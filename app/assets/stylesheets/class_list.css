@@ -1,0 +1,114 @@
+@CHARSET "EUC-KR";
+.overlayOuter {
+	background: #000;
+	opacity: 1;
+	height: 100%;
+	left: 0;
+	display:none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin:0 auto;
+	z-index: 100001;
+}
+
+#overlayInner {
+
+	position: absolute;
+	top: 10%;/*or whatever*/
+	left: 10%; /*or whatever*/
+	width: 80%;
+	height: 80%;
+	margin:0 auto;
+	z-index: 100001;
+	background-color: #FFFFFF;
+}
+
+#close_card_button {
+	float: right;
+	margin-top: 4%;
+	margin-right: 7%;
+	margin-bottom: 3%;
+}
+
+#add_course_button
+{
+	margin-left:890px;
+	margin-bottom:10px;
+	width:100px;
+	font: bold 15px Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	border: 1px solid #333333;
+	border-radius:12px;
+	padding:7px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#636B79), to(#6D7685));
+}
+
+#add_course_button:hover {
+	cursor: pointer;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#6D7685), to(#636B79));
+}
+
+
+
+.class_container
+{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+	width:990px;
+	background:#BBBBBB;
+	border : 2px solid #000000
+}
+
+
+.class_image, .class_title, .class_description {
+	display: block;
+	margin-left:1px;
+	margin-top:1px;
+	width: 280px;
+	height: 171px;
+	position: relative;
+}
+
+.class_image
+{
+	border-radius: 5px 5px 0px 0px;
+}
+
+
+.class_title {
+
+	height: 50px;
+	background: #6D7685;
+}
+
+.class_description {
+	height: 100px;
+	background: #FFFFFF;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.class_list li {
+	display: inline-block;
+	margin:30px 10px;
+	position: relative;
+	text-align: left;
+	width: 282px;
+	height: 325px;
+	z-index: 0;
+	background:#555555;
+	border :1px solid #555555;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#class_label
+{
+	margin-top:20px;
+	text-align:center;
+	font-weight:bold;
+	font-size: 3em;
+}
+
+

@@ -1,0 +1,95 @@
+@CHARSET "EUC-KR";
+
+body {
+	height:100%;
+	background-color: #898989;
+	margin: 0;
+	padding: 0;
+	font-size: 0.75em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+}
+
+header {
+	height:40px;
+	display:block;
+	width:100%;
+	background:#555555;
+	border-bottom: 2px solid #000000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+	z-index: 2;
+	position: relative;
+}
+
+#logo {
+	margin-left: 20px;
+	color:#DDDDDD;
+	font-size: 3em;
+}
+
+footer
+{
+	height:40px;
+	display:block;
+	width:100%;
+	background:#555555;
+	border-top: 2px solid #000000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+	position: relative;
+	margin-top:10px;
+}
+
+#footer_comment
+{
+	padding:10px;
+	margin-left:90%;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#DDDDDD;
+}
+
+
+#wrap {
+	width: 1024px;
+	text-align: left;
+	margin: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+li {
+	height: 18px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+
+	outline: none;
+	outline-style: none;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+
+.button {
+
+	font: bold 25px Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	border: 1px solid #BE0249;
+	border-radius:12px;
+	padding:10px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FE0064), to(#BE0249));
+}
+
+.button:hover {
+	cursor: pointer;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#BE0249), to(#FE0064));
+}
+
+
+
+
