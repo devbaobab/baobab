@@ -1,0 +1,32 @@
+@CHARSET "EUC-KR";
+
+#class_title
+{
+	font-size:4em;
+	font-weight:bold;
+	color:#FFFFFF;
+	text-align:center;
+	margin:20px 0px;
+}
+
+#video_wrapper
+{
+	width:642px;
+	height:485px;
+	padding:10px;
+	margin-top:5px;
+	margin-left:192px;
+	margin-bottom:30px;
+
+	background-color:#333333;
+	
+	border : 2px solid #000000;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+}
+
+#divider
+{
+	margin : 30px 0px;
+	border-bottom: 2px solid #333333;
+}

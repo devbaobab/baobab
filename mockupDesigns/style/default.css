@@ -1,17 +1,52 @@
 @CHARSET "EUC-KR";
 
 body {
+	height:100%;
 	background-color: #898989;
 	margin: 0;
 	padding: 0;
 	font-size: 0.75em;
-	/*line-height:1.2em;*/
+	font-family: Arial, Helvetica, sans-serif;
 	color: #333;
 }
 
 header {
+	height:40px;
+	display:block;
+	width:100%;
+	background:#555555;
 	border-bottom: 2px solid #000000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+	z-index: 2;
+	position: relative;
 }
+
+#logo {
+	margin-left: 20px;
+	color:#DDDDDD;
+	font-size: 3em;
+}
+
+footer
+{
+	height:40px;
+	display:block;
+	width:100%;
+	background:#555555;
+	border-top: 2px solid #000000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+	position: relative;
+	margin-top:10px;
+}
+
+#footer_comment
+{
+	padding:10px;
+	margin-left:90%;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#DDDDDD;
+}
+
 
 #wrap {
 	width: 1024px;
@@ -21,12 +56,6 @@ header {
 	margin-left: auto;
 }
 
-#logo {
-	margin-left: 20px;
-	margin-top: 20px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 3em;
-}
 
 li {
 	height: 18px;
@@ -44,59 +73,23 @@ a {
 	text-decoration: none;
 }
 
-.class_container
-{
-	margin-left:auto;
-	margin-right:auto;
-	width:990px;
-	background:#BBBBBB;
-	border : 2px solid #000000
+
+.button {
+
+	font: bold 25px Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	border: 1px solid #BE0249;
+	border-radius:12px;
+	padding:10px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FE0064), to(#BE0249));
 }
 
-.class_image, .class_title, .class_description {
-	display: block;
-	margin-left:1px;
-	margin-top:1px;
-	width: 280px;
-	height: 171px;
-	position: relative;
-}
-
-.class_image
-{
-	border-radius: 5px 5px 0px 0px;
+.button:hover {
+	cursor: pointer;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#BE0249), to(#FE0064));
 }
 
 
-.class_title {
 
-	height: 50px;
-	background: #6D7685;
-}
 
-.class_description {
-	height: 100px;
-	background: #FFFFFF;
-	border-radius: 0px 0px 5px 5px;
-}
-
-.class_list li {
-	display: inline-block;
-	margin:30px 10px;
-	position: relative;
-	text-align: left;
-	width: 282px;
-	height: 325px;
-	z-index: 0;
-	background:#555555;
-	border :1px solid #555555;
-	border-radius: 5px 5px 5px 5px;
-}
-
-#class_label
-{
-	margin-top:20px;
-	text-align:center;
-	font-weight:bold;
-	font-size: 3em;
-}
