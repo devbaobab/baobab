@@ -1,15 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div id="class_title">
+ <%= @course.name %>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @course.name %>
-</p>
+<div id="video_wrapper">
 
-<p>
-  <b>Description:</b>
-  <%= @course.description %>
-</p>
+	<video width="640" height="480" controls="controls">
+		<source src="http://shapeshed.com/examples/HTML5-video-element/video/320x240.ogg" controls="true" />
+		Your browser does not support the video tag.
+	</video>
+	
+	
+
+</div>
+
+<div id="divider"> 
+	 </div>
+<div>
+	<p>
+	  <b>Description:</b>
+	  <%= @course.description %>
+	</p>
+	<%= link_to 'Edit', edit_course_path(@course) %> |
+	<%= link_to 'Back', courses_path %> |
+	
+</div>
 
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>

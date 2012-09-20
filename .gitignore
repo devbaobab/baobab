@@ -21,3 +21,4 @@ db/sphinx/*
 *~
 tmp/*
 config/*
+*.DS_Store

@@ -40,7 +40,8 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    @course = Course.new(params[:course])
+    #@course = Course.new(params[:course])
+    @course = Course.create(params[:course])
 
     respond_to do |format|
       if @course.save
@@ -73,6 +74,8 @@ class CoursesController < ApplicationController
   # DELETE /courses/1.json
   def destroy
     @course = Course.find(params[:id])
+    @course.snapshot = nil
+    @course.save
     @course.destroy
 
     respond_to do |format|
@@ -80,4 +83,5 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

@@ -1,4 +1,4 @@
-<h1>Listing courses</h1>
+<!--h1>Listing courses</h1>
 
 <table>
   <tr>
@@ -23,3 +23,33 @@
 <br />
 
 <%= link_to 'New Course', new_course_path %>
+-->
+
+	<div id="class_label">Popular Courses</div>
+	<div class="button" id="add_course_button"><%= link_to 'Add Course', new_course_path %></div>
+	<div class="class_container">
+		<ul class="class_list">
+		<% @courses.each do |course| %>
+		<li>	
+			<!-- a href="http://www.google.com" -->
+			<!-- span class="class_image" style="background-image: url('http://images.udemy.com/course/304x171/1682_eca0_5.jpg')" -->
+			<span class="class_image" style="background-image: url('"+<%= course.snapshot.url %>+"')">
+				<span>
+					<span><%= link_to 'View this course', course %></span>
+				</span>
+
+			</span>
+			<span class="class_info">
+				<span class="class_title"><%= course.name %></span>
+				<span class="class_description"><%= course.description %></span>
+				<%= button_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</span>
+			
+		</li>
+		<% end %>
+
+			
+		</ul>
+		
+	</div>
+
