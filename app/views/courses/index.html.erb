@@ -33,12 +33,14 @@
 		<li>	
 			<!-- a href="http://www.google.com" -->
 			<!-- span class="class_image" style="background-image: url('http://images.udemy.com/course/304x171/1682_eca0_5.jpg')" -->
-			<span class="class_image" style="background-image: url('"+<%= course.snapshot.url %>+"')">
+			
+			<!--span class="class_image" style="background-image: url('"+<%= course.snapshot.url(:thumb) %>+"')"-->
 				<span>
+					<%= image_tag course.snapshot.url(:thumb) %>
 					<span><%= link_to 'View this course', course %></span>
 				</span>
 
-			</span>
+			<!--/span-->
 			<span class="class_info">
 				<span class="class_title"><%= course.name %></span>
 				<span class="class_description"><%= course.description %></span>
