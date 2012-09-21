@@ -6,6 +6,8 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+# make sure that ImageMagick is installed on the server machine
+# https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 3.0"
 
 # Gems used only for assets and not required
