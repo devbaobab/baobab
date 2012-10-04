@@ -24,6 +24,21 @@
 	<p>
 	  <div id="description_title">Description:</div>
 	  <div class="description"><%= @course.description %></div>
+	<ul>
+		<% for chapter in @course.chapters %>
+			<li><%=h chapter.title %></li>
+			<ol>
+			<% for lecture in chapter.lectures %>
+				<li><%=h	 lecture.title %> </li>
+			<% end %>
+			</ol>
+		<% end %>
+	</ul>
+		<div class="link_button">
+	  <% @course.categories.each do |cat| %>
+	  <%= link_to cat.name , cat  %>,
+	  <% end %>
+		</div>
 	</p>
 	<div class="link_button">
 	<%= link_to 'Edit', edit_course_path(@course) %> |

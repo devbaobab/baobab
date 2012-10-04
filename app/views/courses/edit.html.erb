@@ -1,6 +1,48 @@
 <h1>Editing course</h1>
 
-<%= render 'form' %>
+<!-- %= render 'form' % -->
+<%= form_for @course , :html => { :multipart => true } do |c| %>
+<% if @course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
+      <ul>
+      <% @course.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= c.label :name %><br />
+    <%= c.text_field :name %>
+  </div>
+  <div class="field">
+    <%= c.label :description %><br />
+    <%= c.text_area :description %>
+  </div>
+	<div class="field">
+	<%= c.file_field :snapshot %>
+  </div>
+
+	<% Category.all.each do |category| %>
+		<div class="field">
+			<%= check_box_tag :category_ids, category.id, @course.categories.include?(category), :name => 'course[category_ids][]' %>
+		    <%= label_tag :category_ids, category.name %>
+		</div>
+	<% end %>
+	
+	<%= c.fields_for :chapters do |builder| %>
+	<%= render "chapter_fields" , :f => builder %>
+	
+ 	<% end %>
+	<div class="field">
+	<%= c.submit %>
+	</div>
+<div class="field">
 <%= link_to 'Show', @course %> |
 <%= link_to 'Back', courses_path %>
+</div>
+<% end %>
+

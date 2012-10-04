@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.all
-
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
@@ -14,10 +14,9 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @course }
+      format.json { render json: @categories }
     end
   end
 
@@ -25,7 +24,17 @@ class CoursesController < ApplicationController
   # GET /courses/new.json
   def new
     @course = Course.new
-
+    # TODO static
+    #@chapter = @course.chapters.build
+    
+    3.times do 
+      chapter = @course.chapters.build
+      4.times { chapter.lectures.build }
+    end
+    
+    #@chapters = @course.chapters
+    #@chapters = @course.chapters.build
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @course }
@@ -40,9 +49,9 @@ class CoursesController < ApplicationController
   # POST /courses
   # POST /courses.json
   def create
-    #@course = Course.new(params[:course])
-    @course = Course.create(params[:course])
-
+    @course = Course.new(params[:course])
+    # @course = Course.create(params[:course])
+    # @chapter = @course.chapters.build(params[:chapter])
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
