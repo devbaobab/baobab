@@ -8,13 +8,25 @@ body {
 	font-size: 0.75em;
 	font-family: Arial, Helvetica, sans-serif;
 	color: #333;
+	background-image:url('cardboard_flat.png');
 }
 
+#wrap {
+	width: 1024px;
+	min-height: 100%;
+	text-align: left;
+	margin: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
 header {
-	height:40px;
+	height:45px;
 	display:block;
 	width:100%;
-	background:#555555;
+	background-image:url('office.png');
+	/*background:#555555;*/
 	border-bottom: 2px solid #000000;
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
 	z-index: 2;
@@ -22,9 +34,12 @@ header {
 }
 
 #logo {
+	padding-top:5px;
 	margin-left: 20px;
 	color:#DDDDDD;
 	font-size: 3em;
+	width:auto;
+	height:inherit;
 }
 
 footer
@@ -32,29 +47,23 @@ footer
 	height:40px;
 	display:block;
 	width:100%;
-	background:#555555;
+	/*background:#555555;*/
 	border-top: 2px solid #000000;
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
 	position: relative;
 	margin-top:10px;
+	margin-bottom:0px;
+	background-image:url('office.png');
 }
 
 #footer_comment
 {
-	padding:10px;
+	padding-top:10px;
 	margin-left:90%;
 	font-family: Arial, Helvetica, sans-serif;
 	color:#DDDDDD;
 }
 
-
-#wrap {
-	width: 1024px;
-	text-align: left;
-	margin: 0;
-	margin-right: auto;
-	margin-left: auto;
-}
 
 
 li {
@@ -71,7 +80,21 @@ a {
 	outline-style: none;
 	font-weight: normal;
 	text-decoration: none;
+	link:normal;
+	color:#DDDDDD;
 }
+
+a:visited
+{
+	color:#DDDDDD;
+}
+
+a:linked
+{
+	color:#DDDDDD;
+}
+a img
+{ border:0 }
 
 
 .button {
@@ -83,13 +106,28 @@ a {
 	border-radius:12px;
 	padding:10px;
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FE0064), to(#BE0249));
+	
+	<!--[if IE]>
+	background-color:#333333;
+	<![endif]-->
+	
 }
 
 .button:hover {
 	cursor: pointer;
 	background: -webkit-gradient(linear, 0 0, 0 100%, from(#BE0249), to(#FE0064));
+	
+	<!--[if IE]>
+	background-color:#333333;
+	<![endif]-->
+	
 }
 
+.thumb_image
+{
+	width:281px;
+	height:173px;
+}
 
 
 

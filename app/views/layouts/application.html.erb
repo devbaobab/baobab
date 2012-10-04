@@ -7,33 +7,35 @@
 		<%= stylesheet_link_tag    "default", :media => "all" %>
 		<%= stylesheet_link_tag    "class_list", :media => "all" %>
 		<%= stylesheet_link_tag    "show_class", :media => "all" %>
-	  <%= javascript_include_tag "courses" %>
-	  <%= csrf_meta_tags %>
+		<%= javascript_include_tag "courses" %>
+		<%= csrf_meta_tags %>
 		<!--title>Class List</title>
 		<link href="style/default.css" rel="stylesheet" type="text/css"-->
 	</head>
-	
-<!--head>
-  <title>Baobab</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head -->
-<body>
-	<header>
-		<div id="logo">
-			Baobab Class
+
+	<!--head>
+	<title>Baobab</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+	</head -->
+	<body>
+		<header>
+			<div id="logo">
+				<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
+			</div>
+		</header>
+		<div id="wrap">
+
+			<article>
+				<%= yield %>
+			</article>
+
 		</div>
-	</header>
-	<div id="wrap">
-
-		<article>
-<%= yield %>
-	</article>
-
-</div>
-<footer>
-	<div id="footer_comment">@2012 Baobab.com</div>
-</footer>
-</body>
+		<footer>
+			<div id="footer_comment">
+				@2012 Baobab.com
+			</div>
+		</footer>
+	</body>
 </html>

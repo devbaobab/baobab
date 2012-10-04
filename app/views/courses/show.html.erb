@@ -4,12 +4,17 @@
 
 <div id="video_wrapper">
 
+
+	<%= video_tag "test1.mp4", :size => "640x480", :controls => true %>
+
+<!--
 	<video width="640" height="480" controls="controls">
-		<source src="http://shapeshed.com/examples/HTML5-video-element/video/320x240.ogg" controls="true" />
+		<!--<source src="http://shapeshed.com/examples/HTML5-video-element/video/320x240.ogg" controls="true" />
+		<source src="test1.mp4" controls="true" />
 		Your browser does not support the video tag.
 	</video>
 	
-	
+-->
 
 </div>
 
@@ -17,11 +22,13 @@
 	 </div>
 <div>
 	<p>
-	  <b>Description:</b>
-	  <%= @course.description %>
+	  <div id="description_title">Description:</div>
+	  <div class="description"><%= @course.description %></div>
 	</p>
+	<div class="link_button">
 	<%= link_to 'Edit', edit_course_path(@course) %> |
 	<%= link_to 'Back', courses_path %> |
+	</div>
 	
 </div>
 

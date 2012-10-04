@@ -33,6 +33,7 @@
 
 #add_course_button
 {
+
 	margin-left:890px;
 	margin-bottom:10px;
 	width:100px;
@@ -42,12 +43,22 @@
 	border: 1px solid #333333;
 	border-radius:12px;
 	padding:7px;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#636B79), to(#6D7685));
+	/*background: -webkit-gradient(linear, 0 0, 0 100%, from(#636B79), to(#6D7685));*/
+	background-color:#777777;
+	
+	<!--[if IE]>
+	background-color:#777777;
+	<![endif]-->
+	
 }
 
 #add_course_button:hover {
 	cursor: pointer;
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(#6D7685), to(#636B79));
+	background-color:#333333;
+	/*background: -webkit-gradient(linear, 0 0, 0 100%, from(#6D7685), to(#636B79));*/
+	<!--[if IE]>
+	background-color:#333333;
+	<![endif]-->
 }
 
 
@@ -58,8 +69,11 @@
 	margin-right:auto;
 	margin-bottom:30px;
 	width:990px;
-	background:#BBBBBB;
-	border : 2px solid #000000
+	background:#89692d;
+	background: rgba(137, 105, 45, 0.6);
+	border : 2px solid #000000;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -68,8 +82,7 @@
 	margin-left:1px;
 	margin-top:1px;
 	width: 280px;
-	height: 171px;
-	position: relative;
+	height: 191px;
 }
 
 .class_image
@@ -80,14 +93,21 @@
 
 .class_title {
 
-	height: 50px;
+	height: 19px;
+	margin-bottom:3px;
 	background: #6D7685;
+	color:#EEEEEE;
+	font-size:1.2em;
+	font-weight:bold;
+	text-align:center;
+	padding-top:8px;
 }
 
 .class_description {
-	height: 100px;
+	height: 120px;
 	background: #FFFFFF;
 	border-radius: 0px 0px 5px 5px;
+	position: absolute;
 }
 
 .class_list li {
@@ -95,12 +115,15 @@
 	margin:30px 10px;
 	position: relative;
 	text-align: left;
-	width: 282px;
-	height: 325px;
+	width: 285px;
+	height: 332px;
 	z-index: 0;
-	background:#555555;
-	border :1px solid #555555;
+	/*background-image:url('office.png');*/
+	background:#222222;
+	border :0px solid #555555;
 	border-radius: 5px 5px 5px 5px;
+	padding-top:3px;
+	padding-left:4px;
 }
 
 #class_label
