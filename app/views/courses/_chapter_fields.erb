@@ -1,0 +1,11 @@
+ <div class="field">
+	<p>
+	<%= f.label :title, "Chapter" %>
+	<%= f.text_area :title, :rows => 1 %>
+	<%= f.check_box :_destroy %>
+  	<%= f.label :_destroy, "Remove Chapter" %>
+	</p>
+	<%= f.fields_for :lectures do |builder| %>
+	<%= render "lecture_fields" , :f => builder %>
+	<% end %>
+</div>
