@@ -4,12 +4,13 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-		<%= stylesheet_link_tag    "default", :media => "all" %>
+		<!-- %= stylesheet_link_tag    "default", :media => "all" %>
 		<%= stylesheet_link_tag    "class_list", :media => "all" %>
 		<%= stylesheet_link_tag    "show_class", :media => "all" %>
 		
 		<%= javascript_include_tag "application" %>
-		<%= csrf_meta_tags %>
+		<%= csrf_meta_tags %> -->
+		<%= yield :head %>
 	</head>
 
 	<body>
@@ -18,6 +19,9 @@
 				<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
 			</div>
 		</header>
+			<%= yield :wrapper_top %>
+			<%= yield :unreleased %>
+			<%= yield :wrapper_bottom %>
 		<div id="wrap">
 			<div id="user_nav" class="link_button" >
 			  <% if user_signed_in? %>

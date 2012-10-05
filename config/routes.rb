@@ -1,12 +1,17 @@
 Baobab::Application.routes.draw do
   
+  # resources :subscriptions
+
   devise_for :users
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
+  # root :to => 'courses#index'
+  root :to => 'subscriptions#new'
+  match 'subscriptions' => 'subscriptions#create'
+  match 'subscriptions/new' => 'subscriptions#new'
   
-  root :to => 'courses#index'
   resources :courses
   resources :categories
 
