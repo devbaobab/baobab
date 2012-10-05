@@ -1,0 +1,86 @@
+<% content_for :head do %>
+<style>
+#wrap
+{
+	display:none;
+}
+header
+{
+	display:none;
+}
+
+footer
+{
+	display:none;
+}
+body
+{
+	width:1024px;
+	margin: 0 auto;
+}
+#intro_background
+{
+	margin-top:20px;
+}
+
+#subscription_email
+{
+	width:300px;
+	font-size: 25px;
+	position:absolute;
+	left:330px;
+	top:707px;
+}
+
+#submit_button
+{
+	width: 150px;
+	font-size: 37px;
+	position:absolute;
+	left:664px;
+	top:707px;
+}
+
+#submit_button:hover
+{
+	cursor:pointer;
+}
+input[type="submit"]
+{
+	
+	width: 150px;
+	font-size: 37px;
+	position:absolute;
+	left:664px;
+	top:707px;
+}
+
+</style>
+<script>
+	function check_submit()
+	{
+		alert('Thanks');
+		var email = document.getElementById('email_input');
+		
+		
+		email.value = "";
+	}
+</script>
+<% end %>
+<% content_for :unreleased do %>
+
+<div id='intro_background'><!--img src="intro.jpg"-->
+	<%= image_tag('intro.jpg') %></div>
+	<!-- input type="email" id="email_input" -->
+	<%= form_for @subscription do |f| %>
+		<%= f.text_field :email %>
+		<!--  div id="submit_button" onclick="check_submit()">&nbsp;</div -->
+		<%= f.submit " ",  :onlick => "check_submit()" %>
+	<% end %>
+	
+	<% if flash[:notice] %>
+	    <div id="notice"><%= flash[:notice] %></div>
+	<% end %>
+
+
+<% end %>
