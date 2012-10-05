@@ -32,11 +32,12 @@
 		    <%= label_tag :category_ids, category.name %>
 		</div>
 	<% end %>
-	
+
 	<%= c.fields_for :chapters do |builder| %>
-	<%= render "chapter_fields" , :f => builder %>
-	
+	<%= render "chapter_fields" , :f => builder %>	
  	<% end %>
+	<p><%= link_to_add_fields "Add Chapter", c , :chapters %></p>
+
 	<div class="field">
 	<%= c.submit %>
 	</div>

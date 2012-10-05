@@ -81,12 +81,12 @@ a {
 	font-weight: normal;
 	text-decoration: none;
 	link:normal;
-	color:#DDDDDD;
+	color:#000000;
 }
 
 a:visited
 {
-	color:#DDDDDD;
+	color:#EEEEEE;
 }
 
 a:linked

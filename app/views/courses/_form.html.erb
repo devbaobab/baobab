@@ -30,11 +30,16 @@
  <div class="field">
 	<%= f.file_field :snapshot %>
   </div>
-	
+	<div class="fields">
 	<%= f.fields_for :chapters do |builder| %>
 	<%= render "chapter_fields" , :f => builder %>
-	
  	<% end %>
+	<p><%= link_to_add_fields "Add Chapter", f , :chapters %></p>
+	</div>
+	
+
+	
+	
 
   <div class="actions">
     <%= f.submit %>
