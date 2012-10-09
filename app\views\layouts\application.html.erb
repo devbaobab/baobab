@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+		<%= stylesheet_link_tag    "default", :media => "all" %>
+		<%= stylesheet_link_tag    "class_list", :media => "all" %>
+		<%= stylesheet_link_tag    "show_class", :media => "all" %>
+		
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %> 
+		<%= yield :head %>
+	</head>
+<!--onresize='autoResize()' -->
+	<body onload='autoResize()'>
+		<header>
+			<div id="logo">
+				<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
+			</div>
+				<%= yield :header %>
+		</header>
+			<%= yield :wrapper_top %>
+			<%= yield :unreleased %>
+			<%= yield :wrapper_bottom %>
+		<div id="wrap">
+			<div id="user_nav" class="link_button" >
+			  <% if user_signed_in? %>
+			    Signed in as <%= current_user.email %>. Not you?
+			    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+			  <% else %>
+			    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+			  <% end %>
+			</div>
+
+			<p class="notice"><%= notice %></p>
+	    	<p class="alert"><%= alert %></p>
+			
+			<article>
+				<%= yield %>
+			</article>
+
+		</div>
+		<footer>
+			<div id="footer_comment">
+				@2012 Baobab.com
+			</div>
+		</footer>
+	</body>
+</html>

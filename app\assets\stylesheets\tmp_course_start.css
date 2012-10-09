@@ -1,0 +1,58 @@
+.student_counter, .rating
+{
+	float:right;
+	font-size:20px;
+	margin-top:20px;
+	margin-right:80px;
+}
+
+#lecture_progress
+{
+	width:inherit;
+	height:40px;
+}
+
+#progress_wrap
+{
+	width:500px;
+	margin:0 auto;
+}
+
+#curr_wrap
+{
+	float:left;
+}
+
+#course_start_wrap
+{
+	margin-top:50px;
+}
+
+.bulletin_board
+{
+	float:right;
+	width:300px;
+	height:500px;
+	border : 1px #333333 solid;
+}
+
+.chapter_title
+{
+	font-size:1.8em;
+	font-weight:bold;
+	margin-left:10px;
+	margin-top:10px;
+}
+
+.lecture_title
+{
+	float:left;
+	font-size:1.5em;
+	margin-left:30px;
+	margin-top:10px;
+}
+
+.lecture_duration
+{
+	float:right;
+}

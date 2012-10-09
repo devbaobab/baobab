@@ -1,0 +1,75 @@
+<% content_for :head do %>
+<style>
+	header {
+		height: 100px;
+	}
+
+	#logo {
+		float: left;
+		margin-top: 30px;
+		margin-left: 50px;
+		height: auto;
+	}
+</style>
+	<%= stylesheet_link_tag    "tmp_index", :media => "all" %>
+<% end %>
+
+<% content_for :header do %>
+
+<div id='login_form'>
+	<div id='facebook_button'>
+		Facebook Login
+	</div>
+	<br>
+	<label for='login_id'>ID</label>
+	<input type='text' id='login_id'/>
+	<label for='login_pw'>Password</label>
+	<input type='password' id='login_pw'/>
+	<input type="submit" value="Login"/>
+</div>
+
+<% end %>
+
+<div id='main_page_wrapper'>
+	<div id='sign_up_form'>
+		<div class='page_title'>
+			Sign up
+		</div>
+		<table id='sign_up_entry'>
+			<tr>
+				<td><label for='full_name'>Full Name</label></td>
+				<td>
+				<input type='text' id='full_name'/>
+				</td>
+			</tr>
+			<tr>
+				<td><label for='email'>Email</label></td>
+				<td>
+				<input type='email' id='email'/>
+				</td>
+			</tr>
+			<tr>
+				<td><label for='password'>Password</label></td>
+				<td>
+				<input type='password' id='password'/>
+				</td>
+			</tr>
+			<tr>
+				<td><label for='confirm'>Confirm</label></td>
+				<td>
+				<input type='password' id='confirm'/>
+				</td>
+			</tr>
+			<tr>
+				<td></td><td>
+				<input type='submit' value='sign up'/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='main_image_wrap'>
+		<div id='main_image'></div>
+		<button>Discover Courses</button>
+	</div>
+</div>
+

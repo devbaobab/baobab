@@ -1,0 +1,43 @@
+#recommend_tab,#popular_tab,#high_rating_tab
+{
+	float:left;
+	border:1px #333333 solid;
+	font-size:1.2em;
+	padding:5px;
+}
+#discover_search_form
+{
+	width:500px;
+	margin:0 auto;
+}
+#discover_search_box
+{
+	margin-left:20px;
+	float:left;
+}
+
+#recommend_tab:hover,#popular_tab:hover,#high_rating_tab:hover, .category_entry:hover
+{
+	cursor:pointer;
+}
+
+.category_entry
+{
+	float:left;
+	margin-left: 20px;
+	margin-top:40px;
+}
+
+#discover_category_wrap
+{
+	border-bottom:2px #333333 solid;
+	height:80px;
+}
+
+.lecture_box
+{
+	margin-top:30px;
+	width:300px;
+	height:300px;
+	border:1px #333333 solid;
+}

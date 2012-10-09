@@ -1,0 +1,67 @@
+#intro_video
+{
+	float:left;
+	width:500px;
+	height:300px;
+	border:1px #333333 solid
+}
+
+#upper_wrap
+{
+	height:400px;
+}
+
+.intro_student_counter,.avg_rating
+{
+	font-size:20px;
+}
+
+.intro_student_counter
+{
+	float:left;
+	margin-right:80px;
+}
+
+#lecturer_wrap
+{
+	float:right;
+}
+
+#lecturer_image
+{
+	width:200px;
+	height:200px;
+	border:1px #333333 solid;
+}
+
+.sub_title
+{
+	width:inherit;
+}
+
+#course_info_box, #course_bulletin
+{
+	width:inherit;
+	height:300px;
+	border:1px #333333 solid;
+	margin-bottom:30px;
+}
+
+.course_info_tab
+{
+	border:1px #333333 solid;
+}
+
+.course_info_tab:hover
+{
+	cursor:pointer;
+}
+#desc
+{
+	float:left;
+}
+
+#curr
+{
+	width:130px;
+}

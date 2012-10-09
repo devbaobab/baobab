@@ -1,0 +1,77 @@
+<% content_for :head do %>
+<script>
+	function printValue(src, dst) {
+		var source = document.getElementById(src);
+		var dst = document.getElementById(dst);
+
+		dst.value = source.value;
+	}
+</script>
+
+<%= stylesheet_link_tag    "tmp_details", :media => "all" %>	
+<% end %>
+
+<div id='main_page_wrapper'>
+	<div class='page_title'>
+		Details
+	</div>
+	<div id='details_form'>
+		<table id='details_entry'>
+			<tr>
+				<td><label for='sex'>Sex</label></td>
+				<td>
+				<div id='male_image'>
+					Male Image
+				</div>
+				<input type='radio' name='sex' value='1'>
+				</input></td><td>
+				<div id='female_image'>
+					Female Image
+				</div>
+				<input type='radio' name='sex' value='2'>
+				</input></td>
+			</tr>
+			<tr>
+				<td><label for='age'>Age</label></td>
+				<td>
+				<input id="age_range" type ="range" min ="0" max="150" step ="1" onmouseup = "printValue('age_range','age_number')"/>
+				</td>
+				<td>
+				<input id="age_number" type ="number" onchange = "printValue('age_number','age_range')"/>
+				</td>
+			</tr>
+			<tr>
+				<td><label for='job'>Job</label></td>
+				<td>
+				<select id='job_select'>
+					<option value='student'>Student</option>
+					<option value='student'>Teacher</option>
+					<option value='student'>etc.</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><label for='interest'>Interest</label></td>
+				<td>
+				<div id='category1_image'>
+					Category1 Image
+				</div>
+				<input type='checkbox' name='interest' value='category_id'>
+				</input></td><td>
+				<div id='category2_image'>
+					Category2 Image
+				</div>
+				<input type='checkbox' name='interest' value='category_id'>
+				</input></td>
+			</tr>
+			<tr>
+				<td></td><td></td><td>
+				<br>
+				<br>
+				<input class='button_entry' type='button' value='Skip'/>
+				<input class='button_entry' type='Submit' value='Submit'/>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+

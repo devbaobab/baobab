@@ -1,0 +1,37 @@
+#details_form
+{
+	width:610px;
+	margin:0 auto;
+}
+
+#details_title {
+	font-size: 3em;
+	font-weight: bold;
+	width: 600px;
+	border-bottom: 2px #000000 solid;
+}
+
+#details_entry tr td {
+	font-size: 1.2em;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-left: 40px;
+}
+
+#details_entry tr td input {
+	width: 200px;
+}
+#details_entry tr td .button_entry {
+	width: 100px;
+}
+#male_image, #female_image, #category1_image, #category2_image
+{
+	width:200px;
+	height:200px;
+	border:1px #333333 solid;
+}
+
+#job_select
+{
+	width:200px;
+}

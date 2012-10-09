@@ -1,0 +1,43 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag    "tmp_course_start", :media => "all" %>
+<% end %>
+<div id='main_page_wrapper'>
+	<div class='page_title'>
+		"Course Title"
+		<div class='rating'>
+			Rate this Course : *****
+		</div>
+		<div class='student_counter'>
+			999 students taken
+		</div>
+	</div>
+	<div id='progress_wrap'>
+		<progress id='lecture_progress' max='100' value='50'></progress>
+		50% done
+	</div>
+
+	<div id='course_start_wrap'>
+		<div id='curr_wrap'>
+			<div id='sub_title'>
+				Curriculum
+			</div>
+			<div class='chapter_entry'>
+				<div class='chapter_title'>
+					chapter1. Introduction
+				</div>
+				<div class='lecture_entry'>
+					<div class='lecture_title'>
+						lecture1. introduction
+					</div>
+					<div class='lecture_duration'>
+						11:20
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class='bulletin_board'>
+				bulletin board
+			</div>
+		</div>
+	</div>
+

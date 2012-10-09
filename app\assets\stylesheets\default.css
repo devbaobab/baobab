@@ -1,0 +1,147 @@
+@CHARSET "EUC-KR";
+
+body {
+	height:100%;
+	background-color: #898989;
+	margin: 0;
+	padding: 0;
+	font-size: 0.75em;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
+	background-image:url('cardboard_flat.png');
+}
+
+#wrap {
+	width: 1024px;
+	min-height: 100%;
+	text-align: left;
+	margin: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+header {
+	height:45px;
+	display:block;
+	width:100%;
+	background-image:url('office.png');
+	/*background:#555555;*/
+	border-bottom: 2px solid #000000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+	z-index: 2;
+	position: relative;
+	color:#DDDDDD;
+}
+
+#logo {
+	padding-top:10px;
+	margin-left: 20px;
+	width:auto;
+	height:inherit;
+}
+
+footer
+{
+/*
+	height:40px;
+	display:block;
+	width:100%;
+	border-top: 2px solid #000000;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.45);
+	position: relative;
+	margin-top:10px;
+	margin-bottom:0px;
+	background-image:url('office.png');*/
+}
+
+#footer_comment
+{
+	padding-top:10px;
+	margin-left:90%;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#333333;
+}
+
+
+
+li {
+	height: 18px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+
+	outline: none;
+	outline-style: none;
+	font-weight: normal;
+	text-decoration: none;
+	link:normal;
+	color:#000000;
+}
+
+a:visited
+{
+	color:#EEEEEE;
+}
+
+a:linked
+{
+	color:#DDDDDD;
+}
+a img
+{ border:0 }
+
+
+.button {
+
+	font: bold 25px Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	border: 1px solid #BE0249;
+	border-radius:12px;
+	padding:10px;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#FE0064), to(#BE0249));
+	
+	<!--[if IE]>
+	background-color:#333333;
+	<![endif]-->
+	
+}
+
+.button:hover {
+	cursor: pointer;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#BE0249), to(#FE0064));
+	
+	<!--[if IE]>
+	background-color:#333333;
+	<![endif]-->
+	
+}
+
+.thumb_image
+{
+	width:281px;
+	height:173px;
+}
+
+.page_title
+{
+	font-size: 3em;
+	font-weight: bold;
+	width: inherit;
+	border-bottom: 2px #000000 solid;
+	margin-bottom:20px;
+}
+
+.sub_title
+{
+	font-size: 2.5em;
+	font-weight: bold;
+	width: 600px;
+	border-bottom: 2px #000000 solid;
+	margin-bottom:20px;
+}

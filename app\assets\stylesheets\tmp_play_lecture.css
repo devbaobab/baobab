@@ -1,0 +1,42 @@
+.page_title
+{
+	text-align:center;
+}
+
+#play_video
+{
+	float:left;
+	width:700px;
+	height:500px;
+	border:1px #333333 solid
+}
+
+#play_wrap
+{
+	height:600px;
+}
+
+
+#side_box
+{
+	float:right;
+	width:300px;
+	height:485px;
+	border:1px #333333 solid
+}
+
+#question_tab, #material_tab
+{
+	float:left;
+	margin-left:1px;
+	border:1px #333333 solid;
+	border-bottom:none;
+}
+#question_tab, #material_tab:hover
+{
+	cursor:pointer;
+}
+#question_tab
+{
+	margin-left:30px;
+}
