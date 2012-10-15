@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TmpUiControllerTest < ActionController::TestCase
+class TakeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

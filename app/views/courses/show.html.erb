@@ -1,50 +1,41 @@
-<div id="class_title">
- <%= @course.name %>
-</div>
+<% content_for :head do %>
+<%= stylesheet_link_tag    "tmp_course_intro", :media => "all" %>
+<% end %>
 
-<div id="video_wrapper">
-
-
-	<%= video_tag "test1.mp4", :size => "640x480", :controls => true %>
-
-<!--
-	<video width="640" height="480" controls="controls">
-		<!--<source src="http://shapeshed.com/examples/HTML5-video-element/video/320x240.ogg" controls="true" />
-		<source src="test1.mp4" controls="true" />
-		Your browser does not support the video tag.
-	</video>
-	
--->
-
-</div>
-
-<div id="divider"> 
-	 </div>
-<div>
-	<p>
-	  <div id="description_title">Description:</div>
-	  <div class="description"><%= @course.description %></div>
-	<ul>
-		<% for chapter in @course.chapters %>
-			<li><%=h chapter.title %></li>
-			<ol>
-			<% for lecture in chapter.lectures %>
-				<li><%=h	 lecture.title %> </li>
-			<% end %>
-			</ol>
-		<% end %>
-	</ul>
-		<div class="link_button">
-	  <% @course.categories.each do |cat| %>
-	  <%= link_to cat.name , cat  %>,
-	  <% end %>
-		</div>
-	</p>
-	<div class="link_button">
-	<%= link_to 'Edit', edit_course_path(@course) %> |
-	<%= link_to 'Back', courses_path %> |
+<div id='main_page_wrapper'>
+	<div class='page_title'>
+		Course Introduction "<%= @course.name %>"
+		<button id='take_course_button'>
+			Take this Course
+		</button>
 	</div>
-	
+	<div id='upper_wrap'>
+		<div class='intro_student_counter'>
+			999 Student taken
+		</div>
+		<div class='avg_rating'>
+			Rating : *****
+		</div>
+		<video id='intro_video' controls="controls"></video>
+		<div id='lecturer_wrap'>
+			<div id='lecturer_title'>
+				<%= @course.user.fullname %>
+			</div>
+			<div id='lecturer_image'></div>
+			<div id='lecturer_desc'>
+				Lecturer Description
+			</div>
+		</div>
+	</div>
+	<div id='lower_wrap'>
+		<div class='sub_title'>Course Information</div>
+		<div class='course_info_tab' id='desc'>Description</div>
+		<div class='course_info_tab' id='curr'>Curriculum</div>
+		<div id='course_info_box'><%= @course.description %></div>
+		<div id='bulletin_title'>Bulletin Board</div>
+		<div id='course_bulletin'></div>
+	</div>
+
 </div>
 
 

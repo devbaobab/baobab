@@ -4,6 +4,11 @@ class Course < ActiveRecord::Base
   
   has_attached_file :snapshot, :styles => { :medium => "280x171", :thumb => "280x171"}
   
+  #belongs_to :take
+  #belongs_to :own
+  
+  #belongs_to :user, :through => :take
+  belongs_to :user #, :through => :own
   
   has_many :categorizations, :dependent => :destroy
   has_many :categories, :through => :categorizations
@@ -17,7 +22,6 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :categorizations
   accepts_nested_attributes_for :chapters, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
   accepts_nested_attributes_for :lectures, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
-  
 
   
 end

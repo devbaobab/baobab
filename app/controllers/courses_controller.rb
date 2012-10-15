@@ -1,12 +1,28 @@
 class CoursesController < ApplicationController
+  # authorization control
+  load_and_authorize_resource
+  # nested:  load_and_authorize_resource, :nested => :article
+  
+  
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
-   
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @courses }
+    selected_category_id = params[:selected_category]
+    if selected_category_id.nil?
+  
+      @courses = Course.all
+      @categories = Category.all
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @courses }
+      end
+    else
+      @categories = Category.all
+      @courses = Category.find(selected_category_id).courses
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @courses }
+      end
     end
   end
 
@@ -27,9 +43,9 @@ class CoursesController < ApplicationController
     # TODO static
     #@chapter = @course.chapters.build
     
-    3.times do 
+    2.times do 
       chapter = @course.chapters.build
-      4.times { chapter.lectures.build }
+      2.times { chapter.lectures.build }
     end
     
     #@chapters = @course.chapters
@@ -52,6 +68,7 @@ class CoursesController < ApplicationController
     @course = Course.new(params[:course])
     # @course = Course.create(params[:course])
     # @chapter = @course.chapters.build(params[:chapter])
+    @course.user = current_user
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }

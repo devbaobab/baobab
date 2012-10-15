@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'devise'
+gem 'devise' # authentication
+gem 'cancan'
 # gem 'formtastic' # easy forms
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,9 +22,14 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-ui-rails'
 end
 
+gem 'jwplayer-rails'
+
 gem 'jquery-rails'
+
+# gem 'cloudfiles'
 #gem 'prototype-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

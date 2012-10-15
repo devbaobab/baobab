@@ -1,80 +1,27 @@
 <% content_for :head do %>
 <style>
-#wrap
-{
-	display:none;
-}
-header
-{
-	display:none;
-}
-
-footer
-{
-	display:none;
-}
-body
-{
-	width:1024px;
-	margin: 0 auto;
-}
-#intro_background
-{
-	margin-top:20px;
-}
-
-#subscription_email
-{
-	width:300px;
-	font-size: 25px;
-	position:absolute;
-	left:330px;
-	top:707px;
-}
-
-#submit_button
-{
-	width: 150px;
-	font-size: 37px;
-	position:absolute;
-	left:664px;
-	top:707px;
-}
-
-#submit_button:hover
-{
-	cursor:pointer;
-}
-input[type="submit"]
-{
-	
-	width: 150px;
-	font-size: 37px;
-	position:absolute;
-	left:664px;
-	top:707px;
-}
-
-</style>
-<script>
-	function check_submit()
-	{
-		alert('Thanks');
-		var email = document.getElementById('email_input');
-		
-		
-		email.value = "";
+	header {
+		height: 100px;
 	}
-</script>
-<% end %>
-<% content_for :unreleased do %>
 
-<div id='intro_background'><!--img src="intro.jpg"-->
+	#logo {
+		float: left;
+		margin-top: 30px;
+		margin-left: 50px;
+		height: auto;
+	}
+</style>
+	<%= stylesheet_link_tag    "tmp_index", :media => "all" %>
+<% end %>
+
+<!-- % content_for :unreleased do % -->
+
+<!-- div id='intro_background'><!--img src="intro.jpg">
 	<%= image_tag('intro.jpg') %></div>
-	<!-- input type="email" id="email_input" -->
+	
 	<%= form_for @subscription do |f| %>
 		<%= f.text_field :email %>
-		<!--  div id="submit_button" onclick="check_submit()">&nbsp;</div -->
+		
 		<%= f.submit " ",  :onlick => "check_submit()" %>
 	<% end %>
 	
@@ -83,4 +30,49 @@ input[type="submit"]
 	<% end %>
 
 
-<% end %>
+< % end % -->
+
+
+<div id='main_page_wrapper'>
+	<div id='sign_up_form'>
+		<div class='page_title'>
+			Sign up
+		</div>
+		<table id='sign_up_entry'>
+			<tr>
+				<td><label for='full_name'>Full Name</label></td>
+				<td>
+				<input type='text' id='full_name'/>
+				</td>
+			</tr>
+			<tr>
+				<td><label for='email'>Email</label></td>
+				<td>
+				<input type='email' id='email'/>
+				</td>
+			</tr>
+			<tr>
+				<td><label for='password'>Password</label></td>
+				<td>
+				<input type='password' id='password'/>
+				</td>
+			</tr>
+			<tr>
+				<td><label for='confirm'>Confirm</label></td>
+				<td>
+				<input type='password' id='confirm'/>
+				</td>
+			</tr>
+			<tr>
+				<td></td><td>
+				<input type='submit' value='sign up'/>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id='main_image_wrap'>
+		<div id='main_image'></div>
+		<button>Discover Courses</button>
+	</div>
+</div>
+

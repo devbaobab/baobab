@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery.ui.all
 
 function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
@@ -25,7 +26,19 @@ function add_fields(link, association, content) {
   $(link).parent().before(content.replace(regexp, new_id));
 }
 
+$(function() {
+    $( "#tabs" ).tabs();
+});
 
+function autoResize(){
+    var height, width;
+
+    height = document.body.offsetHeight + 100;
+    width = document.body.offsetWidth ;
+
+    $("body").height(height);
+    $("body").width(width);
+}
 
 // require prototype
 // require prototype_ujs

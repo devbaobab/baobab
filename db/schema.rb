@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004020716) do
+ActiveRecord::Schema.define(:version => 20121010082003) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(:version => 20121004020716) do
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
     t.decimal  "price",                 :precision => 8, :scale => 2
+    t.integer  "user_id"
+  end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "lectures", :force => true do |t|
@@ -57,6 +64,27 @@ ActiveRecord::Schema.define(:version => 20121004020716) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "chapter_id"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "owns", :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "takes", :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -72,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20121004020716) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "fullname"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -81,6 +110,7 @@ ActiveRecord::Schema.define(:version => 20121004020716) do
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "link"
   end
 
   create_table "videos", :force => true do |t|

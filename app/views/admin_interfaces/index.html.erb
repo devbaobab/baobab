@@ -1,0 +1,37 @@
+<% if current_user.role?(:admin) %>
+<p class="field">
+<% @courses.each do |course| %>
+	<%= course.name %>
+	<%= link_to "show", course %>
+	<%= link_to "edit", edit_course_path(course) %></br>
+<% end %>
+</p>
+
+<p class="field" >
+<% @categories.each do |category| %>
+	<%= category.name %>
+	<%= link_to "show", category %>
+	<%= link_to "edit", edit_category_path(category) %></br>
+<% end %>
+</p>
+
+
+<p class="field">
+	<% @groups.each do |group| %>
+		<p><%= group.name %></br>
+		<% group.users.each do |user| %>
+			<p> &nbsp <%= user.email %> 
+				<!-- %= link_to "show", user % -->
+				<%= link_to "edit", edit_user_registration_path %>
+					<% for group_a in Group.find(:all) %>
+				<%= check_box_tag "user[group_ids][]", user.id, user.role?(group_a.name.to_sym) %>
+			  <%= group_a.name %>
+			<% end %>
+				</p>
+		<% end %>
+		</p>
+	<% end %>
+</p>
+<% else %>
+<p >please login as admin first</p>
+<% end %>

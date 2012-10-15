@@ -10,8 +10,10 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.ui.all
+ */
  */
 
-.field {
+.fields {
 	color: #FFFFFF;
 }

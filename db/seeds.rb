@@ -49,8 +49,28 @@ u2.chapters.create!({"title" => "Chapter 2"})
 u3.chapters.create!({"title" => "Chapter 1"})
 u3.chapters.create!({"title" => "Chapter 2"})
 
+g1 = Group.create({"name" => "admin"})
+g2 = Group.create({"name" => "lecturer"})
+g3 = Group.create({"name" => "student"})
+
+s1 = User.create!(:email => 'user@gmail.com', :password => 'foobar', :password_confirmation => 'foobar', :fullname => "user")
+s2 = User.create!(:email => 'khurtious@gmail.com', :password => 'foobar', :password_confirmation => 'foobar', :fullname => "Khurt")
+s3 = User.create!(:email => 'dev.baobabclass@gmail.com', :password => 'foobar', :password_confirmation => 'foobar', :fullname => "developer")
+s4 = User.create!(:email => 'baobabclass@gmail.com', :password => 'foobar', :password_confirmation => 'foobar', :fullname => "Admin")
 
 
-User.create!(:email => 'user@gmail.com', :password => 'foobar', :password_confirmation => 'foobar')
-User.create!(:email => 'khurtious@gmail.com', :password => 'foobar', :password_confirmation => 'foobar')
-User.create!(:email => 'dev.baobabclass@gmail.com', :password => 'foobar', :password_confirmation => 'foobar')
+mem1 = Membership.create({"user_id" => s1.id, "group_id" => g3.id})
+
+mem1 = Membership.create({"user_id" => s2.id, "group_id" => g3.id})
+mem1 = Membership.create({"user_id" => s2.id, "group_id" => g2.id})
+
+mem1 = Membership.create({"user_id" => s4.id, "group_id" => g2.id})
+
+mem1 = Membership.create({"user_id" => s3.id, "group_id" => g1.id})
+
+
+
+s2.courses << u1
+s2.courses << u2
+s4.courses << u3
+s4.courses << u4

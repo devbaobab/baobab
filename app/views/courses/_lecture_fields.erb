@@ -3,4 +3,10 @@
 	<%= f.text_field :title %>
 	<%= f.hidden_field :_destroy %>
 	<%= link_to_function "remove" , "remove_fields(this)" %>
+	<p>
+	<%= f.fields_for :videoclips do |builder| %>
+	<%= render "videoclip_fields" , :f => builder %>
+	<% end %>
+	<p><!-- %= link_to_add_fields "Add Videoclip" ,  f, :videoclips % --></p>
+	</p>
 </p>
