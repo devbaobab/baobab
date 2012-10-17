@@ -1,5 +1,5 @@
-class Own < ActiveRecord::Base
+class Authour < ActiveRecord::Base
   attr_accessible :course_id, :user_id
-  belongs_to :user
   belongs_to :course
+  belongs_to :user
 end

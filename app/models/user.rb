@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   #has_many :takes
   #has_many :courses, :through => :takes
   
-  #has_many :owns
-  has_many :courses #, :through => :owns
+  has_many :takes
+  has_many :courses , :through => :takes
 
   accepts_nested_attributes_for :memberships
   
@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
     groups.any? { |r| r.name.underscore.to_sym == role}
   end
 
+  def takes?(course_id)
+    !self.takes.where(:course_id => course_id).empty?
+  end
+  
 end

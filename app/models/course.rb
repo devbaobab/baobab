@@ -5,13 +5,14 @@ class Course < ActiveRecord::Base
   has_attached_file :snapshot, :styles => { :medium => "280x171", :thumb => "280x171"}
   
   #belongs_to :take
-  #belongs_to :own
-  
+  has_many :takes
+  has_many :users, :through => :takes
   #belongs_to :user, :through => :take
-  belongs_to :user #, :through => :own
+  #belongs_to :user , :through => :own
   
   has_many :categorizations, :dependent => :destroy
   has_many :categories, :through => :categorizations
+
 
 
   has_many :lectures, :dependent => :destroy
@@ -23,5 +24,34 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :chapters, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
   accepts_nested_attributes_for :lectures, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
 
+  has_many :authours
+
+  def isAuthour?(user_id)
+    
+  end
+  
+  def authour
+    User.find(self.authours.first.user_id)
+  end
+  
+  def assign(user_id)
+    unless !self.takes.where(:course_id => self.id, :user_id => user_id).empty?
+      self.takes << Take.create(:course_id => self.id, :user_id => user_id)
+    end
+    self.takes.size
+    
+  end
+  
+  def unassign(user_id)
+    self.takes.where(:course_id => self.id, :user_id => user_id).each do |take|
+      take.destroy
+    end
+  end
+  
+  private
+    def has_authour
+      a = self.authour
+      a.nil?
+    end
   
 end

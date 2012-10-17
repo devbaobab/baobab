@@ -12,7 +12,8 @@ class Ability
       if user.role? :lecturer
         can :create, Course
         can :update, Course do |course|
-          course.try(:user) == user
+          #course.try(:user) == user
+          course.isAuthour(user)
         end
       end
     end

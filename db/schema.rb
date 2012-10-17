@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010082003) do
+ActiveRecord::Schema.define(:version => 20121017091820) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "authours", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -50,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20121010082003) do
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
     t.decimal  "price",                 :precision => 8, :scale => 2
-    t.integer  "user_id"
   end
 
   create_table "groups", :force => true do |t|
@@ -69,13 +75,6 @@ ActiveRecord::Schema.define(:version => 20121010082003) do
   create_table "memberships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "group_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "owns", :force => true do |t|
-    t.integer  "course_id"
-    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

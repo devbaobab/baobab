@@ -13,10 +13,15 @@ Baobab::Application.routes.draw do
   match 'subscriptions' => 'subscriptions#create'
   match 'subscriptions/new' => 'subscriptions#new'
   
+  # assign_url(:d => course.id)
+  match 'courses/assign/:id' => 'mypages#assign', :as => :assign
+  match 'courses/unassign/:id' => 'mypages#unassign', :as => :unassign
   match 'admininterface' => "admin_interfaces#index" 
   
+  match 'mypages/:id' => 'mypages#show'
+  
   resources :courses
-  resources :categories
+  #resources :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -10,7 +10,9 @@
 		
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
+		<%= stylesheet_link_tag    "tmp_index", :media => "all" %>
 		<% if user_signed_in? %>
+		
 		<% else %>
 		<style>
 			header {
@@ -24,7 +26,7 @@
 				height: auto;
 			}
 		</style>
-			<%= stylesheet_link_tag    "tmp_index", :media => "all" %>
+			
 		<% end %>
 		<%= yield :head %>
 	</head>
@@ -35,15 +37,18 @@
 			<div id="logo">
 				<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
 			</div>
-			 <% if user_signed_in? %>
-				Signed in as <%= current_user.fullname %>. Not you?
-			    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-			 <% else %>
 			<div id='login_form'>
+			 <% if user_signed_in? %>
+			
+				<%= current_user.fullname %>
+			    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+		
+			 <% else %>
+			
 				<div id='facebook_button'>
 					Facebook Login
 				</div>
-			
+
 				<%= form_for( User.new, :as => :user, :url => session_path(:user)) do |f| %>
 				  <%= f.label "login_id" %>
 				  <%= f.email_field :email, :id => "login_id" %>
@@ -51,19 +56,22 @@
 				  <%= f.password_field :password, :id => "login_pw" %>
 				  <%= f.submit "Sign in" %>
 				<% end %>
-			</div>
+			
 			 <% end %>
+			</div>
 			<%= yield :header %>
 		</header>
+
 		 <% if user_signed_in? %>
 		
 		<div id="wrap">
 
-
 			<p class="notice"><%= notice %></p>
 	    	<p class="alert"><%= alert %></p>
+
 			
 			<article>
+
 				<div id="tabs">
 				<%= yield %>
 				</div>
@@ -72,6 +80,7 @@
 		</div>
 		
 		<% else %>
+
 	<%= form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
 		
 		<div id='main_page_wrapper'>

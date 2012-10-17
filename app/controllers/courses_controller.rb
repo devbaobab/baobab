@@ -8,12 +8,14 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     selected_category_id = params[:selected_category]
+    
     if selected_category_id.nil?
   
       @courses = Course.all
+      
       @categories = Category.all
       respond_to do |format|
-        format.html # index.html.erb
+        format.html { render :action => "index", notice: "current_user" } # index.html.erb
         format.json { render json: @courses }
       end
     else
@@ -59,7 +61,9 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+    
     @course = Course.find(params[:id])
+    
   end
 
   # POST /courses
@@ -109,5 +113,6 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>My course</p>
+<% if !@taking_courses.nil?%>
+	<p>taking courses</p>
+	<% @taking_courses.each do |course| %>
+		<%= link_to course.name , course %> </br>
+	<% end %>
+	<%= link_to "add more course", courses_path %>
+<% end %>
+
+<% if !@offering_courses.nil? && !@offering_courses.empty? %>
+	<p>offering courses</p>
+	<% @offering_courses.each do |course| %>
+		<%= link_to course.name , course %></br>
+	<% end %>
+	
+<% end %></br>
+<%= link_to "offer a new course", new_course_path	 %>

@@ -68,9 +68,19 @@ mem1 = Membership.create({"user_id" => s4.id, "group_id" => g2.id})
 
 mem1 = Membership.create({"user_id" => s3.id, "group_id" => g1.id})
 
+a1 = Authour.create!({:course_id => u1.id, :user_id => s4.id})
+a1 = Authour.create!({:course_id => u2.id, :user_id => s4.id})
+a1 = Authour.create!({:course_id => u3.id, :user_id => s3.id})
+a1 = Authour.create!({:course_id => u4.id, :user_id => s4.id})
+
+o1 = Take.create!(:course_id => u1.id, :user_id => s3.id, )
+o1 = Take.create!(:course_id => u1.id, :user_id => s2.id, )
+o1 = Take.create!(:course_id => u1.id, :user_id => s1.id, )
 
 
-s2.courses << u1
-s2.courses << u2
-s4.courses << u3
-s4.courses << u4
+o1 = Take.create!(:course_id => u2.id, :user_id => s2.id, )
+o1 = Take.create!(:course_id => u3.id, :user_id => s3.id, )
+o1 = Take.create!(:course_id => u4.id, :user_id => s3.id, )
+#o1.setAuthour(s4.id)
+#o1.save!
+
