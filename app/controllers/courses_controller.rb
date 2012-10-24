@@ -79,9 +79,11 @@ class CoursesController < ApplicationController
     # @course = Course.create(params[:course])
     # @chapter = @course.chapters.build(params[:chapter])
     # @course.authours << Authour.create!({})
-    Authour.create!({:user_id => current_user.id, :course_id => @course.id })
+    
     respond_to do |format|
       if @course.save
+        Authour.create!({:user_id => current_user.id, :course_id => @course.id })
+        
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
