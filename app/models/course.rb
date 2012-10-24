@@ -24,7 +24,7 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :chapters, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
   accepts_nested_attributes_for :lectures, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
   # accepts_nested_attributes_for :videoclips, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
-  has_many :authours
+  # has_many :authours
 
   def isAuthour?(user_id)
     
@@ -32,7 +32,7 @@ class Course < ActiveRecord::Base
   
   
   def authour
-    User.find(self.authours.first.user_id)
+    User.find(self.users.first.user_id)
   end
   
   def assign(user_id)

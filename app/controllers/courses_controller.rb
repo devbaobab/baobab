@@ -78,7 +78,8 @@ class CoursesController < ApplicationController
     authorize! :create, @course
     # @course = Course.create(params[:course])
     # @chapter = @course.chapters.build(params[:chapter])
-    @course.authours << current_user
+    # @course.authours << Authour.create!({})
+    Authour.create!({:user_id => current_user.id, :course_id => @course.id })
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
