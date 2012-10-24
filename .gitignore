@@ -25,3 +25,4 @@ tmp/*
 public/system/
 subscribers.txt
 app/views/subscriptions/new.erb
+Gemfile.lock
