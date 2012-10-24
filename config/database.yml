@@ -25,6 +25,6 @@ production:
   pool: 5
   user: baobabmaster
   password: baobab37
-  port: 11000 
+  #  port: 11000 
   timeout: 5000
-  host: db.baobabclass.com
+  host: db.baobabclass.com:11000
