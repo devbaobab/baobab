@@ -8,6 +8,7 @@ gem 'cancan'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'mysql2'
 # make sure that ImageMagick is installed on the server machine
 # https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 3.0"
