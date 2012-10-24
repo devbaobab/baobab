@@ -102,6 +102,7 @@
 						<p><input type="text" placeholder="이름" class="name" /></p>
 						<p><%= f.email_field :email, :placeholder => "email" ,:class =>"email" %></p>
 						<p><%= f.password_field :password, :placeholder => "비밀번호" ,:class =>"pwd" %></p>
+						<p><%= f.password_field :password_confirmation, :placeholder => "confirm" ,:class =>"pwd" %></p>
 						<p><%= f.submit "가입하기" %></p>
 						<!--  href="#" class="transition btn-signup">가입하기</a -->
 					</fieldset>
