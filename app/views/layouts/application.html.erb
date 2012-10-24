@@ -99,7 +99,7 @@
 						<legend>회원가입 항목</legend>
 						<a href="#" class="transition btn-fb">Facebook으로 로그인</a>
 						<span class="or" />or</span>
-						<p><input type="text" placeholder="이름" class="name" /></p>
+						<p><%= f.text_field :fullname, :placeholder => "이름", :class => "name" %></p>
 						<p><%= f.email_field :email, :placeholder => "email" ,:class =>"email" %></p>
 						<p><%= f.password_field :password, :placeholder => "비밀번호" ,:class =>"pwd" %></p>
 						<p><%= f.password_field :password_confirmation, :placeholder => "confirm" ,:class =>"pwd" %></p>
