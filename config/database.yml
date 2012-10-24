@@ -27,4 +27,4 @@ production:
   password: baobab37
   port: 11000 
   timeout: 5000
-  hostname: db.baobabclass.com
+  host: db.baobabclass.com
