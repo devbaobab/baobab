@@ -1,0 +1,185 @@
+<div class="container-contents02">
+		<section class="course-dashboard">
+			<h1 class="start">강의수강</h1>
+
+			<div class="board">
+				<h2><%= course.name %></h2>
+
+				<dl class="status-course">
+					<dt>강의평점</dt>
+					<dd><span class="star"><em class="point04"><span>3/5</span></em></span></dd>
+
+					<dt>수강생 수</dt>
+					<dd>
+						<em><%= course.users.size %>명</em>이 수강중입니다.
+						<!-- div class="list-user">
+							<a href="#"><%= image_tag("main/@temp03.png") %></a>
+							<a href="#"><%= image_tag("main/@temp03.png") %></a>
+							<a href="#"><%= image_tag("main/@temp03.png") %></a>
+							<a href="#"><%= image_tag("main/@temp03.png") %></a>
+							<a href="#"><%= image_tag("main/@temp03.png") %></a>
+							<p>xxx님 외 친구 xxx명이 수강했습니다.</p>
+							<span class="arrow"></span>
+						</div -->
+					</dd>
+				</dl>
+			</div>
+
+			<section class="lecturer">
+				<h1 class="subtitle">강의평가</h1>
+				<div class="estimate">
+					<span class="star"><em class="point04"><span>3/5</span></em></span>
+					<!-- 입력 영역 -->
+					<input type="text" />
+					<textarea name="" id=""></textarea>
+					<a href="#" class="btn-write">리뷰쓰기</a>
+				</div>
+
+
+				<h1 class="subtitle">강사소개</h1>
+				<dl>
+					<dt>
+						<%= image_tag("main/@temp02.png") %>
+						<strong><%= course.authour.fullname %></strong>
+					</dt>
+					<dd>
+						<p>
+							Business and Travel Writing and Broadcasting:<br />
+							<br />
+							Business Journalism:<br />
+							<br />
+							I write and film / photograph on travel for a range of publications and websites, internationally as well as for CNN TV - with an emphasis on online business, social media and SEO.<br />
+							<br />
+							Online Marketing / SEO<br />
+						</p>
+						<a href="#" class="more">더 보기</a>
+					</dd>
+				</dl>
+
+
+				<h1 class="subtitle-notice">공지</h1>
+				<ul class="list-mobile">
+					<li>
+						<a href="#">
+							<p>
+								thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>
+								thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+							</p>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<p>
+								thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+							</p>
+						</a>
+					</li>
+				</ul>
+
+				<h1 class="subtitle-q">질문</h1>
+				<fieldset class="question">
+					<legend>질문하기</legend>
+					<textarea name="" id="" placeholder="질문을 입력하세요."></textarea>
+					<a href="#" class="btn-question">질문하기</a>
+				</fieldset>
+
+				<div class="scroll-list-mobile">
+					<ul class="list-mobile">
+						<li>
+							<a href="#">
+								<p>
+									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+								</p>
+								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>
+									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+								</p>
+								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>
+									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+								</p>
+								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			</section>
+
+
+			<section class="summary">
+				<h1 class="subtitle">강의개요</h1>
+				<p>
+					<%= image_tag(course.snapshot) %>
+					<span>by</span> <strong><%= course.authour.fullname %></strong><br />
+					<%= course.description %>
+					
+					<a href="#" class="more">더 보기</a>
+				</p>
+			</section>
+
+
+			<section class="progress">
+				<h1 class="subtitle">강의진도</h1>
+				<span class="progress"><em style="width: 50%;">50%</em></span>
+				<p>전체 50강 중 20강</p>
+			</section>
+
+			
+			<section class="lectures">
+				<h1 class="subtitle">강의교안</h1>
+				<span class="duration">전체 50강 120시간 30분 강의</span>
+				<ol class="list-section">
+					<% course.chapters.each do |chapter| %>
+					<li>
+						<a class="section-title"><%= chapter.title %>:</a>
+						<ol class="list-lecture">
+							<% chapter.lectures.each do |lecture| %>
+							<li>
+								<!-- %= link_to('Click here', :controller => 'users',
+								        :action => 'new', :message => 'Welcome!') do || % -->
+								
+								<a class="lecture">
+									<span class="free">free</span>
+									23:57
+								</a>
+								<%= link_to( lecture.title, :controller => 'courses', :action => 'play', :course_id => course.id, :chapter_id => chapter.id, :lecture_id => lecture.id ) %>:
+								<a href="#" class="title">Presentation</a>
+							</li>
+							<% end %>
+						</ol>
+						<div class="clear"></div>
+					</li>
+					<% end %>
+					<li>
+						<a href="#" class="more">더 보기</a>
+					</li>
+				</ol>
+			</section>
+
+
+			<div class="clear"></div>
+		</section>
+
+
+		<section class="course-info">
+			
+
+
+		</section>
+
+	</div>

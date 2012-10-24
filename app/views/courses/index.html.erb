@@ -1,97 +1,65 @@
 <% content_for :head do %>
-	<%= stylesheet_link_tag    "tmp_discover", :media => "all" %>
+	<!-- %= stylesheet_link_tag    "tmp_discover", :media => "all" % -->
 <% end %>
 
-<div id='main_page_wrapper'>
-	<div class='page_title'>
-		Discover Courses
-	</div>
-	<div id='discover_search_form'>
-		<div id='discover_tabs'>
-			<div id='recommend_tab'>
-				Recommend
-			</div>
-			<div id='popular_tab'>
-				Popular
-			</div>
-			<div id='high_rating_tab'>
-				High Rating
-			</div>
-		</div>
-		<div id='discover_search_box'>
-			<input type='text'/>
-		</div>
-		<button>
-			Search
-		</button>
-	</div>
-	<div id='discover_category_wrap'>
-	<% @categories.each do |category| %>
-
-		
-			<div class='category_entry' id='category1'>
-
-				<%= link_to category.name,  courses_path(:selected_category => category.id )  %>
-			</div>
+<div class="container-contents02">
+<section class="search-course">
+	<h1 Class="search">강의탐색</h1>
 	
-	<% end %>
-	</div>
-	<% @courses.each do |course| %>
-	<div id='discover_lecture_wrap'>
-	
-		<div class='lecture_box' id='lecture1'>
-				<span>
-					<%= link_to image_tag(course.snapshot.url(:thumb), class: 'thumb_image'), course %>
-					<!--<span><%= link_to 'View this course', course %></span>-->
-				</span>
-
-			<!--/span-->
-			<span class="class_info">
-				<span class="class_title"><%= course.name %></span>
-				<span class="class_description"><%= truncate(course.description, length: 170) %>
-					<p>Lecturer: <%= course.authour.email %></p>
-					</span>
-			</span>
+	<ul class="search-filter">
+		<li class="start"><a href="#">추천 강의</a></li><li>
+		<a href="#">인기순</a></li><li>
+		<a href="#">평점순</a></li><li>
 			
-		</div>
+		<a href="#" class="category" onclick="toggleCategoryList()" >카테고리</a>
+			<ul class="list-category">
+				<% @categories.each do |category| %>
+					<li><%= link_to category.name,  courses_path(:selected_category => category.id )  %></li>
+				<% end %>	
+			</ul>
+		</li><li>
+			<fieldset class="search-course-fieldset">
+				<legend>검색</legend>
+				<p>
+					<input type="text" />
+					<a href="#" class="btn-search">검색</a>
+				</p>
+			</fieldset>
+		</li>
+	</ul>
+	<div class="clear"></div>
 	
-	</div>
-	<% end %>
-</div>
-<div id="add_course_button">
-	<%= link_to 'Add Course', new_course_path %>
-</div>
-
-<!-- div id="class_label">Popular Courses</div>
-	<% if can? :create, @course %>	
-
-	<% end %>
-	<div class="class_container">
-		<ul class="class_list">
-		<% @courses.each do |course| %>
-		<li>	
-
-				<span>
-					<%= link_to image_tag(course.snapshot.url(:thumb), class: 'thumb_image'), course %>
-					<span><%= link_to 'View this course', course %></span>
-				</span>
-
-			/span
-			<span class="class_info">
-				<span class="class_title"><%= course.name %></span>
-				<span class="class_description"><%= truncate(course.description, length: 170) %>
-					<p>Lecturer:
-					</span>
-			</span>
-				<%= button_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'test_class' %>
-			
+	<ul class="result-course">
+			<% @courses.each do |course| %>
+		<li>
+			<article class="lecture-summary">
+				<header style="background: url('<%= course.snapshot %>') 5px 5px no-repeat;">
+					<h1><%= link_to course.name, course  %></h1>
+					<span class="updated">updated</span>
+				</header>
+				<dl>
+					<dt>
+						<%= link_to image_tag("@temp01.png"), course %>
+						<strong><%= course.authour.fullname %></strong>
+						<span>LSAT tutor</span>
+					</dt>
+					<dd>
+						<p>
+							<%= truncate(course.description, length: 230 ) %>
+						</p>
+					</dd>
+				</dl>
+				<footer>
+					<span class="price"><%= course.price %>$</span>
+					<span class="students"><%= course.users.size %></span>
+					<span class="star"><em class="point04"><span>3/5</span></em></span>
+					<div class="clear"></div>
+				</footer>
+			</article>
 		</li>
 		<% end %>
-
-			
-		</ul>
-		
-	</div>
-
--->
+	</ul>
+	<div class="clear"></div>
+</section>
 	
+</div>

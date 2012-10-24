@@ -1,0 +1,157 @@
+<div class="container-summary">
+		<section class="summary-course">
+			<h1><%= course.name %></h1>
+			<div class="movie" >
+				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='640' height='480' id='player1' name='player1'>
+				   <param name='movie' value='https://ucloudbiz.olleh.com/cdn/player.swf'>
+				   <param name='allowfullscreen' value='true'>
+				   <param name='allowscriptaccess' value='always'>
+				   <param name='flashvars' value="autostart=true&type=rtmp&streamer=<%= course.intro_video_link %>">
+				   <embed id='player1'
+				          name='player1'
+				          src='https://ucloudbiz.olleh.com/cdn/player.swf'
+				          width='500'
+				          height='300'
+				          allowscriptaccess='always'
+				          allowfullscreen='true'
+				          flashvars='autostart=true&type=rtmp&streamer=<%= course.intro_video_link %>'   />
+				</object>
+				</div>
+			<p><%= course.subtitle %></p>
+			<%= link_to "강의 수강하기", assign_url( :id => course.id ), :class => "transition btn-start" %>
+			<!-- a href="#" class="transition btn-start">강의 수강하기</a -->
+			<dl class="status-course">
+				<dt>강의평점</dt>
+				<dd><span class="star"><em class="point04"><span>3/5</span></em></span></dd>
+
+				<dt>수강생 수</dt>
+				<dd>
+					<em><%= course.users.size %>명</em>이 수강중입니다.
+					<!-- div class="list-user" display="none" >
+						<a href="#"><%= image_tag("main/@temp03.png") %></a>
+						<a href="#"><%= image_tag("main/@temp03.png") %></a>
+						<a href="#"><%= image_tag("main/@temp03.png") %></a>
+						<a href="#"><%= image_tag("main/@temp03.png") %></a>
+						<a href="#"><%= image_tag("main/@temp03.png") %></a>
+						<p>xxx님 외 친구 xxx명이 수강했습니다.</p>
+						<span class="arrow"></span>
+					</div -->
+				</dd>
+			</dl>
+		</section>
+	</div>
+
+	<div class="container-course-info">
+		<section class="course-info">
+			<h1 Class="info">강의정보</h1>
+			
+			<section class="lecturer">
+				<h1 class="subtitle">강사소개</h1>
+				<dl>
+					<dt>
+						<%= image_tag("@temp02.png") %>
+						<strong><%= course.authour.fullname %></strong>
+					</dt>
+					<dd>
+						<p>
+							Business and Travel Writing and Broadcasting:<br />
+							<br />
+							Business Journalism:<br />
+							<br />
+							I write and film / photograph on travel for a range of publications and websites, internationally as well as for CNN TV - with an emphasis on online business, social media and SEO.<br />
+							<br />
+							Online Marketing / SEO<br />
+							<br />
+							I also advise internationally, to companies of all sizes, on their online presence, particularly with emphasis on Search Engine Optimisation (SEO), social media success and marketing.<br />
+							<br />
+							I train people and companies on SEO, Online Marketing, the use of Press Releases, Twitter, Google Search and the correct usage of Google AdWords.<br />
+							<br />
+							Business Books: Author of: "Internet Marketing - All You Need To Know", "Using LinkedIn Successfully - All You Need To Know", "Google And Its’ Products", "Search Engine Optimization For Beginners".<br />
+						</p>
+
+					</dd>
+				</dl>
+			</section>
+
+			<section class="summary">
+				<h1 class="subtitle">강의개요</h1>
+				<p>
+					<span>by</span> <strong><%= course.authour.fullname %></strong><br />
+					<%= course.description %>
+					
+					<a href="#" class="more">더 보기</a>
+				</p>
+			</section>
+			
+
+			<section class="lectures">
+				
+				<h1 class="subtitle">강의교안</h1>
+				<span class="duration">전체 50강 120시간 30분 강의</span>
+				<ol class="list-section">
+					<% course.chapters.each do |chapter| %>
+					<li>
+						<a class="section-title"><%= chapter.title %>:</a>
+						<ol class="list-lecture">
+							<% chapter.lectures.each do |lecture| %>
+							<li>
+								<a class="lecture">
+									<span class="free">free</span>
+									23:57
+								</a>
+								<%= lecture.title %>:
+								<a href="#" class="title">Presentation</a>
+							</li>
+							<% end %>
+						</ol>
+						<div class="clear"></div>
+					</li>
+					<% end %>
+					<li>
+						<a href="#" class="more">더 보기</a>
+					</li>
+				</ol>
+				
+			</section>
+			
+
+			<section class="review">
+				<h1 class="subtitle">강의리뷰</h1>
+				<ul class="list-review">
+					<li>
+						<%= image_tag("main/@temp02.png") %>
+						<span>by</span> <a href="#">Jyotsna Ramani</a>, 1 month ago
+						<span class="star"><em class="point04"><span>3/5</span></em></span>
+						<p>
+							<b>Awesome and very helpful guide</b><br />
+							The course is an extensive one, offering step-by-step approach and simple instructions. There is a collection of videos and extensive guide books, comprising of 37 lectures, that tech you all the secrets and give first hand information. You will be taught on not only how to take the pictures but also what subjects to click. With an arsenal of the right photographs with you, you won’t have much trouble to get your photographs accepted by the big agencies like National Geographic and even get them seen on TV. A bonus in the course is to hear out the interview with the Getty Images Photo.
+						</p>
+					</li>
+					<li>
+						<%= image_tag("main/@temp02.png") %>
+						<span>by</span> <a href="#">Jyotsna Ramani</a>, 1 month ago
+						<span class="star"><em class="point04"><span>3/5</span></em></span>
+						<p>
+							<b>Awesome and very helpful guide</b><br />
+							The course is an extensive one, offering step-by-step approach and simple instructions. There is a collection of videos and extensive guide books, comprising of 37 lectures, that tech you all the secrets and give first hand information. You will be taught on not only how to take the pictures but also what subjects to click. With an arsenal of the right photographs with you, you won’t have much trouble to get your photographs accepted by the big agencies like National Geographic and even get them seen on TV. A bonus in the course is to hear out the interview with the Getty Images Photo.
+						</p>
+					</li>
+					<li>
+						<%= image_tag("main/@temp02.png") %>
+						<span>by</span> <a href="#">Jyotsna Ramani</a>, 1 month ago
+						<span class="star"><em class="point04"><span>3/5</span></em></span>
+						<p>
+							<b>Awesome and very helpful guide</b><br />
+							The course is an extensive one, offering step-by-step approach and simple instructions. There is a collection of videos and extensive guide books, comprising of 37 lectures, that tech you all the secrets and give first hand information. You will be taught on not only how to take the pictures but also what subjects to click. With an arsenal of the right photographs with you, you won’t have much trouble to get your photographs accepted by the big agencies like National Geographic and even get them seen on TV. A bonus in the course is to hear out the interview with the Getty Images Photo.
+						</p>
+					</li>
+					<li class="more"><a href="#" class="more">더 보기</a></li>
+				</ul>
+				
+			</section>
+			
+			<div class="clear"></div>
+		</section>
+	</div>
+
+

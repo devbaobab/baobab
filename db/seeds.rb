@@ -8,22 +8,30 @@
 
 u1 = Course.create({"name"=>"English for Beginners", "description"=>"This course is for beginners"})
 u1.snapshot = File.open("#{Rails.root}/mockupDesigns/image/1682_eca0_5.jpeg")
+u1.intro_video_link = "rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4";
+u1.subtitle = "subtitle beginners";
 u1.price = 0.00;
 u1.save!
 
 u2 = Course.create({"name"=>"English for Intermediates", "description"=>"This course is for intermediates"})
 u2.snapshot = File.open("#{Rails.root}/mockupDesigns/image/1682_eca0_5.jpeg")
+u2.intro_video_link = "rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4";
 u2.price = 12.49;
+u2.subtitle = "subtitle intermediates";
 u2.save!
 
 u3 = Course.create({"name"=>"English for Business", "description"=>"This course is for business language"})
 u3.snapshot = File.open("#{Rails.root}/mockupDesigns/image/1682_eca0_5.jpeg")
 u3.price = 32.19;
+u3.subtitle = "subtitle busines";
+u3.intro_video_link = "rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4";
 u3.save!
 
 u4 = Course.create({"name"=>"English for Advanced", "description"=>"This course is for advanced"})
 u4.snapshot = File.open("#{Rails.root}/mockupDesigns/image/1682_eca0_5.jpeg")
 u4.price = 9.99;
+u4.subtitle = "subtitle advanced";
+u4.intro_video_link = "rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4";
 u4.save!
 
 
@@ -38,7 +46,12 @@ cz1 = Categorization.create({"course_id" => u2.id, "category_id" => c3.id})
 cz1 = Categorization.create({"course_id" => u4.id, "category_id" => c3.id})
 
 
-u1.chapters.create!({"title" => "Chapter 1"})
+
+cp1 = u1.chapters.create!({"title" => "Chapter 1"})
+# :title, :video_clip_link, :video_script_link
+cp1.lectures.create!({"title" => "lecture 1", "video_clip_link" => "rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4", "video_script_link" => ""})
+cp1.lectures.create!({"title" => "lecture 2", "video_clip_link" => "rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4", "video_script_link" => ""})
+
 u1.chapters.create!({"title" => "Chapter 2"})
 u1.chapters.create!({"title" => "Chapter 3"})
 u1.chapters.create!({"title" => "Chapter 4"})

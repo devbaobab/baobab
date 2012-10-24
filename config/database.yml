@@ -19,12 +19,16 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  database: baobabdb
-  pool: 5
-  user: baobabmaster
-  password: baobab37
-  port: 11000 
-  timeout: 5000
-  host: db.baobabclass.com
+    adapter: sqlite3
+    database: db/test.sqlite3
+    pool: 5
+    timeout: 5000
+#  adapter: mysql2
+#  encoding: utf8
+#  database: baobabdb
+#  pool: 5
+#  user: baobabmaster
+#  password: baobab37
+#  port: 11000 
+#  timeout: 5000
+#  host: db.baobabclass.com

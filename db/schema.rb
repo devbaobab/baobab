@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017091820) do
+ActiveRecord::Schema.define(:version => 20121024132508) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20121017091820) do
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
     t.decimal  "price",                 :precision => 8, :scale => 2
+    t.text     "subtitle"
+    t.string   "intro_video_link"
   end
 
   create_table "groups", :force => true do |t|
@@ -67,14 +69,21 @@ ActiveRecord::Schema.define(:version => 20121017091820) do
 
   create_table "lectures", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "chapter_id"
+    t.string   "video_clip_link"
+    t.string   "video_script_link"
   end
 
   create_table "memberships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "group_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "mypages", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -107,9 +116,10 @@ ActiveRecord::Schema.define(:version => 20121017091820) do
 
   create_table "videoclips", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "link"
+    t.string   "subtitle_file_link"
   end
 
   create_table "videos", :force => true do |t|

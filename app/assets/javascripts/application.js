@@ -26,6 +26,35 @@ function add_fields(link, association, content) {
   $(link).parent().before(content.replace(regexp, new_id));
 }
 
+function toggleUserMenu() {
+	var display = $('.user-menu').css('display');
+	
+	if(display == 'none'){
+		$('.user-menu').show();
+	} else {
+		$('.user-menu').hide();
+	}
+		
+}
+
+function setupPlay(){
+	$('body').attr("class", "movie-start");
+	$('header').first().hide();
+	
+	
+}
+
+function toggleCategoryList() {
+	var display = $('.list-category').css('display');
+	
+	if(display == 'none'){
+		$('.list-category').show();
+	} else {
+		$('.list-category').hide();
+	}
+		
+}
+
 $(function() {
     $( "#tabs" ).tabs();
 });

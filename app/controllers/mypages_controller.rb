@@ -1,4 +1,6 @@
 class MypagesController < ApplicationController
+  before_filter :authenticate_user!
+  # load_and_authorize_resource
   
   # GET /mypages/1
   # GET /mypages/1.json

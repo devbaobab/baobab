@@ -1,8 +1,8 @@
 class Course < ActiveRecord::Base
-  attr_accessible :description, :name, :snapshot, :price, :category_ids, :lectures, :chapters, :chapters_attributes, :lectures_attributes
+  attr_accessible :description, :name, :snapshot, :price, :subtitle, :intro_video_link, :category_ids, :lectures, :chapters ,:chapters_attributes, :lectures_attributes
   
   
-  has_attached_file :snapshot, :styles => { :medium => "280x171", :thumb => "280x171"}
+  has_attached_file :snapshot, :styles => { :medium => "270x171", :thumb => "270x171"}
   
   #belongs_to :take
   has_many :takes
@@ -17,18 +17,19 @@ class Course < ActiveRecord::Base
 
   has_many :lectures, :dependent => :destroy
   has_many :chapters, :dependent => :destroy
-  has_many :videos, :dependent => :destroy
-  # has_many :videoclips, :through => :videos
+  # has_many :videos, :dependent => :destroy
+  # has_many :videoclips, :dependent => :destroy #, :through => :videos
   
   accepts_nested_attributes_for :categorizations
   accepts_nested_attributes_for :chapters, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
   accepts_nested_attributes_for :lectures, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
-
+  # accepts_nested_attributes_for :videoclips, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
   has_many :authours
 
   def isAuthour?(user_id)
     
   end
+  
   
   def authour
     User.find(self.authours.first.user_id)

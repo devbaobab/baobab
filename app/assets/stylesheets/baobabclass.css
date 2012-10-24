@@ -1,0 +1,530 @@
+@charset "utf-8";
+
+@import url(./common.css);		/* 기본 설정 CSS */
+
+
+
+/* 강의 영상 - 상단 */
+header.class-start { width: 100%; min-width: 1024px; height: 57px; }
+header.class-start a.baobab-class-start { position: absolute; top: 15px; left: 20px; display: block; width: 181px; height: 22px; text-indent: -9999px; background: url(baobabclass_black.png) left top no-repeat; }
+header.class-start a.btn-exit { position: absolute; top: 14px; right: 54px;  display: block; font-size: 12px; color: #ffffff; text-align: center; padding: 5px 10px 6px 10px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #4a4a4a;
+	background-color: #000000;
+}
+header.class-start h1 { font-size: 16px; color: #ffffff; font-weight: bold; text-align: center; padding: 20px 0 0 0; }
+
+
+
+/* 회원가입 - 상단 */
+header.register { position: relative; width: 1024px; height: 104px; margin: 0 auto; }
+header.register a.baobab-class { position: absolute; top: 26px; left: 20px; display: block; width: 248px; height: 55px; text-indent: -9999px; background: url(baobabclass.png) left top no-repeat; }
+header.register fieldset.login { position: absolute; top: 40px; right: 54px; }
+header.register fieldset.login input { display: inline-block; font-size: 12px; width: 121px; height: 28px; line-height: 32px; margin-left: 4px; padding: 0 0 0 10px; border: 1px solid #bebebe; }
+header.register fieldset.login a.btn-login { display: inline-block; width: 74px; height: 28px; font-size: 12px; color: #ffffff; font-weight: bold; line-height: 24px; text-align: center; vertical-align: middle;
+border-radius: 2px; 
+-moz-border-radius: 2px; 
+-webkit-border-radius: 2px; 
+border: 1px solid #898989;
+
+-moz-box-shadow: inset 0 2px 2px -2px #d2d2d2;
+-webkit-box-shadow: inset 0 2px 2px -2px #d2d2d2;
+box-shadow: inset 0 2px 2px -2px #d2d2d2;
+
+background-color: #999999;
+}
+
+div.container-contents { width: 100%; min-width: 1024px;
+	-moz-box-shadow: inset 0 40px 40px -40px #9b942a;
+	-webkit-box-shadow: inset 0 40px 40px -40px #9b942a;
+	box-shadow: inset 0 40px 40px -40px #9b942a;
+
+	background-image: -webkit-gradient(linear, center top, center bottom, color-stop(80%, #e1ddaf), color-stop(100%, #f1f0db));
+	background-image: -webkit-linear-gradient(top, #e1ddaf 80%, #f1f0db 100%);
+	background-image: -moz-linear-gradient(top, #e1ddaf 80%, #f1f0db 100%);
+	background-image: -ms-linear-gradient(top, #e1ddaf 80%, #f1f0db 100%);
+	background-image: -o-linear-gradient(top, #e1ddaf 80%, #f1f0db 100%);
+	background-image: linear-gradient(to bottom, #e1ddaf 80%, #f1f0db 100%);
+	background-color: #e1ddaf;
+
+	border-top: 1px solid #9b942a; border-bottom: 2px solid #e1ddaf;
+}
+div.container-contents02 { width: 100%; min-width: 1024px;
+	-moz-box-shadow: inset 0 40px 40px -40px #9b942a;
+	-webkit-box-shadow: inset 0 40px 40px -40px #9b942a;
+	box-shadow: inset 0 40px 40px -40px #9b942a;
+
+	background-color: #e1ddaf;
+
+	border-top: 1px solid #9b942a; border-bottom: 2px solid #e1ddaf;
+}
+
+
+/* 회원가입 contents */
+section.register { position: relative; width: 373px; margin: 0 auto; padding: 97px 54px 95px 597px; }
+section.register h1 { height: 38px; text-indent: -9999px; border-bottom: 1px solid #cbc79a; background: url(title01.png) left top no-repeat; }
+
+fieldset.signup-fieldset { margin-top: 10px; padding: 20px 46px 14px 47px; border: 1px solid #cbc79a; background-color: #d8d39e; }
+fieldset.signup-fieldset span.or { display: block; height: 15px; text-indent: -9999px; margin: 7px 0 0 0; border: 0px; background: url(text_or.png) left top no-repeat; }
+fieldset.signup-fieldset p { margin-top: 8px; padding: 0; }
+fieldset.signup-fieldset input { width: 241px; height: 30px; font-size: 12px; line-height: 32px; *margin: -1px 0; padding: 0 0 0 35px; border: 1px solid #bcbcbc; }
+fieldset.signup-fieldset input.name { background: #fff url(icon01.png) 9px 7px no-repeat; }
+fieldset.signup-fieldset input.email { background: #fff url(icon02.png) 9px 7px no-repeat; }
+fieldset.signup-fieldset input.pwd { background: #fff url(icon03.png) 9px 7px no-repeat; }
+fieldset.signup-fieldset a.btn-fb { display: block; width: 278px; height: 40px; text-indent: -9999px; background: url(btn_fb.png) left top no-repeat; }
+fieldset.signup-fieldset a.btn-signup { display: block; width: 152px; height: 36px; text-indent: -9999px; margin: 15px auto 0 auto; background: url(btn_signup.png) left top no-repeat; }
+
+
+section.register-detail { position: relative; width: 950px; margin: 0 auto; padding: 49px 54px 27px 20px; }
+section.register-detail h1 { height: 38px; text-indent: -9999px; border-bottom: 1px solid #cbc79a; background: url(title02.png) left top no-repeat; }
+section.register-detail a.btn-signup-complete { display: block; width: 152px; height: 36px; text-indent: -9999px; margin: 15px auto 0 auto; background: url(btn_signup_complete.png) left top no-repeat; }
+
+fieldset.signup-detail-fieldset { margin-top: 10px; padding: 27px 0 27px 0; border: 1px solid #cbc79a; background-color: #d8d39e; }
+fieldset.signup-detail-fieldset th { width: 55px; height: 38px; font-size: 14px; color: #544411; font-weight: bold; vertical-align: top; text-align: left; padding: 4px 0 0 31px; background: url(bar01.png) right 6px no-repeat; }
+fieldset.signup-detail-fieldset td { height: 38px; font-size: 14px; color: #544411; vertical-align: top; padding: 4px 0 0 14px; }
+fieldset.signup-detail-fieldset td input { vertical-align: middle; }
+fieldset.signup-detail-fieldset td label { display: inline-block; padding-left: 5px; padding-right: 25px; }
+fieldset.signup-detail-fieldset td select { font-size: 11px; color: #999999; }
+
+ul.list-interest { }
+ul.list-interest li { float: left; font-size: 12px; color: #544411; font-weight: bold; text-align: center; padding: 0 10px 10px 0; }
+ul.list-interest li a { position: relative; display: block; width: 124px; height: 114px; margin-bottom: 4px; padding: 0;
+	border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	border: 1px solid #e8e6d1;
+
+	background: url(interest.png) left top no-repeat;
+}
+ul.list-interest li a span { position: absolute; top: -9999px; left: -9999px; }
+ul.list-interest li.on a span { position: absolute; top: -1px; left: -1px; display: block; width: 116px; height: 106px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 5px solid #f8653f;
+}
+ul.list-interest li a:hover span { position: absolute; top: -1px; left: -1px; display: block; width: 124px; height: 114px; background-color: #ffffff;
+	border-radius: 10px; 
+	-moz-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	border: 1px solid #e8e6d1;
+
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=55)";
+	filter: alpha(opacity=55);
+	-moz-opacity: 0.55;
+	-khtml-opacity: 0.55;
+	opacity: 0.55;
+}
+ul.list-interest li.on a:hover span { position: absolute; top: -1px; left: -1px; display: block; width: 116px; height: 106px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 5px solid #f8653f;
+
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	-moz-opacity: 1.0;
+	-khtml-opacity: 1.0;
+	opacity: 1.0;
+	background-color: transparent;
+}
+ul.list-interest li a.interest01 { background-position: 0px 0px; }
+ul.list-interest li a.interest02 { background-position: -136px 0px; }
+ul.list-interest li a.interest03 { background-position: -272px 0px; }
+ul.list-interest li a.interest04 { background-position: -408px 0px; }
+ul.list-interest li a.interest05 { background-position: -544px 0px; }
+ul.list-interest li a.interest06 { background-position: -680px 0px; }
+ul.list-interest li a.interest07 { background-position: 0px -146px; }
+ul.list-interest li a.interest08 { background-position: -136px -146px; }
+ul.list-interest li a.interest09 { background-position: -272px -146px; }
+ul.list-interest li a.interest10 { background-position: -408px -146px; }
+ul.list-interest li a.interest11 { background-position: -544px -146px; }
+
+
+
+/* 회원가입 - 강의 소개목록 */
+section.list-courses { position: absolute; top: 97px; left: 4px; width: 567px; }
+section.list-courses h1 { position: absolute; top: -9999px; left: -9999px; }
+section.list-courses ul { overflow: hidden; width: 535px; height: 318px; margin: 0 0 0 16px; }
+section.list-courses ul li { }
+section.list-courses ul li img { width: 521px; height: 304px; border: 7px solid #cbc79a; }
+section.list-courses a.btn-prev { position: absolute; top: 140px; left: 0px; display: block; width: 38px; height: 38px; text-indent: -9999px; background: url(btn_prev01.png) left top no-repeat; }
+section.list-courses a.btn-next { position: absolute; top: 140px; right: 0px; display: block; width: 38px; height: 38px; text-indent: -9999px; background: url(btn_next01.png) left top no-repeat; }
+
+
+
+/* 강의 탐색 */
+section.search-course { width: 950px; margin: 0 auto; padding: 30px 54px 55px 20px; }
+section.search-course h1.search { height: 35px; text-indent: -9999px; border-bottom: 1px solid #c3bf92; background: url(title03.png) left top no-repeat; }
+
+section.search-course ul.search-filter { width: 560px; margin: 30px auto 0 auto; }
+section.search-course ul.search-filter li { position: relative; float: left; display: block; margin: 0; padding: 0; }
+section.search-course ul.search-filter li a { display: block; font-size: 12px; color: #857031; font-weight: bold; text-align: center;
+	padding: 14px 23px 16px 23px;
+	border-top: 1px solid  #C3BF92;
+	border-right: 1px solid  #C3BF92;
+	border-bottom: 1px solid  #C3BF92;
+	background-color: #fff;
+}
+section.search-course ul.search-filter li a:hover { color: #fff; background-color: #857031; }
+section.search-course ul.search-filter li a.on { color: #fff; background-color: #857031; }
+section.search-course ul.search-filter li a.category { padding-right: 38px; background-image: url(bu01.png); background-position: 77% 50%; background-repeat: no-repeat; }
+section.search-course ul.search-filter li.start a {
+	border-radius: 5px 0px 0px 5px;
+	-moz-border-radius: 5px 0px 0px 5px;
+	-webkit-border-radius: 5px 0px 0px 5px;
+	border-left: 1px solid  #C3BF92;
+}
+
+
+section.search-course ul.search-filter li fieldset.search-course-fieldset { 
+	display: block;
+	padding: 4px 5px 5px 5px; *padding: 5px;
+
+	border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+
+	border-top: 1px solid #C3BF92;
+	border-right: 1px solid #C3BF92;
+	border-bottom: 1px solid #C3BF92;
+	background-color: #ffffff;
+}
+section.search-course ul.search-filter li fieldset.search-course-fieldset p { width: 146px; height: 25px; margin: 0; padding: 6px 0 0 10px; border: 1px solid #c3bf92; background-color: #eeecd5; }
+section.search-course ul.search-filter li fieldset.search-course-fieldset input { width: 120px; height: 18px; font-size: 12px; border: 0; background-color: transparent; }
+section.search-course ul.search-filter li fieldset.search-course-fieldset a.btn-search { display: inline-block; width: 16px; height: 16px; vertical-align: middle; text-indent: -9999px; margin: 0px; padding: 0px; border: 0; background: transparent url(main/btn_search01.png) left top no-repeat; }
+
+section.search-course ul.search-filter li ul.list-category { display: none; position: absolute; left: -1px; width: 100%; border-bottom: 1px solid #c3bf92; }
+section.search-course ul.search-filter li ul.list-category li { float: none; display: block; margin: 0; border-right: 1px solid #c3bf92; border-left: 1px solid #c3bf92; }
+section.search-course ul.search-filter li ul.list-category li a { display: block; font-size: 12px; color: #5a412b; font-weight: bold; text-align: left; border: 0px; padding: 11px 0 12px 20px; }
+section.search-course ul.search-filter li ul.list-category li a:hover, section.search-course ul.search-filter li ul.list-category li a.on { color: #fff; background-color: #bba459; }
+
+ul.result-course { padding-left: 20px; }
+ul.result-course li { float: left; display: block; margin: 30px 30px 0 0; }
+ul.result-course li.lb { margin-right: 0; }
+
+article.lecture-summary { display: block; width: 288px;
+	-moz-box-shadow: 4px 4px 0 0 #c3bf92;
+	-webkit-box-shadow: 4px 4px 0 0 #c3bf92;
+	box-shadow: 4px 4px 0 0 #c3bf92;
+
+	border: 1px solid #c3bf92;
+	background-color: #ffffff;
+}
+	article.lecture-summary header { width: 278px; height: auto; margin: 0; padding: 175px 5px 0px 5px; }
+	article.lecture-summary header h1 { display: block; font-size: 14px; color: #fff; font-weight: bold; margin: 0; padding: 9px 5px 8px 17px; background-color: #554410; }
+	article.lecture-summary header span { position: absolute; top: -1px; left: -1px; display: block; width: 65px; height: 67px; text-indent: -9999px; }
+	article.lecture-summary header span.updated { background: url(ribbon_updated.png) left top no-repeat; }
+	article.lecture-summary header span.event { background: url(ribbon_event.png) left top no-repeat; }
+	article.lecture-summary header span.new { background: url(ribbon_new.png) left top no-repeat; }
+	article.lecture-summary dl { padding: 10px 5px 5px 5px; }
+	article.lecture-summary dl dt { position: relative; min-height: 40px; padding: 12px 0 0 67px; }
+	article.lecture-summary dl dt img { position: absolute; top: 0; left: 5px; width: 44px; height: 44px; border: 4px solid #e0e0e0; }
+	article.lecture-summary dl dt strong { display: block; font-size: 16px; color: #554410; font-weight: bold; }
+	article.lecture-summary dl dt span { font-size: 12px; color: #857031; }
+	article.lecture-summary dl dd { padding: 10px 5px 5px 5px; }
+	article.lecture-summary dl dd p { font-size: 12px; color: #999999; line-height: 16px; }
+	article.lecture-summary footer { display: block; border-top: 1px solid #c3bf92; }
+	article.lecture-summary footer span.students { float: left; display: block; height: 20px; font-size: 12px; color: #856e22; border-right: 1px solid #c3bf92; padding: 7px 17px 0 33px; background: url(icon01.png) 10px 5px no-repeat; }
+	article.lecture-summary footer span.price { float: right; height: 20px; font-size: 12px; color: #856e22; font-weight: bold; padding: 7px 10px 0 29px; border-left: 1px solid #c3bf92; background: url(icon04.png) 9px 5px no-repeat; }
+	article.lecture-summary footer span.star { display: block; width: 84px; height: 16px; margin: 5px auto 0 auto; background: url(main/point_star.png) 0px -16px no-repeat; }
+	article.lecture-summary footer em.point01 { display: inline-block; width: 18px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	article.lecture-summary footer em.point02 { display: inline-block; width: 34px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	article.lecture-summary footer em.point03 { display: inline-block; width: 50px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	article.lecture-summary footer em.point04 { display: inline-block; width: 66px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	article.lecture-summary footer em.point05 { display: inline-block; width: 84px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	article.lecture-summary footer span.star span { position: absolute; top: -9999px; left: -9999px; }
+
+
+
+/* 내 강의목목 */
+section.list-course { width: 950px; margin: 0 auto; padding: 30px 54px 55px 20px; }
+	section.list-course h1.course { height: 35px; text-indent: -9999px; border-bottom: 1px solid #c3bf92; background: url(title04.png) left top no-repeat; }
+
+	section.list-course ul.list-my-course { margin: 0 auto 0 auto; }
+	section.list-course ul.list-my-course li { position: relative; float: left; display: block; width: 290px; margin: 30px 30px 0 0; padding: 0; }
+	section.list-course ul.list-my-course li.lb { margin-right: 0; }
+
+	section.list-course ul.list-my-course li a.btn-add { display: block; width: 122px; height: 94px; text-indent: -9999px; margin: 70px auto 0 auto; background: url(btn_add01.png) left top no-repeat; }
+
+	section.my-course { position: relative; width: 290px; }
+	section.my-course a.btn-course-view { display: block; padding: 5px; border: 1px solid #c3bf92;
+		-moz-box-shadow: 4px 4px 0 0 #c3bf92;
+		-webkit-box-shadow: 4px 4px 0 0 #c3bf92;
+		box-shadow: 4px 4px 0 0 #c3bf92;
+		background-color: #fff;
+	}
+	section.my-course a.btn-course-view img { width: 278px; height: 170px; }
+	section.my-course div.layer { position: absolute; top: 158px; left: 11px; width: 256px; height: 37px; font-size: 11px; color: #333333; padding: 5px;
+		border-radius: 5px; 
+		-moz-border-radius: 5px; 
+		-webkit-border-radius: 5px; 
+		border: 1px solid #c3bf92;
+
+		-moz-box-shadow: 4px 4px 0 0 rgba(195, 191, 146, .8);
+		-webkit-box-shadow: 4px 4px 0 0 rgba(195, 191, 146, .8);
+		box-shadow: 4px 4px 0 0 rgba(195, 191, 146, .8);
+
+		background-color: #fff;
+	}
+	section.my-course div.layer a { display: block; font-size: 14px; color: #ffffff; font-weight: bold; text-align: center; padding: 11px 0 12px 0;
+		border-radius: 3px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+	}
+
+	section.my-course div.layer span.progress { display: block; width: 250px; height: 12px; margin: 5px 0; background: url(bg_progress.png) left 1px no-repeat; }
+	section.my-course div.layer span.progress em { display: block; height: 10px; text-indent: -9999px;
+		border-radius: 8px;
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border: 1px solid #cdcdcd;
+
+		-moz-box-shadow: inset 0 1px 1px 1px #8ae349;
+		-webkit-box-shadow: inset 0 1px 1px 1px #8ae349;
+		box-shadow: inset 0 1px 1px 1px #8ae349;
+
+		background-color: #6ddc1c;
+	}
+	section.my-course div.layer span.text { display: inline-block; color: #999999; margin-left: 2px; }
+
+	section.my-course div.layer a.replay {
+		background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #a7af2e), color-stop(100%, #838a24));
+		background-image: -webkit-linear-gradient(top, #a7af2e 0%, #838a24 100%);
+		background-image: -moz-linear-gradient(top, #a7af2e 0%, #838a24 100%);
+		background-image: -ms-linear-gradient(top, #a7af2e 0%, #838a24 100%);
+		background-image: -o-linear-gradient(top, #a7af2e 0%, #838a24 100%);
+		background-image: linear-gradient(to bottom, #a7af2e 0%, #838a24 100%);
+		background-color: #838a24;
+	}
+	section.my-course div.layer a.start {
+		background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #af892e), color-stop(100%, #8a6d24));
+		background-image: -webkit-linear-gradient(top, #af892e 0%, #8a6d24 100%);
+		background-image: -moz-linear-gradient(top, #af892e 0%, #8a6d24 100%);
+		background-image: -ms-linear-gradient(top, #af892e 0%, #8a6d24 100%);
+		background-image: -o-linear-gradient(top, #af892e 0%, #8a6d24 100%);
+		background-image: linear-gradient(to bottom, #af892e 0%, #8a6d24 100%);
+		background-color: #8a6d24;
+	}
+
+	section.my-course p { margin-top: 38px; }
+	section.my-course p strong { display: block; font-size: 16px; color: #554410; font-weight: bold; text-align: center; line-height: 18px; }
+	section.my-course p span { display: block; font-size: 12px; color: #857031; text-align: center; }
+
+
+
+/* 강의수강 */
+section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px 20px; }
+	section.course-dashboard h1.start { height: 35px; text-indent: -9999px; border-bottom: 1px solid #c3bf92; background: url(title05.png) left top no-repeat; }
+
+	div.board { position: relative; width: 950px; height: 138px; margin-top: 10px; background: url(bg_board.png) left top no-repeat; }
+	div.board h2 { width: 380px; font-size: 30px; color: #ffffff; font-weight: bold; line-height: 30px; padding: 37px 0 0 30px; }
+	div.board dl.status-course { position: absolute; top: 38px; left: 496px; width: 384px; height: 21px; text-align: left; padding: 20px;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+
+	div.board dl.status-course dt { display: inline-block; zoom: 1; *display: inline; font-size: 12px; color: #ffffff; font-weight: bold; line-height: 14px; vertical-align: middle; padding: 4px 6px 5px 6px; background-color: #1c4b27; }
+	div.board dl.status-course dd { position: relative; display: inline-block; zoom: 1; *display: inline; font-size: 12px; color: #ffffff; font-weight: bold; line-height: 14px; vertical-align: middle; padding: 0 0 0 3px; }
+	div.board dl.status-course dd span.star { display: inline-block; width: 84px; height: 16px; margin-right: 10px; background: url(main/point_star.png) 0px -16px no-repeat; }
+	div.board dl.status-course dd em.point01 { display: inline-block; width: 18px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	div.board dl.status-course dd em.point02 { display: inline-block; width: 34px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	div.board dl.status-course dd em.point03 { display: inline-block; width: 50px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	div.board dl.status-course dd em.point04 { display: inline-block; width: 66px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	div.board dl.status-course dd em.point05 { display: inline-block; width: 84px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	div.board dl.status-course dd span.star span { position: absolute; top: -9999px; left: -9999px; }
+	div.board dl.status-course dd em { color: #ffb400; }
+
+	div.board div.list-user { position: absolute; top: -83px; left: -90px; min-width: 196px; padding: 9px 9px 7px 9px; border: 1px solid #e7a502; background-color: #795f32; }
+	div.board div.list-user img { width: 36px; height: 36px; }
+	div.board div.list-user p { clear: both; font-size: 11px; color: #fff; letter-spacing: -0.1em; margin-top: 2px; padding: 0; }
+	div.board div.list-user span.arrow { position: absolute; bottom: -11px; left: 45%; display: block; width: 13px; height: 11px; background: url(main/icon_arrow01.png) left top no-repeat; }
+
+
+
+	/* 강의 평가 - 강사 소개 - 공지 - 질문 */
+	section.lecturer { float: right; width: 309px; padding-top: 28px; }
+	section.lecturer h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 1px 32px; background: url(main/icon_title02.png) 11px 1px no-repeat; }
+	section.lecturer h1.subtitle-notice { font-size: 14px; color: #856e22; font-weight: bold; margin-top: 30px; padding: 0 0 12px 32px; background: url(main/icon_title06.png) 11px 1px no-repeat; }
+	section.lecturer h1.subtitle-q { font-size: 14px; color: #856e22; font-weight: bold; margin-top: 30px; padding: 0 0 2px 32px; background: url(main/icon_title07.png) 11px 1px no-repeat; }
+
+	/* 강의 평가 */
+	section.lecturer div.estimate { font-size: 12px; margin-top: 10px; margin-bottom: 30px; padding: 10px; border: 1px solid #cbc79a; background-color: #ffffff; }
+	section.lecturer div.estimate input { display: block; width: 100%; height: 18px; line-height: 18px; margin-top: 5px; border: 1px solid #dfdfc9; background-color: #fbfbf5; }
+	section.lecturer div.estimate textarea { display: block; width: 100%; height: 72px; margin-top: 4px; border: 1px solid #dfdfc9; background-color: #fbfbf5; }
+	section.lecturer div.estimate a.btn-write { display: block; width: 60px; font-size: 11px; color: #ffffff; text-align: center; margin: 7px auto 0 auto; padding: 3px 0 4px 0; border: 1px solid #927e2a; background-color: #a68f30; }
+	section.lecturer div.estimate span.star { display: inline-block; width: 84px; height: 16px; margin-right: 10px; background: url(main/point_star.png) 0px -16px no-repeat; }
+	section.lecturer div.estimate em.point01 { display: inline-block; width: 18px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	section.lecturer div.estimate em.point02 { display: inline-block; width: 34px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	section.lecturer div.estimate em.point03 { display: inline-block; width: 50px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	section.lecturer div.estimate em.point04 { display: inline-block; width: 66px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	section.lecturer div.estimate em.point05 { display: inline-block; width: 84px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
+	section.lecturer div.estimate span.star span { position: absolute; top: -9999px; left: -9999px; }
+
+	/* 강사소개 */
+	section.lecturer dl { margin-top: 10px; border: 1px solid #cbc79a; }
+	section.lecturer dt { text-align: center; padding: 20px 0; background-color: #eeecd5; }
+	section.lecturer dt img { width: 90px; height: 90px; border: 5px solid #cbc79a; }
+	section.lecturer dt strong { display: block; font-size: 14px; color: #856e22; font-weight: bold; text-align: center; margin-top: 18px; }
+	section.lecturer dd { border-top: 1px dashed #cbc79a; background-color: #fff; }
+	section.lecturer dd p { font-size: 12px; color: #999999; text-align: center; line-height: 18px; padding: 18px 10px; }
+	section.lecturer dd a.more { display: block; height: 23px; text-indent: -9999px; margin: 0; border-top: 1px dashed #cbc79a; background: #ffffff url(main/icon_more01.png) center center no-repeat; }
+
+	/* 공지, 질문 */
+	fieldset.question { margin-top: 10px; padding: 10px; border-top: 1px solid #cbc79a; border-right: 1px solid #cbc79a; border-left: 1px solid #cbc79a; background-color: #fff; }
+	fieldset.question textarea { display: block; width: 275px; height: 27px; line-height: 18px; padding: 5px; border: 1px solid #dfdfc9; background-color: #fbfbf5; }
+	fieldset.question a.btn-question {  display: block; width: 60px; font-size: 11px; color: #ffffff; text-align: center; margin: 7px auto 0 auto; padding: 3px 0 4px 0; border: 1px solid #927e2a; background-color: #a68f30; }
+	div.scroll-list-mobile { height: 185px; overflow: hidden; overflow-y: scroll; }
+
+	ul.list-mobile { border-top: 1px solid #cbc79a; border-right: 1px solid #cbc79a; border-left: 1px solid #cbc79a; }
+	ul.list-mobile li { border-bottom: 1px solid #cbc79a; }
+	ul.list-mobile li a { display: block; font-size: 12px; color: #666666; line-height: 14px; padding: 18px 35px 20px 12px; background: #ffffff url(icon_arrow01.png) 96% center no-repeat; }
+	ul.list-mobile li a span { display: inline-block; font-size: 12px; color: #856e22; margin-top: 5px; padding: 4px 5px 5px 5px; background-color: #eeeeee; }
+	ul.list-mobile li a span em { color: #439c5a; font-weight: bold; }
+
+	/* 강의 개요 */
+	section.summary { float: left; width: 611px; margin-right: 30px; padding-top: 28px; }
+	section.summary h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 1px 32px; background: url(main/icon_title01.png) 11px 1px no-repeat; }
+	section.summary p { font-size: 12px; color: #666666; line-height: 17px; margin-top: 10px; padding: 20px; border: 1px solid #cbc79a; background-color: #fff; }
+	section.summary p img { display: block; margin-bottom: 20px; }
+	section.summary p span { font-size: 14px; font-weight: bold; }
+	section.summary p strong { font-size: 14px; color: #856e22; font-weight: bold; }
+	section.summary p a.more { display: block; height: 23px; text-indent: -9999px; margin: 10px -20px -20px -20px; border-top: 1px dashed #cbc79a; background: url(main/icon_more01.png) center center no-repeat; }
+
+	/* 강의 진도 */
+	section.progress { float: left; width: 611px; margin-right: 30px; padding-top: 28px; }
+	section.progress h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 2px 32px; background: url(main/icon_title05.png) 11px 1px no-repeat; }
+	section.progress span.progress { display: block; width: 571px; height: 20px; margin: 8px 0 0 12px; padding: 8px 10px 0 8px; background: url(bg_progress_b.png) left top no-repeat; }
+	section.progress span.progress em { display: block; height: 10px; text-indent: -9999px; 
+		border-radius: 8px;
+		-moz-border-radius: 8px;
+		-webkit-border-radius: 8px;
+		border: 1px solid #cdcdcd;
+
+		-moz-box-shadow: inset 0 1px 1px 1px #8ae349;
+		-webkit-box-shadow: inset 0 1px 1px 1px #8ae349;
+		box-shadow: inset 0 1px 1px 1px #8ae349;
+
+		background-color: #6ddc1c;
+	}
+	section.progress p { font-size: 12px; color: #856e22; font-weight: bold; text-align: right; padding: 6px 20px 0 0; }
+
+	/* 강의 교안 */
+	section.lectures { float: left; width: 611px; margin-right: 30px; padding-top: 28px; }
+	section.lectures h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 0 32px; background: url(main/icon_title03.png) 11px 2px no-repeat; }
+	section.lectures span.duration { float: right; font-size: 12px; color: #856e22; font-weight: bold; margin-top: -10px; margin-right: 5px; }
+	section.lectures ol.list-section { margin-top: 10px; border-left: 1px solid #cbc79a; border-right: 1px solid #cbc79a; border-bottom: 1px solid #cbc79a; }
+	section.lectures ol.list-section li { clear: both; background-color: #f5f3da; }
+	section.lectures ol.list-section li a.section-title { display: block; font-size: 12px; color: #856e22; font-weight: bold; border-top: 1px solid #cbc79a; padding: 9px 0 10px 19px; cursor: default; }
+	section.lectures ol.list-section li a.more { display: block; height: 23px; text-indent: -9999px; margin: 0; border-top: 1px dashed #cbc79a; background: #ffffff url(main/icon_more01.png) center center no-repeat; }
+
+	section.lectures ol.list-lecture { float: left; border-top: 1px dashed #cbc79a; padding: 18px 0 9px 14px; *padding-right: 14px; background-color: #fff; }
+	section.lectures ol.list-lecture li { position: relative; clear: none; float: left; width: 104px; height: 66px; font-size: 12px; color: #333333; font-weight: bold; line-height: 14px; padding: 23px 0 0 90px; background-color: #fff; }
+	section.lectures ol.list-lecture li a.article { position: absolute; top: 0; left: 0; display: inline-block; width: 80px; height: 24px; font-size: 11px; color: #ffffff; font-weight: bold; text-align: center; padding-top: 55px; background: url(main/lecture_article.png) left top no-repeat; }
+	section.lectures ol.list-lecture li a.lecture { position: absolute; top: 0; left: 0; display: inline-block; width: 80px; height: 24px; font-size: 11px; color: #ffffff; font-weight: bold; text-align: center; padding-top: 55px; background: url(main/lecture.png) left top no-repeat; }
+	section.lectures ol.list-lecture li a.lecture span.free { position: absolute; top: 0; left: 0; display: block; width: 42px; height: 42px; text-indent: -9999px; background: url(main/free.png) left top no-repeat; }
+	section.lectures ol.list-lecture li a.title { display: block; font-size: 12px; color: #333333; font-weight: normal; }
+
+	section.lectures ol.list-lecture li.status01 { color: #666666; }
+	section.lectures ol.list-lecture li.status01 a.title { color: #666666; }
+	section.lectures ol.list-lecture li.status01 a.lecture { background: url(main/lecture_status01.png) left top no-repeat; }
+
+	section.lectures ol.list-lecture li.status02 { color: #999999; }
+	section.lectures ol.list-lecture li.status02 a.title { color: #999999; }
+	section.lectures ol.list-lecture li.status02 a.lecture { background: url(main/lecture_status02.png) left top no-repeat; }
+
+
+
+/* 강의영상 */
+div.movie-contents { width: 100%; min-width: 1024px;
+	border-top: 1px solid #323232;
+	border-top: 1px solid rgba(211, 211, 211, .1);
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+aside.lecture-aside { position: fixed; top: 68px; right: 54px; bottom: 30px; display: block; width: 307px; border: 1px solid #7c7c7c; background-color: #ffffff; }
+	aside.lecture-aside a.btn-toggle { position: absolute; top: -1px; left: -22px; display: block; width: 19px; height: 19px; text-indent: -9999px; border: 1px solid #4b4b4b; background: #000000 url(icon_arrow02.png) 6px center no-repeat; }
+
+	aside.lecture-aside ul.tab-btns { }
+	aside.lecture-aside ul.tab-btns li { float: left; width: 49.9%; }
+	aside.lecture-aside ul.tab-btns li a { display: block; height: 26px; font-size: 12px; color: #999999; font-weight: bold; text-align: center; padding: 15px 0 0 23px; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; background-color: #f1f1f1; }
+	aside.lecture-aside ul.tab-btns li a.q { background-image: url(icon05.png); background-position: 57px 15px; background-repeat: no-repeat; }
+	aside.lecture-aside ul.tab-btns li a.p { border-right: 0; background-image: url(icon06.png); background-position: 57px 15px; background-repeat: no-repeat;  }
+	aside.lecture-aside ul.tab-btns li a.on { color: #333333; border-bottom: 1px solid #fff; background-color: #fff; }
+
+	aside.lecture-aside fieldset.question { clear: both; margin-top: 10px; padding: 10px; border: 0; background-color: #fff; }
+	aside.lecture-aside div.scroll-list-mobile { height: auto; overflow: hidden; overflow-y: scroll; }
+
+	aside.lecture-aside ul.list-mobile { border-top: 1px solid #e0e0e0; }
+	aside.lecture-aside ul.list-mobile li { border-bottom: 1px solid #e0e0e0; }
+
+section.movie-area { position: fixed; top: 57px; right: 381px; bottom: 30px; left: 20px; min-width: 621px; text-align: center; padding: 20px 0 0 0; }
+	section.movie-area h1 { font-size: 14px; color: #999999; font-weight: bold; text-align: center; margin-top: 9px; }
+	section.movie-area em.section { font-size: 12px; color: #857021; font-weight: bold; }
+	section.movie-area em.lecture { font-size: 12px; color: #419e58; font-weight: bold; }
+	section.movie-area div.movie { position: absolute; top: 73px; right: 0; bottom: 40px; left: 0; color: #fff; border: 3px solid #3b3b3b; background-color: #000; }
+	section.movie-area div.btns { position: absolute; right: 0px; bottom: 0px; }
+	section.movie-area div.btns a { float: right; display: block; width: 30px; height: 30px; text-indent: -9999px; margin-left: 6px; }
+	section.movie-area div.btns a.like { background: url(btn_like.png) left top no-repeat; }
+	section.movie-area div.btns a.fb { background: url(btn_facebook.png) left top no-repeat; }
+	section.movie-area div.btns a.tw { background: url(btn_twitter.png) left top no-repeat; }
+
+section.movie-area a.btn-nav { position: absolute; top: 30px; display: inline-block; font-size: 12px; color: #fff; font-weight: bold; letter-spacing: -0.1em; text-align: center;
+	padding: 9px 15px 11px 15px;
+
+	border-radius: 17px;
+	-moz-border-radius: 17px;
+	-webkit-border-radius: 17px;
+	border: 1px solid #353535;
+
+	-moz-box-shadow: inset 0 1px 1px 0 #949494, 1px 1px 6px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 1px 1px 0 #949494, 1px 1px 6px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 1px 1px 0 #949494, 1px 1px 6px 2px rgba(0, 0, 0, 0.3);
+
+	background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #828282), color-stop(100%, #656565));
+	background-image: -webkit-linear-gradient(top, #828282 0%, #656565 100%);
+	background-image: -moz-linear-gradient(top, #828282 0%, #656565 100%);
+	background-image: -ms-linear-gradient(top, #828282 0%, #656565 100%);
+	background-image: -o-linear-gradient(top, #828282 0%, #656565 100%);
+	background-image: linear-gradient(to bottom, #828282 0%, #656565 100%);
+	background-color: #838a24;
+	
+	background-color: #7e7e7e;
+}
+
+section.movie-area a.prev { left: 0px; padding-left: 32px;
+	background-image: url(noise.png), url(icon_prev.png);
+	background-position: 0 0, 9px center;
+	background-repeat: repeat, no-repeat;
+
+	*background: #656565 url(icon_prev.png) 9px center no-repeat;
+	background: #656565 url(icon_prev.png) 9px center no-repeat\0/;
+}
+section.movie-area a.next { right: 0px; padding-right: 32px;
+	background-image: url(noise.png), url(icon_next.png);
+	background-position: 0 0, 90% center;
+	background-repeat: repeat, no-repeat;
+	
+	*background: #656565 url(icon_next.png) 90% center no-repeat;
+	background: #656565 url(icon_next.png) 90% center no-repeat\0/;
+}
+
+
+footer { display: none; }
+
+.hasPlaceholder { color: #999999; }
+
+
+
+@media all and ( max-width: 1024px ) {
+	aside.lecture-aside { left: 661px; float: right; }
+}
+
+
+
+
+

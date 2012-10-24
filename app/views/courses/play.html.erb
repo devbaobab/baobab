@@ -1,0 +1,90 @@
+<script>setupPlay();</script>
+
+<header class="class-start" onload="setupPlay()" >
+	<%= link_to "강의 나가기", @course, :class => "btn-exit" %>
+	<%= link_to "Baobab Class", mypages_path, :class => "baobab-class-start" %>
+	<h1><%= @course.name %></h1>
+</header>
+<div class="movie-contents">
+		
+		<aside class="lecture-aside">
+			<a href="#" class="btn-toggle">닫힘</a>
+			<ul class="tab-btns">
+				<li><a href="#" class="q on">질문</a></li>
+				<li><a href="#" class="p end">교안</a></li>
+			</ul>
+
+			<div class="tab-question">
+				<fieldset class="question">
+					<legend>질문하기</legend>
+					<textarea name="" id="" placeholder="질문을 입력하세요."></textarea>
+					<a href="#" class="btn-question">질문하기</a>
+				</fieldset>
+
+				<div class="scroll-list-mobile">
+					<ul class="list-mobile">
+						<li>
+							<a href="#">
+								<p>
+									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+								</p>
+								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>
+									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+								</p>
+								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p>
+									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+								</p>
+								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tab-plan">
+				
+			</div>
+		</aside>
+
+
+
+		<section class="movie-area">
+			<em class="section"><%= @chapter.title %></em> <!-- em class="lecture"></em -->
+			<h1><%= @lecture.title %></h1>
+
+			<a href="#" class="transition btn-nav prev">이전 강의</a>
+			<a href="#" class="transition btn-nav next">다음 강의</a>
+			<div class="movie">
+				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' id='player1' height="350" name='player1'>
+				   <param name='movie' value='https://ucloudbiz.olleh.com/cdn/player.swf'>
+				   <param name='allowfullscreen' value='true'>
+				   <param name='allowscriptaccess' value='always'>
+				   <param name='flashvars' value="autostart=true&type=rtmp&streamer=<%= @lecture.video_clip_link %>">
+				   <embed id='player1'
+				          name='player1'
+				          src='https://ucloudbiz.olleh.com/cdn/player.swf'
+				          width='616'
+				          height='500'
+				          allowscriptaccess='always'
+				          allowfullscreen='true'
+				          flashvars='autostart=true&type=rtmp&streamer=<%=  @lecture.video_clip_link %>'   />
+				</object>
+				</div>
+			<div class="btns">
+				<a href="#" class="tw">트위터</a>
+				<a href="#" class="fb">페이스북</a>
+				<a href="#" class="like">좋아요</a>
+			</div>
+		</section>
+
+	</div>

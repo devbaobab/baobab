@@ -1,68 +1,13 @@
 <% content_for :head do %>
 <%= stylesheet_link_tag    "tmp_course_intro", :media => "all" %>
 <% end %>
+<% if current_user.takes?(@course.id) %>
 
-<div id='main_page_wrapper'>
-	<div class='page_title'>
-		Course Introduction "<%= @course.name %>"
-		
-		<% if !current_user.nil? %>
-				<% if current_user.takes?(@course.id) %>
-					<%= button_to "unassign", unassign_url( :id => @course.id ) %>
-				<% else %>
-					<%= button_to "assign", assign_url( :id => @course.id ) %>
-				<% end %>
-			<% else %>
-				<%= link_to "log in", new_user_session_path %>
-			<% end %>
-	
-	</div>
-	<div id='upper_wrap'>
-		<div class='intro_student_counter'>
-			<%= @course.users.size %> Student taken
-		</div>
-		<div class='avg_rating'>
-			Rating : *****
-		</div>
-		<!--%= jw_player("rtmp%3A//jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4",
-		  :width => 640, :height => 480) % -->
-		<!--video id='intro_video' controls="controls" -->
-		<div id="intro_video">
-			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='640' height='480' id='player1' name='player1'>
-			   <param name='movie' value='https://ucloudbiz.olleh.com/cdn/player.swf'>
-			   <param name='allowfullscreen' value='true'>
-			   <param name='allowscriptaccess' value='always'>
-			   <param name='flashvars' value="autostart=true&type=rtmp&streamer=rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4">
-			   <embed id='player1'
-			          name='player1'
-			          src='https://ucloudbiz.olleh.com/cdn/player.swf'
-			          width='500'
-			          height='300'
-			          allowscriptaccess='always'
-			          allowfullscreen='true'
-			          flashvars='autostart=true&type=rtmp&streamer=rtmp://jb1587vol00-jb1587.ktics.co.kr/jb1587vol00/_definst_&file=movie.mp4'   />
-			</object>
-			</div>
-			
-			
-		<!--/video-->
-		<div id='lecturer_wrap'>
-			<div id='lecturer_title'>
-				<%= @course.authour.email %>
-			</div>
-			<div id='lecturer_image'></div>
-			<div id='lecturer_desc'>
-				Lecturer Description
-			</div>
-		</div>
-	</div>
-	<div id='lower_wrap'>
-		<div class='sub_title'>Course Information</div>
-		<div class='course_info_tab' id='desc'>Description</div>
-		<div class='course_info_tab' id='curr'>Curriculum</div>
-		<div id='course_info_box'><%= @course.description %></div>
-		<div id='bulletin_title'>Bulletin Board</div>
-		<div id='course_bulletin'></div>
-	</div>
+<%= render "assigned_course_fields", :course => @course %>
 
-</div>
+<% else %>
+
+
+<%= render "unassigned_course_fields", :course => @course %>
+
+<% end %>

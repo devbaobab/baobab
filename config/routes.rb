@@ -8,8 +8,8 @@ Baobab::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
   # root :to => 'courses#index'
-  
-  root :to => 'subscriptions#new'
+  root :to => 'mypages#show'
+  # root :to => 'subscriptions#new'
   match 'subscriptions' => 'subscriptions#create'
   match 'subscriptions/new' => 'subscriptions#new'
   
@@ -18,10 +18,11 @@ Baobab::Application.routes.draw do
   match 'courses/unassign/:id' => 'mypages#unassign', :as => :unassign
   match 'admininterface' => "admin_interfaces#index" 
   
-  match 'mypages/:id' => 'mypages#show'
+  match 'mypages' => 'mypages#show'
+  match 'courses/play' => 'courses#play'
   
   resources :courses
-  #resources :categories
+  resources :categories
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

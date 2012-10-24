@@ -1,12 +1,16 @@
 <p class="fields" >
-	<%= f.label :title, "Title" %>
-	<%= f.text_field :title %>
+	<%= f.label :title, "Lecture Title" %>
+	<%= f.text_field :title %></br>
+	<%= f.label :video_clip_link, "Video Link" %>
+	<%= f.text_field :video_clip_link %></br>
+	
+	<%= f.label :video_script_link, "Script Link" %>
+	<%= f.text_field :video_script_link %></br>
+	
 	<%= f.hidden_field :_destroy %>
 	<%= link_to_function "remove" , "remove_fields(this)" %>
 	<p>
-	<%= f.fields_for :videoclips do |builder| %>
-	<%= render "videoclip_fields" , :f => builder %>
-	<% end %>
+
 	<p><!-- %= link_to_add_fields "Add Videoclip" ,  f, :videoclips % --></p>
 	</p>
 </p>

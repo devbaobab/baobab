@@ -1,19 +1,73 @@
-<p id="notice"><%= notice %></p>
 
-<p>My course</p>
-<% if !@taking_courses.nil?%>
-	<p>taking courses</p>
-	<% @taking_courses.each do |course| %>
-		<%= link_to course.name , course %> </br>
-	<% end %>
-	<%= link_to "add more course", courses_path %>
-<% end %>
+<div class="container-contents02">
+		<section class="list-course">
 
+			<h1 Class="course">내 강의목록</h1>
+
+			<!-- results -->
+			<% if !@taking_courses.nil?%>
+			<ul class="list-my-course">
+				<% @taking_courses.each do |course| %>
+					<li>
+						<section class="my-course">
+							<%= link_to image_tag(course.snapshot) , course, :class => "btn-course-view"  %> </br>
+							<!-- a href="#" class="btn-course-view"><img src="../images/@temp04.png" alt="" /></a-->
+							<div class="layer">
+								<span class="progress"><em style="width: 80%;">50%</em></span>
+								<span class="text">NEXT LECTURE -</span> What is this LSAT?
+							</div>
+							<p>
+								<strong><%= course.name %></strong>
+								<span><%= course.authour.fullname %></span>
+							</p>
+						</section>
+					</li>
+					
+				<% end %>
+				<li class="lb">
+					<%= link_to "다른 강의 추가하기", courses_path, :class => "transition btn-add" %>
+					<!-- a href="#" class="transition btn-add">다른 강의 추가하기</a -->
+				</li>
+			</ul>
+			<% end %>
+			<div class="clear"></div>
+		</section>
+</div>
 <% if !@offering_courses.nil? && !@offering_courses.empty? %>
-	<p>offering courses</p>
-	<% @offering_courses.each do |course| %>
-		<%= link_to course.name , course %></br>
-	<% end %>
+<div class="container-contents02">
+		<section class="list-course">
+
+			<h1>Offering Courses</h1>
+
+			<!-- results -->
+			
+			<ul class="list-my-course">
+				<% @offering_courses.each do |course| %>
+					<li>
+						<section class="my-course">
+							<%= link_to image_tag(course.snapshot) , course, :class => "btn-course-view"  %> </br>
+							<!-- a href="#" class="btn-course-view"><img src="../images/@temp04.png" alt="" /></a-->
+							<div class="layer">
+								<span class="progress"><em style="width: 80%;">50%</em></span>
+								<span class="text">NEXT LECTURE -</span> What is this LSAT?
+							</div>
+							<p>
+								<strong><%= course.name %></strong>
+								<span><%= course.authour.fullname %></span>
+							</p>
+						</section>
+					</li>
+					
+				<% end %>
+				<li class="lb">
+					<%= link_to "offer new course", new_course_path, :class => "transition btn-add" %>
+				</li>
+			</ul>
+			
+			<div class="clear"></div>
+		</section>
+</div>
+<% end %>
 	
-<% end %></br>
-<%= link_to "offer a new course", new_course_path	 %>
+
+
