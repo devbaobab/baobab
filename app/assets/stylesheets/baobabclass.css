@@ -1,10 +1,10 @@
 @charset "utf-8";
 
-@import url(./common.css);		/* 기본 설정 CSS */
+@import url(./common.css);		/* 湲곕낯 �ㅼ젙 CSS */
 
 
 
-/* 강의 영상 - 상단 */
+/* 媛뺤쓽 �곸긽 - �곷떒 */
 header.class-start { width: 100%; min-width: 1024px; height: 57px; }
 header.class-start a.baobab-class-start { position: absolute; top: 15px; left: 20px; display: block; width: 181px; height: 22px; text-indent: -9999px; background: url(baobabclass_black.png) left top no-repeat; }
 header.class-start a.btn-exit { position: absolute; top: 14px; right: 54px;  display: block; font-size: 12px; color: #ffffff; text-align: center; padding: 5px 10px 6px 10px;
@@ -18,12 +18,12 @@ header.class-start h1 { font-size: 16px; color: #ffffff; font-weight: bold; text
 
 
 
-/* 회원가입 - 상단 */
+/* �뚯썝媛�엯 - �곷떒 */
 header.register { position: relative; width: 1024px; height: 104px; margin: 0 auto; }
 header.register a.baobab-class { position: absolute; top: 26px; left: 20px; display: block; width: 248px; height: 55px; text-indent: -9999px; background: url(baobabclass.png) left top no-repeat; }
 header.register fieldset.login { position: absolute; top: 40px; right: 54px; }
 header.register fieldset.login input { display: inline-block; font-size: 12px; width: 121px; height: 28px; line-height: 32px; margin-left: 4px; padding: 0 0 0 10px; border: 1px solid #bebebe; }
-header.register fieldset.login a.btn-login { display: inline-block; width: 74px; height: 28px; font-size: 12px; color: #ffffff; font-weight: bold; line-height: 24px; text-align: center; vertical-align: middle;
+header.register fieldset.login input.btn-login { display: inline-block; width: 74px; height: 28px; font-size: 12px; color: #ffffff; font-weight: bold; line-height: 24px; text-align: center; vertical-align: middle;
 border-radius: 2px; 
 -moz-border-radius: 2px; 
 -webkit-border-radius: 2px; 
@@ -62,7 +62,7 @@ div.container-contents02 { width: 100%; min-width: 1024px;
 }
 
 
-/* 회원가입 contents */
+/* �뚯썝媛�엯 contents */
 section.register { position: relative; width: 373px; margin: 0 auto; padding: 97px 54px 95px 597px; }
 section.register h1 { height: 38px; text-indent: -9999px; border-bottom: 1px solid #cbc79a; background: url(title01.png) left top no-repeat; }
 
@@ -74,7 +74,7 @@ fieldset.signup-fieldset input.name { background: #fff url(icon01.png) 9px 7px n
 fieldset.signup-fieldset input.email { background: #fff url(icon02.png) 9px 7px no-repeat; }
 fieldset.signup-fieldset input.pwd { background: #fff url(icon03.png) 9px 7px no-repeat; }
 fieldset.signup-fieldset a.btn-fb { display: block; width: 278px; height: 40px; text-indent: -9999px; background: url(btn_fb.png) left top no-repeat; }
-fieldset.signup-fieldset a.btn-signup { display: block; width: 152px; height: 36px; text-indent: -9999px; margin: 15px auto 0 auto; background: url(btn_signup.png) left top no-repeat; }
+fieldset.signup-fieldset input.btn-signup { display: block; width: 152px; height: 36px; text-indent: -9999px; margin: 15px auto 0 auto; background: url(btn_signup.png) left top no-repeat; border: 0px; }
 
 
 section.register-detail { position: relative; width: 950px; margin: 0 auto; padding: 49px 54px 27px 20px; }
@@ -144,19 +144,19 @@ ul.list-interest li a.interest11 { background-position: -544px -146px; }
 
 
 
-/* 회원가입 - 강의 소개목록 */
+/* �뚯썝媛�엯 - 媛뺤쓽 �뚭컻紐⑸줉 */
 section.list-courses { position: absolute; top: 97px; left: 4px; width: 567px; }
 section.list-courses h1 { position: absolute; top: -9999px; left: -9999px; }
-section.list-courses ul { overflow: hidden; width: 535px; height: 318px; margin: 0 0 0 16px; }
+section.list-courses ul { overflow: hidden; width: 535px; height: 318px; margin: 36px 0 0 16px; }
 section.list-courses ul li { }
 section.list-courses ul li img { width: 521px; height: 304px; border: 7px solid #cbc79a; }
-section.list-courses a.btn-prev { position: absolute; top: 140px; left: 0px; display: block; width: 38px; height: 38px; text-indent: -9999px; background: url(btn_prev01.png) left top no-repeat; }
-section.list-courses a.btn-next { position: absolute; top: 140px; right: 0px; display: block; width: 38px; height: 38px; text-indent: -9999px; background: url(btn_next01.png) left top no-repeat; }
+section.list-courses a.btn-prev { position: absolute; top: 175px; left: 0px; display: block; width: 38px; height: 38px; text-indent: -9999px; background: url(btn_prev01.png) left top no-repeat; }
+section.list-courses a.btn-next { position: absolute; top: 175px; right: 0px; display: block; width: 38px; height: 38px; text-indent: -9999px; background: url(btn_next01.png) left top no-repeat; }
 
 
 
-/* 강의 탐색 */
-section.search-course { width: 950px; margin: 0 auto; padding: 30px 54px 55px 20px; }
+/* 媛뺤쓽 �먯깋 */
+section.search-course { width: 980px; margin: 0 auto; padding: 30px 24px 55px 20px; }
 section.search-course h1.search { height: 35px; text-indent: -9999px; border-bottom: 1px solid #c3bf92; background: url(title03.png) left top no-repeat; }
 
 section.search-course ul.search-filter { width: 560px; margin: 30px auto 0 auto; }
@@ -214,7 +214,8 @@ article.lecture-summary { display: block; width: 288px;
 	background-color: #ffffff;
 }
 	article.lecture-summary header { width: 278px; height: auto; margin: 0; padding: 175px 5px 0px 5px; }
-	article.lecture-summary header h1 { display: block; font-size: 14px; color: #fff; font-weight: bold; margin: 0; padding: 9px 5px 8px 17px; background-color: #554410; }
+	article.lecture-summary header:hover { cursor:pointer }
+	article.lecture-summary header a { display: block; font-size: 14px; color: #fff; font-weight: bold; margin: 0; padding: 9px 5px 8px 17px; background-color: #554410; text-align: center; }
 	article.lecture-summary header span { position: absolute; top: -1px; left: -1px; display: block; width: 65px; height: 67px; text-indent: -9999px; }
 	article.lecture-summary header span.updated { background: url(ribbon_updated.png) left top no-repeat; }
 	article.lecture-summary header span.event { background: url(ribbon_event.png) left top no-repeat; }
@@ -239,8 +240,8 @@ article.lecture-summary { display: block; width: 288px;
 
 
 
-/* 내 강의목목 */
-section.list-course { width: 950px; margin: 0 auto; padding: 30px 54px 55px 20px; }
+/* ��媛뺤쓽紐⑸ぉ */
+section.list-course { width: 960px; margin: 0 auto; padding: 30px 44px 55px 20px; }
 	section.list-course h1.course { height: 35px; text-indent: -9999px; border-bottom: 1px solid #c3bf92; background: url(title04.png) left top no-repeat; }
 
 	section.list-course ul.list-my-course { margin: 0 auto 0 auto; }
@@ -315,7 +316,7 @@ section.list-course { width: 950px; margin: 0 auto; padding: 30px 54px 55px 20px
 
 
 
-/* 강의수강 */
+/* 媛뺤쓽�섍컯 */
 section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px 20px; }
 	section.course-dashboard h1.start { height: 35px; text-indent: -9999px; border-bottom: 1px solid #c3bf92; background: url(title05.png) left top no-repeat; }
 
@@ -346,13 +347,13 @@ section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px
 
 
 
-	/* 강의 평가 - 강사 소개 - 공지 - 질문 */
+	/* 媛뺤쓽 �됯� - 媛뺤궗 �뚭컻 - 怨듭� - 吏덈Ц */
 	section.lecturer { float: right; width: 309px; padding-top: 28px; }
 	section.lecturer h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 1px 32px; background: url(main/icon_title02.png) 11px 1px no-repeat; }
 	section.lecturer h1.subtitle-notice { font-size: 14px; color: #856e22; font-weight: bold; margin-top: 30px; padding: 0 0 12px 32px; background: url(main/icon_title06.png) 11px 1px no-repeat; }
 	section.lecturer h1.subtitle-q { font-size: 14px; color: #856e22; font-weight: bold; margin-top: 30px; padding: 0 0 2px 32px; background: url(main/icon_title07.png) 11px 1px no-repeat; }
 
-	/* 강의 평가 */
+	/* 媛뺤쓽 �됯� */
 	section.lecturer div.estimate { font-size: 12px; margin-top: 10px; margin-bottom: 30px; padding: 10px; border: 1px solid #cbc79a; background-color: #ffffff; }
 	section.lecturer div.estimate input { display: block; width: 100%; height: 18px; line-height: 18px; margin-top: 5px; border: 1px solid #dfdfc9; background-color: #fbfbf5; }
 	section.lecturer div.estimate textarea { display: block; width: 100%; height: 72px; margin-top: 4px; border: 1px solid #dfdfc9; background-color: #fbfbf5; }
@@ -365,7 +366,7 @@ section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px
 	section.lecturer div.estimate em.point05 { display: inline-block; width: 84px; height: 16px; background: url(main/point_star.png) 0px 0px no-repeat; }
 	section.lecturer div.estimate span.star span { position: absolute; top: -9999px; left: -9999px; }
 
-	/* 강사소개 */
+	/* 媛뺤궗�뚭컻 */
 	section.lecturer dl { margin-top: 10px; border: 1px solid #cbc79a; }
 	section.lecturer dt { text-align: center; padding: 20px 0; background-color: #eeecd5; }
 	section.lecturer dt img { width: 90px; height: 90px; border: 5px solid #cbc79a; }
@@ -374,7 +375,7 @@ section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px
 	section.lecturer dd p { font-size: 12px; color: #999999; text-align: center; line-height: 18px; padding: 18px 10px; }
 	section.lecturer dd a.more { display: block; height: 23px; text-indent: -9999px; margin: 0; border-top: 1px dashed #cbc79a; background: #ffffff url(main/icon_more01.png) center center no-repeat; }
 
-	/* 공지, 질문 */
+	/* 怨듭�, 吏덈Ц */
 	fieldset.question { margin-top: 10px; padding: 10px; border-top: 1px solid #cbc79a; border-right: 1px solid #cbc79a; border-left: 1px solid #cbc79a; background-color: #fff; }
 	fieldset.question textarea { display: block; width: 275px; height: 27px; line-height: 18px; padding: 5px; border: 1px solid #dfdfc9; background-color: #fbfbf5; }
 	fieldset.question a.btn-question {  display: block; width: 60px; font-size: 11px; color: #ffffff; text-align: center; margin: 7px auto 0 auto; padding: 3px 0 4px 0; border: 1px solid #927e2a; background-color: #a68f30; }
@@ -386,7 +387,7 @@ section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px
 	ul.list-mobile li a span { display: inline-block; font-size: 12px; color: #856e22; margin-top: 5px; padding: 4px 5px 5px 5px; background-color: #eeeeee; }
 	ul.list-mobile li a span em { color: #439c5a; font-weight: bold; }
 
-	/* 강의 개요 */
+	/* 媛뺤쓽 媛쒖슂 */
 	section.summary { float: left; width: 611px; margin-right: 30px; padding-top: 28px; }
 	section.summary h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 1px 32px; background: url(main/icon_title01.png) 11px 1px no-repeat; }
 	section.summary p { font-size: 12px; color: #666666; line-height: 17px; margin-top: 10px; padding: 20px; border: 1px solid #cbc79a; background-color: #fff; }
@@ -395,7 +396,7 @@ section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px
 	section.summary p strong { font-size: 14px; color: #856e22; font-weight: bold; }
 	section.summary p a.more { display: block; height: 23px; text-indent: -9999px; margin: 10px -20px -20px -20px; border-top: 1px dashed #cbc79a; background: url(main/icon_more01.png) center center no-repeat; }
 
-	/* 강의 진도 */
+	/* 媛뺤쓽 吏꾨룄 */
 	section.progress { float: left; width: 611px; margin-right: 30px; padding-top: 28px; }
 	section.progress h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 2px 32px; background: url(main/icon_title05.png) 11px 1px no-repeat; }
 	section.progress span.progress { display: block; width: 571px; height: 20px; margin: 8px 0 0 12px; padding: 8px 10px 0 8px; background: url(bg_progress_b.png) left top no-repeat; }
@@ -413,7 +414,7 @@ section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px
 	}
 	section.progress p { font-size: 12px; color: #856e22; font-weight: bold; text-align: right; padding: 6px 20px 0 0; }
 
-	/* 강의 교안 */
+	/* 媛뺤쓽 援먯븞 */
 	section.lectures { float: left; width: 611px; margin-right: 30px; padding-top: 28px; }
 	section.lectures h1.subtitle { font-size: 14px; color: #856e22; font-weight: bold; padding: 0 0 0 32px; background: url(main/icon_title03.png) 11px 2px no-repeat; }
 	section.lectures span.duration { float: right; font-size: 12px; color: #856e22; font-weight: bold; margin-top: -10px; margin-right: 5px; }
@@ -439,7 +440,7 @@ section.course-dashboard { width: 950px; margin: 0 auto; padding: 30px 54px 55px
 
 
 
-/* 강의영상 */
+/* 媛뺤쓽�곸긽 */
 div.movie-contents { width: 100%; min-width: 1024px;
 	border-top: 1px solid #323232;
 	border-top: 1px solid rgba(211, 211, 211, .1);

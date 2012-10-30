@@ -33,7 +33,7 @@
 			<% @courses.each do |course| %>
 		<li>
 			<article class="lecture-summary">
-				<header style="background: url('<%= course.snapshot %>') 5px 5px no-repeat;">
+				<header style="background: url('<%= course.snapshot %>') 5px 5px no-repeat;" onclick="window.location='<%=course_url(:id => course.id) %>'">
 					<h1><%= link_to course.name, course  %></h1>
 					<span class="updated">updated</span>
 				</header>

@@ -7,12 +7,11 @@
 		<!-- %= stylesheet_link_tag    "default", :media => "all" % -->
 		<!-- %= stylesheet_link_tag    "class_list", :media => "all" % -->
 		<!-- %= stylesheet_link_tag    "show_class", :media => "all" % -->
-		
+
 		<%= stylesheet_link_tag    "baobabclass", :media => "all" %>
 		<%= stylesheet_link_tag    "common", :media => "all" %>
 		<%= stylesheet_link_tag    "main", :media => "all" %>
-		
-		
+
 		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
 		<!-- %= stylesheet_link_tag    "tmp_index", :media => "all" % -->
@@ -22,137 +21,166 @@
 
 	<body >
 
-			<!-- div id="logo">
-				<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
-			</div -->
-			 <% if user_signed_in? %>
-			
-			<header>
-				<a href="#" class="baobab-class">Baobab Class</a>
-				<nav>
-					<ul class="navigation">
-						<li>
-							<a href="#" class="user" onclick="toggleUserMenu()" >
-								<span><%= image_tag("@temp01.png")%></span>
-								<%= current_user.fullname %>
-							</a>
+		<!-- div id="logo">
+		<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
+		</div -->
+		<% if user_signed_in? %>
 
-							<ul class="user-menu">
-								<li><%= link_to "계정 관리" , edit_user_password_path %></li>
-								<li><%= link_to "내 강의 목록", mypages_path %></li>
-								<li><%= link_to "강의 탐색" , courses_path %></li>
-								<li><a href="#">Support</a></li>
-								<li class="logout"><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-							</ul>
-						</li>
-						<li><%= link_to "내 강의목록" , mypages_path %></li>
-						<li><%= link_to "강의 탐색" , courses_path %></li>
-					</ul>
-				</nav>
+		<header>
+			<%= link_to "Baobab Class", mypages_path, :class => "baobab-class" %>
+			<nav>
+				<ul class="navigation">
+					<li>
+						<a href="#" class="user" onclick="toggleUserMenu()" > <span><%= image_tag("@temp01.png")%></span> <%= current_user.fullname %> </a>
 
-				<fieldset class="search-fieldset">
-					<legend>검색</legend>
-					<input type="text" />
-					<a href="#" class="btn-search">검색</a>
-				</fieldset>
-			</header>
-			
-				
-			    
-		
-			 <% else %>
-			<header class="register" >
-				<a href="#" class="baobab-class">Baobab Class - For Your Ever Learning Experience</a>
-			
-				<%= form_for( User.new, :as => :user, :url => session_path(:user)) do |f| %>
-				<fieldset class="login">
-				
-				<legend>Login</legend>
+						<ul class="user-menu">
+							<li>
+								<%= link_to "계정 관리" , edit_user_password_path %>
+							</li>
+							<li>
+								<%= link_to "내 강의 목록", mypages_path %>
+							</li>
+							<li>
+								<%= link_to "강의 탐색" , courses_path %>
+							</li>
+							<li>
+								<a href="#">Support</a>
+							</li>
+							<li class="logout">
+								<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<%= link_to "내 강의목록" , mypages_path %>
+					</li>
+					<li>
+						<%= link_to "강의 탐색" , courses_path %>
+					</li>
+				</ul>
+			</nav>
+
+			<fieldset class="search-fieldset">
+				<legend>
+					검색
+				</legend>
+				<input type="text" />
+				<a href="#" class="btn-search">검색</a>
+			</fieldset>
+		</header>
+
+		<% else %>
+		<header class="register" >
+			<a href="#" class="baobab-class">Baobab Class - For Your Ever Learning Experience</a>
+
+			<%= form_for( User.new, :as => :user, :url => session_path(:user)) do |f| %>
+			<fieldset class="login">
+
+				<legend>
+					Login
+				</legend>
 				<!-- input type="text" placeholder="이메일" />
 				<input type="password" placeholder="비밀번호" />
 				<a href="#" class="transition btn-login">로그인</a -->
-				  <!--%= f.label "login_id" %-->
-				  <%= f.text_field :email, :placeholder => "이메일" %>
-				  <!--%= f.label :password %-->
-				  <%= f.password_field :password, :placeholder => "비밀번호" %>
-				  <%= f.submit "로그인", :class => "transition btn-login" %>
-					</fieldset>
-		 		<% end %>
-			</header>
-
+				<!--%= f.label "login_id" %-->
+				<%= f.text_field :email, :placeholder => "이메일" %>
+				<!--%= f.label :password %-->
+				<%= f.password_field :password, :placeholder => "비밀번호" %>
+				<%= f.submit "로그인  ", :class => "transition btn-login" %>
+			</fieldset>
 			<% end %>
-			
-		
-			<%= yield :header %>
-	
+		</header>
 
-		
-		 <% if user_signed_in? %>
-				<%= yield %>
+		<% end %>
+
+		<%= yield :header %>
+
+		<% if user_signed_in? %>
+		<%= yield %>
 		<% else %>
 		<%= form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
 		<div class="container-contents">
-		<section class="register">
-					<h1>회원가입</h1>
+			<section class="register">
+				<h1>회원가입</h1>
 
-					<fieldset class="signup-fieldset">
-						<legend>회원가입 항목</legend>
-						<a href="#" class="transition btn-fb">Facebook으로 로그인</a>
-						<span class="or" />or</span>
-						<p><%= f.text_field :fullname, :placeholder => "이름", :class => "name" %></p>
-						<p><%= f.email_field :email, :placeholder => "email" ,:class =>"email" %></p>
-						<p><%= f.password_field :password, :placeholder => "비밀번호" ,:class =>"pwd" %></p>
-						<p><%= f.password_field :password_confirmation, :placeholder => "confirm" ,:class =>"pwd" %></p>
-						<p><%= f.submit "가입하기" %></p>
-						<!--  href="#" class="transition btn-signup">가입하기</a -->
-					</fieldset>
+				<fieldset class="signup-fieldset">
+					<legend>
+						회원가입 항목
+					</legend>
+					<a href="#" class="transition btn-fb">Facebook으로 로그인</a>
+					<span class="or" />or</span>
+					<p>
+						<%= f.text_field :fullname, :placeholder => "이름", :class => "name" %>
+					</p>
+					<p>
+						<%= f.email_field :email, :placeholder => "email" ,:class =>"email" %>
+					</p>
+					<p>
+						<%= f.password_field :password, :placeholder => "비밀번호" ,:class =>"pwd" %>
+					</p>
+					<p>
+						<%= f.password_field :password_confirmation, :placeholder => "confirm" ,:class =>"pwd" %>
+					</p>
+					<p>
+						<%= f.submit "가입하기", :class=>"transition btn-signup" %>
+					</p>
+					<!--  href="#" class="transition btn-signup">가입하기</a -->
+				</fieldset>
 
-					<section class="list-courses">
-						<h1>강의 목록</h1>
-						<ul>
-							<li><a href="#"><%= image_tag("@temp01.png") %></a></li>
-							<li><a href="#"><%= image_tag("@temp01.png") %></a></li>
-						</ul>
-						<a href="#" class="btn-prev">이전</a>
-						<a href="#" class="btn-next">다음</a>
-					</section>
-				</section>	
-				</div>
-	<% end %>
+				<section class="list-courses">
+					<h1>강의 목록</h1>
+					<ul>
+						<li>
+							<a href="#"><%= image_tag("@temp01.png") %></a>
+						</li>
+						<li>
+							<a href="#"><%= image_tag("@temp01.png") %></a>
+						</li>
+					</ul>
+					<a href="#" class="btn-prev">이전</a>
+					<a href="#" class="btn-next">다음</a>
+				</section>
+			</section>
+		</div>
+		<% end %>
 
 		<% end %>
-	</div>
+		</div>
 		<footer>
-			<p>Baobab Class</p>
+			<p>
+				Baobab Class
+			</p>
 		</footer>
 		<% if !user_signed_in? %>
 		<script type="text/javascript">
 			$(function() {
 				$.support.placeholder = false;
 				test = document.createElement('input');
-				if('placeholder' in test) $.support.placeholder = true;
+				if('placeholder' in test)
+					$.support.placeholder = true;
 
 				if(!$.support.placeholder) {
 					var active = document.activeElement;
-					$('input').focus(function () {
-						if ($(this).attr('placeholder') != '' && $(this).val() == $(this).attr('placeholder')) {
+					$('input').focus(function() {
+						if($(this).attr('placeholder') != '' && $(this).val() == $(this).attr('placeholder')) {
 							$(this).val('').removeClass('hasPlaceholder');
 						}
-					}).blur(function () {
-						if ($(this).attr('placeholder') != '' && ($(this).val() == '' || $(this).val() == $(this).attr('placeholder'))) {
+					}).blur(function() {
+						if($(this).attr('placeholder') != '' && ($(this).val() == '' || $(this).val() == $(this).attr('placeholder'))) {
 							$(this).val($(this).attr('placeholder')).addClass('hasPlaceholder');
 						}
 					});
 					$('input').blur();
 					$(active).focus();
-					$('form').submit(function () {
-						$(this).find('.hasPlaceholder').each(function() { $(this).val(''); });
+					$('form').submit(function() {
+						$(this).find('.hasPlaceholder').each(function() {
+							$(this).val('');
+						});
 					});
 				}
 			});
-			
 
-			</script>
-			<% end %>
+		</script>
+		<% end %>
 	</body>
 </html>
