@@ -3,6 +3,7 @@ class Lecture < ActiveRecord::Base
   
   belongs_to :course
   belongs_to :chapter
+  has_many :comments, :as => :commentable
   
   has_one :article
   #has_one :videoclip

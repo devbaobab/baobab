@@ -1,5 +1,7 @@
 Baobab::Application.routes.draw do
   
+  resources :comments
+
   # resources :subscriptions
 
   devise_for :users, :controller => { :registration => "devise_registration" }
@@ -7,11 +9,19 @@ Baobab::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-  # root :to => 'courses#index'
-  root :to => 'mypages#show'
+   root :to => 'courses#index'
+  #root :to => 'mypages#show'
   # root :to => 'subscriptions#new'
   match 'subscriptions' => 'subscriptions#create'
   match 'subscriptions/new' => 'subscriptions#new'
+  
+  match 'comments/lectures/create/:lecture_id/' => 'comments#create_comment', :as => :comment_lecture, :via => :post
+  match 'comments/courses/create/:course_id/' => 'comments#create_comment', :as => :comment_course, :via => :post
+
+  match 'comments/lectures/get/:lecture_id/' => 'comments#get_comments', :as => :get_comments_lecture, :via => :get
+  match 'comments/courses/get/:course_id/' => 'comments#get_comments', :as => :get_comments_course, :via => :get
+  
+  
   
   # assign_url(:d => course.id)
   match 'courses/assign/:id' => 'mypages#assign', :as => :assign
@@ -21,9 +31,15 @@ Baobab::Application.routes.draw do
   match 'mypages' => 'mypages#show'
   match 'courses/play' => 'courses#play'
   
-  resources :courses
+  resources :courses do
+    resources :comments
+  end
+  
+  #resources :lectures do
+  #  resources :comments
+  #end
   resources :categories
-
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

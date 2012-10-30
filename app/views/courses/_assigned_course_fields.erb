@@ -30,6 +30,7 @@
 				<div class="estimate">
 					<span class="star"><em class="point04"><span>3/5</span></em></span>
 					<!-- 입력 영역 -->
+
 					<input type="text" />
 					<textarea name="" id=""></textarea>
 					<a href="#" class="btn-write">리뷰쓰기</a>
@@ -85,38 +86,37 @@
 				<h1 class="subtitle-q">질문</h1>
 				<fieldset class="question">
 					<legend>질문하기</legend>
-					<textarea name="" id="" placeholder="질문을 입력하세요."></textarea>
-					<a href="#" class="btn-question">질문하기</a>
+					<%= form_for [course, Comment.new ] do |f| %>
+						<%= f.text_area :content, :placeholder => "질문을 입력하세요 ."  %>
+						<%= f.hidden_field :user_id, :value => current_user.id %>
+						<%= f.submit "submit comment" %>
+					<% end %>
+					<!--textarea name="" id="" placeholder="질문을 입력하세요."></textarea>
+					<a href="#" class="btn-question">질문하기</a-->
 				</fieldset>
-
+				<% if !course.comments.empty? %>
+				
 				<div class="scroll-list-mobile">
+					
 					<ul class="list-mobile">
+						<% course.comments.each do |c| %>
 						<li>
 							<a href="#">
 								<p>
-									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+									<strong><%= c.user.fullname  %></strong>
 								</p>
-								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
 								<p>
-									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
+									<%= c.content %>
 								</p>
-								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
+
+								<!--span><em>3개</em>의 답변 <em>35강</em> 관련</span -->
 							</a>
 						</li>
-						<li>
-							<a href="#">
-								<p>
-									thanks for the comments on arguments, what book would you suggest I read to get a more in depth understanding of this subject? Have a great holiday.
-								</p>
-								<span><em>3개</em>의 답변 <em>35강</em> 관련</span>
-							</a>
-						</li>
+						<% end %>
+						
 					</ul>
 				</div>
+				<% end %>
 
 			</section>
 

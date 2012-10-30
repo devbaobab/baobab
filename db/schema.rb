@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024132508) do
+ActiveRecord::Schema.define(:version => 20121030064244) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(:version => 20121024132508) do
     t.integer  "course_id"
   end
 
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -61,10 +70,31 @@ ActiveRecord::Schema.define(:version => 20121024132508) do
     t.string   "intro_video_link"
   end
 
+  create_table "employments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "groups", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "interests", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "lectures", :force => true do |t|
@@ -88,6 +118,13 @@ ActiveRecord::Schema.define(:version => 20121024132508) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "preferences", :force => true do |t|
+    t.integer  "interest_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "takes", :force => true do |t|
     t.integer  "course_id"
     t.integer  "user_id"
@@ -109,6 +146,9 @@ ActiveRecord::Schema.define(:version => 20121024132508) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "fullname"
+    t.string   "gender"
+    t.date     "birthday"
+    t.text     "introduction"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

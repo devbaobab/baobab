@@ -81,6 +81,30 @@ mem1 = Membership.create({"user_id" => s4.id, "group_id" => g2.id})
 
 mem1 = Membership.create({"user_id" => s3.id, "group_id" => g1.id})
 
+job1 = Job.create({"title"=> "Web Developer", "description" => "Web Application Designer based on Ruby on Rails"})
+job2 = Job.create({"title"=> "Student", "description" => "Student in any kind of institution"})
+job3 = Job.create({"title"=> "Teacher at BAOBAB", "description" => "teaches business english in BAOBAB class"})
+
+emp1 = Employment.create({:user_id => s1.id , :job_id => job2.id })
+emp2 = Employment.create({:user_id => s2.id , :job_id => job1.id })
+emp3 = Employment.create({:user_id => s3.id , :job_id => job1.id })
+emp4 = Employment.create({:user_id => s4.id , :job_id => job3.id })
+
+int1 = Interest.create({"title" => "Technology", "description" => "technical" })
+int2 = Interest.create({"title" => "Arts", "description" => "artistic" })
+int3 = Interest.create({"title" => "Music", "description" => "musics" })
+
+pref1 = Preference.create({:user_id => s1.id , :interest_id => int1.id })
+pref1 = Preference.create({:user_id => s1.id , :interest_id => int2.id })
+pref1 = Preference.create({:user_id => s1.id , :interest_id => int3.id })
+
+pref1 = Preference.create({:user_id => s2.id , :interest_id => int2.id })
+pref1 = Preference.create({:user_id => s2.id , :interest_id => int3.id })
+
+pref1 = Preference.create({:user_id => s3.id , :interest_id => int1.id })
+
+pref1 = Preference.create({:user_id => s3.id , :interest_id => int2.id })
+
 a1 = Authour.create!({:course_id => u1.id, :user_id => s4.id})
 a1 = Authour.create!({:course_id => u2.id, :user_id => s4.id})
 a1 = Authour.create!({:course_id => u3.id, :user_id => s3.id})

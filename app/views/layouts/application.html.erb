@@ -25,7 +25,13 @@
 		<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
 		</div -->
 		<% if user_signed_in? %>
-
+		
+		<script type="text/javascript">
+		    window.currentUser = {
+		        id : "<%=current_user.id%>"
+		    }
+		</script>
+		
 		<header>
 			<%= link_to "Baobab Class", mypages_path, :class => "baobab-class" %>
 			<nav>

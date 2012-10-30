@@ -26,6 +26,33 @@ function add_fields(link, association, content) {
   $(link).parent().before(content.replace(regexp, new_id));
 }
 
+function sendLectureComment() {
+	var new_comment = $('#new_comment').val();
+	if(new_comment){	
+		$.ajax({
+		  type: 'POST',
+		  url: "/comments/courses/create/1",
+		  data: { comment : { user_id : window.currentUser , content : new_comment }} ,
+		  success: function (data) {
+			alert(JSON.stringify(data));
+		},
+		  dataType: "json"
+		});
+	}
+}
+
+function getComments(){
+	$.ajax({
+	  type: 'GET',
+	  url: "/comments/courses/get/1",
+	  data: null ,
+	  success: function (data) {
+		alert(JSON.stringify(data));
+	},
+	  dataType: "json"
+	});
+}
+
 function toggleUserMenu() {
 	var display = $('.user-menu').css('display');
 	

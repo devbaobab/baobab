@@ -12,7 +12,7 @@ class Course < ActiveRecord::Base
   
   has_many :categorizations, :dependent => :destroy
   has_many :categories, :through => :categorizations
-
+  has_many :comments, :as => :commentable
 
 
   has_many :lectures, :dependent => :destroy
