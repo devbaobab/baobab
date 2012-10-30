@@ -75,6 +75,8 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(params[:course])
+
+    
     authorize! :create, @course
     # @course = Course.create(params[:course])
     # @chapter = @course.chapters.build(params[:chapter])
@@ -84,6 +86,31 @@ class CoursesController < ApplicationController
       if @course.save
         Authour.create!({:user_id => current_user.id, :course_id => @course.id })
         
+        @course.chapters.each do |chapter|
+          chapter.lectures.each do |lecture|
+            lecture.update_attribute(:course_id, @course.id)
+          end
+        end
+        
+        prev_lecture = nil
+        @course.lectures.each do |lecture|
+          if prev_lecture
+            NextLecture.create!({:lecture_id => prev_lecture.id, :next_id => lecture.id })
+          end
+          prev_lecture = lecture
+        end
+        
+                # 
+                # @course.chapters.each do |chapter|
+                #   prev_lecture = nil
+                #   chapter.lectures.each do |lecture|
+                #     if !prev_lecture.nil?
+                #       NextLecture.create!({:lecture_id => prev_lecture.id, :next_id => lecture.id })
+                #     end
+                #     prev_lecture = lecture
+                #   end
+                # end
+                # 
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
@@ -125,9 +152,10 @@ class CoursesController < ApplicationController
   end
   
   def play
-    @course = Course.find(params[:course_id])
-    @chapter = @course.chapters.find(params[:chapter_id])
-    @lecture = @chapter.lectures.find(params[:lecture_id])
+    @lecture = Lecture.find(params[:lecture_id])
+    @course = Course.find(@lecture.course.id)
+    @chapter = Chapter.find(@lecture.chapter.id)
+    
     respond_to do |format|
       format.html # new.html.erb
     end

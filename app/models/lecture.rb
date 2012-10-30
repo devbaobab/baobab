@@ -3,7 +3,15 @@ class Lecture < ActiveRecord::Base
   
   belongs_to :course
   belongs_to :chapter
+  
   has_many :comments, :as => :commentable
+  
+  has_one :next_lecture
+  has_one :next, :through => :next_lecture
+  
+  has_one :previous_lecture, :class_name => "NextLecture", :foreign_key => "next_id"
+  has_one :previous, :through => :previous_lecture, :source => :lecture
+  
   
   has_one :article
   #has_one :videoclip

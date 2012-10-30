@@ -1,5 +1,7 @@
 Baobab::Application.routes.draw do
   
+  resources :next_lectures
+
   resources :comments
 
   # resources :subscriptions

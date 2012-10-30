@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030064244) do
+ActiveRecord::Schema.define(:version => 20121030153055) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20121030064244) do
     t.integer  "chapter_id"
     t.string   "video_clip_link"
     t.string   "video_script_link"
+    t.integer  "course_id"
   end
 
   create_table "memberships", :force => true do |t|
@@ -114,6 +115,13 @@ ActiveRecord::Schema.define(:version => 20121030064244) do
   end
 
   create_table "mypages", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "next_lectures", :force => true do |t|
+    t.integer  "lecture_id"
+    t.integer  "next_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

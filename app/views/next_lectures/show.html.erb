@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Lecture:</b>
+  <%= @next_lecture.lecture_id %>
+</p>
+
+<p>
+  <b>Next:</b>
+  <%= @next_lecture.next_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_next_lecture_path(@next_lecture) %> |
+<%= link_to 'Back', next_lectures_path %>

@@ -31,7 +31,7 @@ function sendLectureComment() {
 	if(new_comment){	
 		$.ajax({
 		  type: 'POST',
-		  url: "/comments/courses/create/1",
+		  url: "/comments/lectures/create/"+lecture_id ,
 		  data: { comment : { user_id : window.currentUser , content : new_comment }} ,
 		  success: function (data) {
 			alert(JSON.stringify(data));
