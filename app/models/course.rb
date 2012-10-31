@@ -1,11 +1,11 @@
 class Course < ActiveRecord::Base
-  attr_accessible :description, :name, :snapshot, :price, :subtitle, :intro_video_link, :category_ids, :lectures, :chapters ,:chapters_attributes, :lectures_attributes
+  attr_accessible :description, :name, :snapshot, :price, :subtitle, :intro_video_link, :category_ids, :lectures, :chapters ,:chapters_attributes, :lectures_attributes, :authours
   
   
   has_attached_file :snapshot, :styles => { :medium => "270x171", :thumb => "270x171"}
   
   #belongs_to :take
-  has_many :takes
+  has_many :takes, :dependent => :destroy
   has_many :users, :through => :takes
   #belongs_to :user, :through => :take
   #belongs_to :user , :through => :own
@@ -26,6 +26,8 @@ class Course < ActiveRecord::Base
   # accepts_nested_attributes_for :videoclips, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
   has_many :authours
 
+  after_save :update_nested_references
+  
   def isAuthour?(user_id)
     
   end
@@ -37,9 +39,10 @@ class Course < ActiveRecord::Base
   
   def assign(user_id)
     unless !self.takes.where(:course_id => self.id, :user_id => user_id).empty?
-      self.takes << Take.create(:course_id => self.id, :user_id => user_id)
+      take = Take.create(:course_id => self.id, :user_id => user_id)
+      self.takes << take
     end
-    self.takes.size
+    return take
     
   end
   
@@ -53,6 +56,25 @@ class Course < ActiveRecord::Base
     def has_authour
       a = self.authour
       a.nil?
+    end
+    
+    
+    def update_nested_references
+      lecture_position = 1
+      self.chapters.each do |chapter|
+        chapter.lectures.each do |lecture|
+          lecture.update_attributes(:course_id => self.id, :position => lecture_position)
+          lecture_position += 1
+        end
+      end
+
+      prev_lecture = nil
+      self.lectures.each do |lecture|
+        if prev_lecture
+          NextLecture.create!({:lecture_id => prev_lecture.id, :next_id => lecture.id })
+        end
+        prev_lecture = lecture
+      end
     end
   
 end

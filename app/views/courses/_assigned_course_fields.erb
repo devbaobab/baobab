@@ -3,7 +3,7 @@
 			<h1 class="start">강의수강</h1>
 
 			<div class="board">
-				<h2><%= course.name %></h2>
+				<h2><%= take.course.name %></h2>
 
 				<dl class="status-course">
 					<dt>강의평점</dt>
@@ -11,7 +11,7 @@
 
 					<dt>수강생 수</dt>
 					<dd>
-						<em><%= course.users.size %>명</em>이 수강중입니다.
+						<em><%= take.course.users.size %>명</em>이 수강중입니다.
 						<!-- div class="list-user">
 							<a href="#"><%= image_tag("main/@temp03.png") %></a>
 							<a href="#"><%= image_tag("main/@temp03.png") %></a>
@@ -41,7 +41,7 @@
 				<dl>
 					<dt>
 						<%= image_tag("main/@temp02.png") %>
-						<strong><%= course.authour.fullname %></strong>
+						<strong><%= take.course.authour.fullname %></strong>
 					</dt>
 					<dd>
 						<p>
@@ -86,7 +86,7 @@
 				<h1 class="subtitle-q">질문</h1>
 				<fieldset class="question">
 					<legend>질문하기</legend>
-					<%= form_for [course, Comment.new ] do |f| %>
+					<%= form_for [take.course, Comment.new ] do |f| %>
 						<%= f.text_area :content, :placeholder => "질문을 입력하세요 ."  %>
 						<%= f.hidden_field :user_id, :value => current_user.id %>
 						<%= f.submit "submit comment" %>
@@ -94,12 +94,12 @@
 					<!--textarea name="" id="" placeholder="질문을 입력하세요."></textarea>
 					<a href="#" class="btn-question">질문하기</a-->
 				</fieldset>
-				<% if !course.comments.empty? %>
+				<% if !take.course.comments.empty? %>
 				
 				<div class="scroll-list-mobile">
 					
 					<ul class="list-mobile">
-						<% course.comments.each do |c| %>
+						<% take.course.comments.each do |c| %>
 						<li>
 							<a href="#">
 								<p>
@@ -124,9 +124,9 @@
 			<section class="summary">
 				<h1 class="subtitle">강의개요</h1>
 				<p>
-					<%= image_tag(course.snapshot) %>
-					<span>by</span> <strong><%= course.authour.fullname %></strong><br />
-					<%= course.description %>
+					<%= image_tag(take.course.snapshot) %>
+					<span>by</span> <strong><%= take.course.authour.fullname %></strong><br />
+					<%= take.course.description %>
 					
 					<a href="#" class="more">더 보기</a>
 				</p>
@@ -135,8 +135,8 @@
 
 			<section class="progress">
 				<h1 class="subtitle">강의진도</h1>
-				<span class="progress"><em style="width: 50%;">50%</em></span>
-				<p>전체 50강 중 20강</p>
+				<span class="progress"><em style="width: <%= take.progress %>%;">50%</em></span>
+				<p><%= take.progress %>% completed ( 전체 50강 중 20강)</p>
 			</section>
 
 			
@@ -144,7 +144,7 @@
 				<h1 class="subtitle">강의교안</h1>
 				<span class="duration">전체 50강 120시간 30분 강의</span>
 				<ol class="list-section">
-					<% course.chapters.each do |chapter| %>
+					<% take.course.chapters.each do |chapter| %>
 					<li>
 						<a class="section-title"><%= chapter.title %>:</a>
 						<ol class="list-lecture">
@@ -157,7 +157,7 @@
 									<span class="free">free</span>
 									23:57
 								</a>
-								<%= link_to( lecture.title, :controller => 'courses', :action => 'play', :course_id => course.id, :chapter_id => chapter.id, :lecture_id => lecture.id ) %>:
+								<%= link_to( lecture.title, :controller => 'courses', :action => 'play', :lecture_id => lecture.id ) %>:
 								<a href="#" class="title">Presentation</a>
 							</li>
 							<% end %>

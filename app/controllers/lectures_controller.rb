@@ -1,6 +1,7 @@
 class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
+  before_filter :authenticate_user!
   def index
     @lectures = Lecture.all
 

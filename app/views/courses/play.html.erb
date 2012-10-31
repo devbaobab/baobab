@@ -7,7 +7,7 @@
 <header class="class-start" onload="setupPlay()" >
 	<%= link_to "강의 나가기", @course, :class => "btn-exit" %>
 	<%= link_to "Baobab Class", mypages_path, :class => "baobab-class-start" %>
-	<h1><%= @course.name %></h1>
+	<h1><%= link_to @course.name, @course %></h1>
 </header>
 <div class="movie-contents">
 

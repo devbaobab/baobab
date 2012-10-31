@@ -7,18 +7,18 @@
 			<!-- results -->
 			<% if !@taking_courses.nil?%>
 			<ul class="list-my-course">
-				<% @taking_courses.each do |course| %>
+				<% @taking_courses.each do |take| %>
 					<li>
 						<section class="my-course">
-							<%= link_to image_tag(course.snapshot) , course, :class => "btn-course-view"  %> </br>
+							<%= link_to image_tag(take.course.snapshot) , take.course, :class => "btn-course-view"  %> </br>
 							<!-- a href="#" class="btn-course-view"><img src="../images/@temp04.png" alt="" /></a-->
 							<div class="layer">
-								<span class="progress"><em style="width: 80%;">50%</em></span>
-								<span class="text">NEXT LECTURE -</span> What is this LSAT?
+								<span class="progress"><em style="width: <%= take.progress %>%;">50%</em></span>
+								<span class="text">NEXT LECTURE -</span> <%= link_to( Lecture.find(take.lecture_id).next.title , :controller => 'courses', :action => 'play', :lecture_id => Lecture.find(take.lecture_id).next.id ) %>
 							</div>
 							<p>
-								<strong><%= course.name %></strong>
-								<span><%= course.authour.fullname %></span>
+								<strong><%= take.course.name %></strong>
+								<span><%= take.course.authour.fullname %></span>
 							</p>
 						</section>
 					</li>

@@ -6,7 +6,7 @@ class MypagesController < ApplicationController
   # GET /mypages/1.json
   def show
     @user = current_user #User.find(params[:id])
-    @taking_courses = @user.courses
+    @taking_courses = @user.takes
     @offering_courses = Array.new
     
     Authour.where(:user_id => @user.id).each do |authour|
@@ -24,8 +24,8 @@ class MypagesController < ApplicationController
       redirect_to @course, notice: "please login first"
     end
     
-    @course.assign(current_user.id)
-    
+    take = @course.assign(current_user.id)
+    take.set_last_lecture_reference_nil()
     respond_to do |format|
       format.html { redirect_to @course }
       format.json { head :no_content }

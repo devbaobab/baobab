@@ -3,7 +3,7 @@
 <% end %>
 <% if current_user.takes?(@course.id) %>
 
-<%= render "assigned_course_fields", :course => @course %>
+<%= render "assigned_course_fields", :take => @take %>
 
 <% else %>
 

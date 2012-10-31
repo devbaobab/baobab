@@ -49,9 +49,15 @@
 							<li>
 								<%= link_to "강의 탐색" , courses_path %>
 							</li>
+							<% if current_user.role? :admin %>
+							<li>
+								<%= link_to "Administration" , admininterface_path %>
+							</li>
+							<% else %>
 							<li>
 								<a href="#">Support</a>
 							</li>
+							<% end %>
 							<li class="logout">
 								<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
 							</li>

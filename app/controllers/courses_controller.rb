@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
   # load_and_authorize_resource
   # nested:  load_and_authorize_resource, :nested => :article
   
-  
+  before_filter :authenticate_user!
   # GET /courses
   # GET /courses.json
   def index
@@ -19,8 +19,7 @@ class CoursesController < ApplicationController
         format.html { render :action => "index", notice: "current_user" } # index.html.erb
         format.json { render json: @courses }
       end
-    else
-      
+    else     
       @categories = Category.all
       @courses = Category.find(selected_category_id).courses
       authorize! :read, @courses
@@ -35,6 +34,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
+    @take = Take.find_by_course_id_and_user_id(@course.id, current_user.id)
     authorize! :read, @course
     respond_to do |format|
       format.html # show.html.erb
@@ -50,9 +50,9 @@ class CoursesController < ApplicationController
     # TODO static
     #@chapter = @course.chapters.build
     
-    2.times do 
+    1.times do 
       chapter = @course.chapters.build
-      2.times { chapter.lectures.build }
+      1.times { chapter.lectures.build }
     end
     
     #@chapters = @course.chapters
@@ -85,32 +85,6 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
         Authour.create!({:user_id => current_user.id, :course_id => @course.id })
-        
-        @course.chapters.each do |chapter|
-          chapter.lectures.each do |lecture|
-            lecture.update_attribute(:course_id, @course.id)
-          end
-        end
-        
-        prev_lecture = nil
-        @course.lectures.each do |lecture|
-          if prev_lecture
-            NextLecture.create!({:lecture_id => prev_lecture.id, :next_id => lecture.id })
-          end
-          prev_lecture = lecture
-        end
-        
-                # 
-                # @course.chapters.each do |chapter|
-                #   prev_lecture = nil
-                #   chapter.lectures.each do |lecture|
-                #     if !prev_lecture.nil?
-                #       NextLecture.create!({:lecture_id => prev_lecture.id, :next_id => lecture.id })
-                #     end
-                #     prev_lecture = lecture
-                #   end
-                # end
-                # 
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
@@ -155,7 +129,7 @@ class CoursesController < ApplicationController
     @lecture = Lecture.find(params[:lecture_id])
     @course = Course.find(@lecture.course.id)
     @chapter = Chapter.find(@lecture.chapter.id)
-    
+    Take.find_by_course_id_and_user_id( @course.id , current_user.id ).set_last_lecture_reference( @lecture.id )
     respond_to do |format|
       format.html # new.html.erb
     end

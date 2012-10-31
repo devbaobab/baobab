@@ -1,37 +1,61 @@
 <% if current_user.role?(:admin) %>
-<p class="field">
+</br>
+<h3>Courses</h3>
+<table>
+	<colgroup>
+    <col width="760">
+    <col width="20">
+    <col width="20">
+  </colgroup>
 <% @courses.each do |course| %>
-	<%= course.name %>
-	<%= link_to "show", course %>
-	<%= link_to "edit", edit_course_path(course) %></br>
+	<tr>
+	<th><%= course.name %></th>
+	<th><%= link_to "show", course %></th>
+	<th><%= link_to "edit", edit_course_path(course) %></th>
+	</tr>
 <% end %>
-</p>
+<tr><th><%= link_to "Add new Course" , new_course_path %></th></tr>
+</table>
+</br>
 
-<p class="field" >
+<h3>Categories</h3>
+<table>
+	<colgroup>
+    <col width="760">
+    <col width="20">
+    <col width="20">
+  </colgroup>
 <% @categories.each do |category| %>
-	<%= category.name %>
-	<%= link_to "show", category %>
-	<%= link_to "edit", edit_category_path(category) %></br>
+<tr>
+	<th><%= category.name %></th>
+	<th><%= link_to "show", category %></th>
+	<th><%= link_to "edit", edit_category_path(category) %></th>
+	</tr>
 <% end %>
-</p>
+<tr><th><%= link_to "Add new Category" , new_category_path %></th></tr>
+</table>
 
 
-<p class="field">
+<h3>Users</h3>
+
+<table>
+	<colgroup>
+	  <col width="760">
+
+	  <col width="50">
+	</colgroup>
 	<% @groups.each do |group| %>
-		<p><%= group.name %></br>
+		<tr><th><%= group.name %></th><th><%= link_to "add" %></th></tr>
 		<% group.users.each do |user| %>
-			<p> &nbsp <%= user.email %> 
-				<!-- %= link_to "show", user % -->
-				<%= link_to "edit", edit_user_registration_path %>
-					<% for group_a in Group.find(:all) %>
-				<%= check_box_tag "user[group_ids][]", user.id, user.role?(group_a.name.to_sym) %>
-			  <%= group_a.name %>
-			<% end %>
-				</p>
+			<tr> <td><%= user.email %> </td>
+				<td><%= link_to "edit", edit_user_registration_path %></td>
+					<!-- td><% for group_a in Group.find(:all) %><%= check_box_tag "user[group_ids][]", user.id, user.role?(group_a.name.to_sym) %><%= group_a.name %><% end %></td -->
+			</tr>
+			
+			
 		<% end %>
-		</p>
 	<% end %>
-</p>
+</table>
 <% else %>
-<p >please login as admin first</p>
+<p>please login as admin first</p>
 <% end %>

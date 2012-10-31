@@ -1,6 +1,8 @@
 class AdminInterfacesController < ApplicationController
   # GET /admin_interfaces
   # GET /admin_interfaces.json
+  before_filter :authenticate_user!
+  
   def index
     #@admin_interfaces = AdminInterface.all
     @courses = Course.all

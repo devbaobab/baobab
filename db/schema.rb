@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030153055) do
+ActiveRecord::Schema.define(:version => 20121031114947) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20121030153055) do
     t.string   "video_clip_link"
     t.string   "video_script_link"
     t.integer  "course_id"
+    t.integer  "position"
   end
 
   create_table "memberships", :force => true do |t|
@@ -126,6 +127,13 @@ ActiveRecord::Schema.define(:version => 20121030153055) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "offers", :force => true do |t|
+    t.integer  "course_id"
+    t.integer  "authour_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "preferences", :force => true do |t|
     t.integer  "interest_id"
     t.integer  "user_id"
@@ -136,8 +144,10 @@ ActiveRecord::Schema.define(:version => 20121030153055) do
   create_table "takes", :force => true do |t|
     t.integer  "course_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "lecture_id"
+    t.integer  "last_position"
   end
 
   create_table "users", :force => true do |t|
@@ -157,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20121030153055) do
     t.string   "gender"
     t.date     "birthday"
     t.text     "introduction"
+    t.string   "type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -6,7 +6,18 @@ Baobab::Application.routes.draw do
 
   # resources :subscriptions
 
-  devise_for :users, :controller => { :registration => "devise_registration" }
+  # devise_for :users, :controller => { :registration => "devise_registration" }
+
+  #routes.rb
+  
+    devise_for :users
+  devise_scope :user do
+      get '/login' => 'devise/sessions#new'
+      get '/logout' => 'devise/sessions#destroy'
+  end
+  resources :user, :controller => "user"
+ 
+ 
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
