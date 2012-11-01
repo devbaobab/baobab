@@ -1,0 +1,12 @@
+<%= form_for(@user) do |f| %>
+	<%= f.label :fullname %>
+	<%= f.text_field :fullname %><br />
+	<%= f.label :email %>
+	<%= f.text_field :email %><br />
+	<%= f.label :birthday %>	
+	<%= f.date_select :birthday, :start_year => 1950, :end_year => Time.now.year, :default => Date.new(1980,6,18) %><br />
+	<%= f.label :gender %>
+	<%= f.text_field :gender %><br />	
+	
+    <%= f.submit %>
+<% end %>
