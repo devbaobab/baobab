@@ -3,7 +3,7 @@ class UserController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @users = User.excludes(:id => current_user.id)
+    @users = User.all #User.excludes(:id => current_user.id)
   end
   
   def new

@@ -8,6 +8,7 @@ class AdminInterfacesController < ApplicationController
     @courses = Course.all
     @categories = Category.all
     @groups = Group.all
+   
     
     respond_to do |format|
       format.html # index.html.erb

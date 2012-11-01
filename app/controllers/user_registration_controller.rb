@@ -9,6 +9,10 @@ class UserRegistrationsController < Devise::RegistrationsController
     super
     # add custom create logic here
   end
+  
+  def edit
+    super
+  end
 
   def update
     super
