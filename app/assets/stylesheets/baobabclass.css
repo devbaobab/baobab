@@ -79,7 +79,7 @@ fieldset.signup-fieldset input.btn-signup { display: block; width: 152px; height
 
 section.register-detail { position: relative; width: 950px; margin: 0 auto; padding: 49px 54px 27px 20px; }
 section.register-detail h1 { height: 38px; text-indent: -9999px; border-bottom: 1px solid #cbc79a; background: url(title02.png) left top no-repeat; }
-section.register-detail a.btn-signup-complete { display: block; width: 152px; height: 36px; text-indent: -9999px; margin: 15px auto 0 auto; background: url(btn_signup_complete.png) left top no-repeat; }
+section.register-detail input.btn-signup-complete { border: 0px; display: block; width: 152px; height: 36px; text-indent: -9999px; margin: 15px auto 0 auto; background: url(btn_signup_complete.png) left top no-repeat; }
 
 fieldset.signup-detail-fieldset { margin-top: 10px; padding: 27px 0 27px 0; border: 1px solid #cbc79a; background-color: #d8d39e; }
 fieldset.signup-detail-fieldset th { width: 55px; height: 38px; font-size: 14px; color: #544411; font-weight: bold; vertical-align: top; text-align: left; padding: 4px 0 0 31px; background: url(bar01.png) right 6px no-repeat; }

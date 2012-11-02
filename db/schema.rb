@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102090412) do
+ActiveRecord::Schema.define(:version => 20121102160303) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -59,15 +59,19 @@ ActiveRecord::Schema.define(:version => 20121102090412) do
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",                                          :null => false
-    t.datetime "updated_at",                                          :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
     t.string   "snapshot_file_name"
     t.string   "snapshot_content_type"
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
-    t.decimal  "price",                 :precision => 8, :scale => 2
+    t.decimal  "price",                     :precision => 8, :scale => 2
     t.text     "subtitle"
     t.string   "intro_video_link"
+    t.string   "big_snapshot_file_name"
+    t.string   "big_snapshot_content_type"
+    t.integer  "big_snapshot_file_size"
+    t.datetime "big_snapshot_updated_at"
   end
 
   create_table "employments", :force => true do |t|
@@ -172,6 +176,9 @@ ActiveRecord::Schema.define(:version => 20121102090412) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "simple_job"
+    t.string   "interest"
+    t.string   "subtitle"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -2,3 +2,6 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Baobab::Application
+
+Encoding.default_internal = 'utf-8'
+Encoding.default_external = 'utf-8'

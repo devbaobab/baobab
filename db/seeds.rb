@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -135,9 +136,17 @@ prefs << Preference.create({:user_id => s3.id , :interest_id => int1.id })
 prefs << Preference.create({:user_id => s3.id , :interest_id => int2.id })
 
 categories = Array.new
-categories << Category.create({"name" => "Beginner"})
-categories << Category.create({"name" => "Intermediate"})
-categories << Category.create({"name" => "Advanced"})
+categories << Category.create({"name" => "경영/경제"})
+categories << Category.create({"name" => "어학"})
+categories << Category.create({"name" => "예술"})
+categories << Category.create({"name" => "인문/사회"})
+categories << Category.create({"name" => "스포츠"})
+categories << Category.create({"name" => "취미"})
+categories << Category.create({"name" => "생활"})
+categories << Category.create({"name" => "자연/공학"})
+categories << Category.create({"name" => "컴퓨터/IT"})
+categories << Category.create({"name" => "직무/취업"})
+categories << Category.create({"name" => "학업"})
 
 ### create example courses
 number_courses = 4+rand(4)

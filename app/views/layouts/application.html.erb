@@ -3,7 +3,7 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<!-- %= stylesheet_link_tag    "default", :media => "all" % -->
 		<!-- %= stylesheet_link_tag    "class_list", :media => "all" % -->
 		<!-- %= stylesheet_link_tag    "show_class", :media => "all" % -->
@@ -25,13 +25,14 @@
 		<%= link_to image_tag("logo1.png", :size => "240x30"), courses_path%>
 		</div -->
 		<% if user_signed_in? %>
-		
+
 		<script type="text/javascript">
-		    window.currentUser = {
-		        id : "<%=current_user.id%>"
-		    }
+			window.currentUser = {
+id : "<%= current_user.id%>
+	"
+	}
 		</script>
-		
+
 		<header>
 			<%= link_to "Baobab Class", mypages_path, :class => "baobab-class" %>
 			<nav>
@@ -55,7 +56,7 @@
 							</li>
 							<% else %>
 							<!-- li>
-								<a href="#">Support</a>
+							<a href="#">Support</a>
 							</li -->
 							<% end %>
 							<li class="logout">
@@ -193,6 +194,18 @@
 			});
 
 		</script>
+
 		<% end %>
+		<script type="text/javascript">
+			var uvOptions = {};
+			(function() {
+				var uv = document.createElement('script');
+				uv.type = 'text/javascript';
+				uv.async = true;
+				uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/vqfwqHIwtoq0j6sTGWvdeQ.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(uv, s);
+			})();
+		</script>
 	</body>
 </html>

@@ -1,51 +1,67 @@
 <!-- %= form_for @course, :url => courses_path, :html => { :multipart => true } do |f| % -->
 <%= form_for @course, :html => { :multipart => true } do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<% if @course.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
+	<ul>
+		<% @course.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="field">
 	<%= f.label :user %>
 
-   </div> 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+</div>
+<div class="field">
+	<%= f.label :name %>
+	<br />
+	<%= f.text_field :name %>
+</div>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div> 
+<div class="field">
+	<%= f.label :description %>
+	<br />
+	<%= f.text_area :description %>
+</div>
 
-	<% for category in Category.find(:all) %>
-	<div class="field" >
-	  <%= check_box_tag "course[category_ids][]", category.id, @course.categories.include?(category) %>
-	  <%= category.name %>
-	</div>
-	<% end %>
- 
- 	<div class="field">
-	<%= f.file_field :snapshot %>
-  </div>
-	<div class="fields">
-	<%= f.fields_for :chapters do |builder| %>
-	<%= render "chapter_fields" , :f => builder %>
- 	<% end %>
-	<p><%= link_to_add_fields "Add Chapter", f , :chapters %></p>
-	</div>
-	
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field">
+	<%= f.label :intro_video_link %>
+	<br />
+	<%= f.text_field :intro_video_link %>
+</div>
 
+<% for category in Category.find(:all) %>
+<div class="field" >
+	<%= check_box_tag "course[category_ids][]", category.id, @course.categories.include?(category) %>
+	<%= category.name %>
+</div>
 <% end %>
 
+<div class="field">
+	<%= f.label :snapshot %>
+	<%= f.file_field :snapshot %>
+</div>
+<div class="field">
+	<%= f.label :big_snapshot %>
+	<%= f.file_field :big_snapshot %>
+</div>
+<div class="fields">
+	<%= f.fields_for :chapters do |builder| %>
+	<%= render "chapter_fields" , :f => builder %>
+	<% end %>
+	<p>
+		<%= link_to_add_fields "Add Chapter", f , :chapters %>
+	</p>
+</div>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
+
+<% end %>
 

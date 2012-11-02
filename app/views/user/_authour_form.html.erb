@@ -1,0 +1,12 @@
+<%= form_for(@user) do |f| %>
+	<%= f.label :avatar %>
+	<% if ! @user.avatar.nil?%>
+	<%= image_tag(@user.avatar.url, :size => '100x100') %>
+	<br />
+	<% end %>
+	<%= f.file_field :avatar %><br />
+	<%= f.label :introduction %><br />
+	<%= f.text_field :introduction %><br />
+	<%= f.label :subtitle %><br />
+	<%= f.text_field :subtitle %><br />
+<% end %>

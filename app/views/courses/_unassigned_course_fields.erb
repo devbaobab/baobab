@@ -54,17 +54,9 @@
 					</dt>
 					<dd>
 						<p>
-							<%= course.authour.job.title %><br />
+							<%= course.authour.subtitle %><br />
 							<br />
-							I write and film / photograph on travel for a range of publications and websites, internationally as well as for CNN TV - with an emphasis on online business, social media and SEO.<br />
-							<br />
-							Online Marketing / SEO<br />
-							<br />
-							I also advise internationally, to companies of all sizes, on their online presence, particularly with emphasis on Search Engine Optimisation (SEO), social media success and marketing.<br />
-							<br />
-							I train people and companies on SEO, Online Marketing, the use of Press Releases, Twitter, Google Search and the correct usage of Google AdWords.<br />
-							<br />
-							Business Books: Author of: "Internet Marketing - All You Need To Know", "Using LinkedIn Successfully - All You Need To Know", "Google And Its’ Products", "Search Engine Optimization For Beginners".<br />
+							<%= course.authour.introduction %><br />
 						</p>
 
 					</dd>
@@ -85,7 +77,7 @@
 			<section class="lectures">
 				
 				<h1 class="subtitle">강의교안</h1>
-				<span class="duration">전체 50강 120시간 30분 강의</span>
+		<!--		<span class="duration">전체 50강 120시간 30분 강의</span>  -->
 				<ol class="list-section">
 					<% course.chapters.each do |chapter| %>
 					<li>
@@ -98,7 +90,6 @@
 									23:57
 								</a>
 								<%= lecture.title %>:
-								<a href="#" class="title">Presentation</a>
 							</li>
 							<% end %>
 						</ol>

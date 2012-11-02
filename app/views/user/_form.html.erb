@@ -1,22 +1,116 @@
-<%= form_for(@user) do |f| %>
-	<%= f.label :avatar %>
-	<% if ! @user.avatar.nil?%>
-	<%= image_tag(@user.avatar.url) %>
-	<br />
-	<% end %>
-	<%= f.file_field :avatar %><br />
-	<%= f.label :fullname %>
-	<%= f.text_field :fullname %><br />
-	<%= f.label :email %>
-	<%= f.text_field :email %><br />
-	<%= f.label :birthday %>	
-	<%= f.date_select :birthday, :start_year => 1950, :end_year => Time.now.year, :default => Date.new(1980,6,18) %><br />
-	<%= f.label :gender %>
-	<%= f.text_field :gender %><br />	
-    <%= f.submit %>
-	<% if @user.role? :lecturer %>
-		<p>please update your author profile</p>
-		<%= render "authour_form" %>
-	<% end %>
-	
-<% end %>
+<% # encoding: UTF-8 %>
+<script>
+function toggleInterest(li_entry) {
+var option = $(li_entry).attr("class");
+var clickInterestArr = new Array();
+
+if(option == "on") {
+$(li_entry).attr("class", "off");
+} else {
+$(li_entry).attr("class", "on");
+}
+
+$(".on").each(function() {
+var item = $(this).attr("value");
+clickInterestArr.push(item);
+});
+
+$("#hidden_interest").attr("value", JSON.stringify(clickInterestArr));
+
+}
+
+var interestArray =  <%= interest_array %>;
+function setInterest() {
+var item;
+if(interestArray != null) {
+
+for(var i = 0; i < interestArray.length; i++) {
+item = $('.list-interest li')[interestArray[i] - 1];
+$(item).attr('class', 'on');
+}
+}
+$("#hidden_interest").attr("value", JSON.stringify(interestArray));
+}
+
+$(setInterest);
+</script>
+<div class="container-contents">
+	<section class="register-detail">
+		<h1>상세정보</h1>
+
+		<%= form_for(@user) do |f| %>
+		<fieldset class="signup-detail-fieldset">
+			<legend>
+				회원가입 상세정보 항목
+			</legend>
+
+			<table>
+				<tbody>
+					<tr>
+						<th><label for="male">성별</label></th>
+						<td> <%= radio_button(:user,:gender, "male",:checked => true) %><label for="m">남자</label> <%= radio_button(:user,:gender, "female") %><label for="f">여자</label></td>
+					</tr>
+					<tr>
+						<th><label for="age">생일</label></th>
+						<td> <%= f.date_select :birthday, :start_year => 1940, :end_year => Time.now.year, :default => Date.new(1980,6,18) %>
+						<br />
+						</td>
+					</tr>
+					<tr>
+						<th><label for="job">직업</label></th>
+						<td> <%= f.select(:simple_job, options_for_select(job_list, @user.simple_job.to_s)) %> </td>
+					</tr>
+					<tr>
+						<th><label for="">관심사</label></th>
+						<td>
+						<ul class="list-interest">
+							<li value="1" onclick="toggleInterest(this)">
+								<a href="#" class="interest01"><span></span></a><span>경제/경영</span>
+							</li>
+							<li value="2" onclick="toggleInterest(this)">
+								<a href="#" class="interest02"><span></span></a><span>어학</span>
+							</li>
+							<li value="3" onclick="toggleInterest(this)">
+								<a href="#" class="interest03"><span></span></a><span>예술</span>
+							</li>
+							<li value="4" onclick="toggleInterest(this)">
+								<a href="#" class="interest04"><span></span></a><span>인문/사회</span>
+							</li>
+							<li value="5" onclick="toggleInterest(this)">
+								<a href="#" class="interest05"><span></span></a><span>스포츠</span>
+							</li>
+							<li value="6" onclick="toggleInterest(this)">
+								<a href="#" class="interest06"><span></span></a><span>취미</span>
+							</li>
+							<li value="7" onclick="toggleInterest(this)">
+								<a href="#" class="interest07"><span></span></a><span>생활</span>
+							</li>
+							<li value="8" onclick="toggleInterest(this)">
+								<a href="#" class="interest08"><span></span></a><span>자연/공학</span>
+							</li>
+							<li value="9" onclick="toggleInterest(this)">
+								<a href="#" class="interest09"><span></span></a><span>컴퓨터</span>
+							</li>
+							<li value="10" onclick="toggleInterest(this)">
+								<a href="#" class="interest10"><span></span></a><span>취업/직무</span>
+							</li>
+							<li value="11" onclick="toggleInterest(this)">
+								<a href="#" class="interest11"><span></span></a><span>학업</span>
+							</li>
+						</ul></td>
+					</tr>
+					<%= f.hidden_field :interest, :id => "hidden_interest", :value => nil %>
+				</tbody>
+			</table>
+
+			<% if @user.role? :lecturer %>
+			<p>
+				please update your author profile
+			</p>
+			<%= render "authour_form" %>
+			<%= f.submit :class => "transition btn-signup-complete" %>
+			<% end %>
+		</fieldset>
+		<% end %>
+	</section>
+</div>

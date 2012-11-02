@@ -33,7 +33,7 @@
 			<div class="clear"></div>
 		</section>
 </div>
-<% if !@offering_courses.nil? && !@offering_courses.empty? %>
+<% if current_user.role?(:lecturer) %>
 <div class="container-contents02">
 		<section class="list-course">
 

@@ -1,27 +1,58 @@
 Baobab::Application.routes.draw do
   
-  get "tmp_ui/index"
-  get "tmp_ui/signup_details"
-  get "tmp_ui/discover_courses"
-  get "tmp_ui/course_start_page"
-  get "tmp_ui/my_courses"
-  get "tmp_ui/course_introduction"
-  get "tmp_ui/play_lecture"
+  resources :next_lectures
+
+  resources :comments
+
   # resources :subscriptions
 
-  devise_for :users
+  # devise_for :users, :controller => { :registration => "devise_registration" }
+
+  #routes.rb
+  
+    devise_for :users, :controllers => { :registrations => "registrations" }
+  devise_scope :user do
+      get '/login' => 'devise/sessions#new'
+      get '/logout' => 'devise/sessions#destroy'
+  end
+  resources :user, :controller => "user"
+ 
+ 
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-  # root :to => 'courses#index'
-  root :to => 'subscriptions#new'
+   root :to => 'mypages#show'
+  #root :to => 'mypages#show'
+  # root :to => 'subscriptions#new'
   match 'subscriptions' => 'subscriptions#create'
   match 'subscriptions/new' => 'subscriptions#new'
   
-  resources :courses
-  resources :categories
+  match 'comments/lectures/create/:lecture_id/' => 'comments#create_comment', :as => :comment_lecture, :via => :post
+  match 'comments/courses/create/:course_id/' => 'comments#create_comment', :as => :comment_course, :via => :post
 
+  match 'comments/lectures/get/:lecture_id/' => 'comments#get_comments', :as => :get_comments_lecture, :via => :get
+  match 'comments/courses/get/:course_id/' => 'comments#get_comments', :as => :get_comments_course, :via => :get
+  
+  
+  
+  # assign_url(:d => course.id)
+  match 'courses/assign/:id' => 'mypages#assign', :as => :assign
+  match 'courses/unassign/:id' => 'mypages#unassign', :as => :unassign
+  match 'admininterface' => "admin_interfaces#index" 
+  
+  match 'mypages' => 'mypages#show'
+  match 'courses/play' => 'courses#play'
+  
+  resources :courses do
+    resources :comments
+  end
+  
+  #resources :lectures do
+  #  resources :comments
+  #end
+  resources :categories
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

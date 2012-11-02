@@ -1,5 +1,5 @@
 class Course < ActiveRecord::Base
-  attr_accessible :description, :name, :snapshot, :price, :subtitle, :intro_video_link, :category_ids, :lectures, :chapters ,:chapters_attributes, :lectures_attributes, :authours
+  attr_accessible :description, :name, :snapshot, :price, :subtitle, :intro_video_link, :category_ids, :lectures, :chapters ,:chapters_attributes, :lectures_attributes, :authours, :big_snapshot
   
   
   has_attached_file :snapshot, :styles => { :medium => "270x171", :thumb => "270x171"}
