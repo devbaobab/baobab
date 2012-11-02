@@ -196,7 +196,7 @@ section.search-course ul.search-filter li fieldset.search-course-fieldset p { wi
 section.search-course ul.search-filter li fieldset.search-course-fieldset input { width: 120px; height: 18px; font-size: 12px; border: 0; background-color: transparent; }
 section.search-course ul.search-filter li fieldset.search-course-fieldset a.btn-search { display: inline-block; width: 16px; height: 16px; vertical-align: middle; text-indent: -9999px; margin: 0px; padding: 0px; border: 0; background: transparent url(main/btn_search01.png) left top no-repeat; }
 
-section.search-course ul.search-filter li ul.list-category { display: none; position: absolute; left: -1px; width: 100%; border-bottom: 1px solid #c3bf92; }
+section.search-course ul.search-filter li ul.list-category { position:absolute; z-index: 6; display: none; position: absolute; left: -1px; width: 100%; border-bottom: 1px solid #c3bf92; }
 section.search-course ul.search-filter li ul.list-category li { float: none; display: block; margin: 0; border-right: 1px solid #c3bf92; border-left: 1px solid #c3bf92; }
 section.search-course ul.search-filter li ul.list-category li a { display: block; font-size: 12px; color: #5a412b; font-weight: bold; text-align: left; border: 0px; padding: 11px 0 12px 20px; }
 section.search-course ul.search-filter li ul.list-category li a:hover, section.search-course ul.search-filter li ul.list-category li a.on { color: #fff; background-color: #bba459; }

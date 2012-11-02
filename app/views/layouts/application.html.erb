@@ -17,6 +17,7 @@
 		<!-- %= stylesheet_link_tag    "tmp_index", :media => "all" % -->
 
 		<%= yield :head %>
+		<title>바오밥클래스</title>
 	</head>
 
 	<body >
@@ -111,6 +112,79 @@ id : "<%= current_user.id%>
 		<% if user_signed_in? %>
 		<%= yield %>
 		<% else %>
+
+		<!--------------------------- FACEBOOK API ------------------------->
+
+		<div id="fb-root"></div>
+		<script>
+			var FB_clone;
+			window.fbAsyncInit = function() {
+				FB_clone = FB;
+				FB.init({
+					appId : '440634675983667', // App ID
+					channelUrl : 'http://cdn.baobabclass.com/channel.php', // Channel File
+					status : true, // check login status
+					cookie : true, // enable cookies to allow the server to access the session
+					xfbml : true  // parse XFBML
+				});
+
+				// Additional initialization code here
+			};
+
+			function fb_login() {
+				FB_clone.login(function(response) {
+					if(response.authResponse) {
+						console.log('Welcome!  Fetching your information.... ');
+						FB_clone.api('/me', function(response) {
+							console.log('Good to see you, ' + response.name + '.');
+						});
+
+					} else {
+						console.log('User cancelled login or did not fully authorize.');
+					}
+				});
+			}
+
+			function fb_logout() {
+				FB_clone.logout(function(response) {
+
+				});
+			}
+
+			function fb_info() {
+				FB_clone.api('/me', function(response) {
+					alert("name : " + response.name);
+					alert("id : " + response.id);
+					alert("gender : " + response.gender);
+					alert("birthday : " + response.birthday);
+					alert("email : " + response.email);
+					alert(JSON.stringify(response));
+				});
+			}
+
+			function fb_image() {
+				FB_clone.api('/me', function(response) {
+					$("#image_box").html("<img src='https://graph.facebook.com/" + response.id + "/picture'/>");
+				});
+			}
+
+			// Load the SDK Asynchronously
+			( function(d) {
+					var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+					if(d.getElementById(id)) {
+						return;
+					}
+					js = d.createElement('script');
+					js.id = id;
+					js.async = true;
+					js.src = "//connect.facebook.net/en_US/all.js";
+					ref.parentNode.insertBefore(js, ref);
+				}(document));
+
+		</script>
+
+		<!------------------ FACEBOOK API END ----------------------------------->
+
 		<%= form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
 		<div class="container-contents">
 			<section class="register">
@@ -120,7 +194,7 @@ id : "<%= current_user.id%>
 					<legend>
 						회원가입 항목
 					</legend>
-					<a href="#" class="transition btn-fb">Facebook으로 로그인</a>
+					<a class="transition btn-fb" onclick="fb_login()">Facebook으로 로그인</a>
 					<span class="or" />or</span>
 					<p>
 						<%= f.text_field :fullname, :placeholder => "이름", :class => "name" %>
