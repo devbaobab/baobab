@@ -1,6 +1,7 @@
 #user_controller.rb
 class UserController < ApplicationController
-  load_and_authorize_resource
+  
+  before_filter :authenticate_user!
   
   def index
     @users = User.all #User.excludes(:id => current_user.id)
@@ -30,7 +31,11 @@ class UserController < ApplicationController
     params[:user].delete(:password_confirmation) if params[:user][:password].blank? and params[:user][:password_confirmation].blank?
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated User."
-      redirect_to admininterface_path
+      if current_user.role? :admin
+        redirect_to admininterface_path
+      else
+        redirect_to mypages_path
+      end
     else
       render :action => 'edit'
     end

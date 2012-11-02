@@ -16,6 +16,10 @@ class Ability
           course.isAuthour(user)
         end
       end
+      
+      can :update, User do |u|
+        user.id == u.id
+      end
     end
     
 
