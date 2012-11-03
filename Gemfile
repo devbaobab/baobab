@@ -8,7 +8,9 @@ gem 'cancan'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'mysql2'
+group :production do
+  gem 'mysql2'
+end
 # make sure that ImageMagick is installed on the server machine
 # https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 3.0"
@@ -41,8 +43,8 @@ gem 'jquery-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+#Deploy with Capistrano
+gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
