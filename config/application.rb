@@ -60,5 +60,8 @@ module Baobab
     config.assets.precompile += ['common.css']
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.consider_all_requests_local       = true
+    
   end
 end
