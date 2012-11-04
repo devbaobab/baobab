@@ -25,7 +25,7 @@ class Course < ActiveRecord::Base
   accepts_nested_attributes_for :chapters, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
   accepts_nested_attributes_for :lectures, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true 
   # accepts_nested_attributes_for :videoclips, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
-  has_many :authours
+  has_many :authours, :dependent => :destroy
 
   after_save :update_nested_references
   
