@@ -3,61 +3,83 @@
 <h3>Courses</h3>
 <table>
 	<colgroup>
-    <col width="760">
-    <col width="20">
-    <col width="20">
-  </colgroup>
-<% @courses.each do |course| %>
+		<col width="760">
+		<col width="20">
+		<col width="20">
+	</colgroup>
+	<% @courses.each do |course| %>
 	<tr>
-	<th><%= course.name %></th>
-	<th><%= link_to "show", course %></th>
-	<th><%= link_to "edit", edit_course_path(course) %></th>
+		<th><%= course.name %></th>
+		<th><%= link_to "show", course %></th>
+		<th><%= link_to "edit", edit_course_path(course) %></th>
 	</tr>
-<% end %>
-<tr><th><%= link_to "Add new Course" , new_course_path %></th></tr>
+	<% end %>
+	<tr>
+		<th><%= link_to "Add new Course" , new_course_path %></th>
+	</tr>
 </table>
 </br>
 
 <h3>Categories</h3>
 <table>
 	<colgroup>
-    <col width="760">
-    <col width="20">
-    <col width="20">
-  </colgroup>
-<% @categories.each do |category| %>
-<tr>
-	<th><%= category.name %></th>
-	<th><%= link_to "show", category %></th>
-	<th><%= link_to "edit", edit_category_path(category) %></th>
+		<col width="760">
+		<col width="20">
+		<col width="20">
+	</colgroup>
+	<% @categories.each do |category| %>
+	<tr>
+		<th><%= category.name %></th>
+		<th><%= link_to "show", category %></th>
+		<th><%= link_to "edit", edit_category_path(category) %></th>
 	</tr>
-<% end %>
-<tr><th><%= link_to "Add new Category" , new_category_path %></th></tr>
+	<% end %>
+	<tr>
+		<th><%= link_to "Add new Category" , new_category_path %></th>
+	</tr>
 </table>
-
 
 <h3>Users</h3>
 
 <table>
 	<colgroup>
-	  <col width="760">
+		<col width="760">
 
-	  <col width="50">
+		<col width="50">
 	</colgroup>
 	<% @groups.each do |group| %>
-		<tr><th><%= group.name %></th><th><%= link_to "add" %></th></tr>
-		<% group.users.each do |user| %>
-			<tr> <td><%= user.email %> </td>
-				<td><%= link_to "edit", edit_user_path(:id => user.id) %></td>
-				<td><%= link_to "Make Lecturer", give_auth_path(:user_id => user.id, :id => current_user.id) %></td>
-					<!-- td><% for group_a in Group.find(:all) %><%= check_box_tag "user[group_ids][]", user.id, user.role?(group_a.name.to_sym) %><%= group_a.name %><% end %></td -->
-			</tr>
-			
-			
-		<% end %>
+	<tr>
+		<th><%= group.name %></th><th><%= link_to "add" %></th>
+	</tr>
+	<% group.users.each do |user| %>
+	<tr>
+		<td><%= user.email %> </td>
+		<td><%= link_to "edit", edit_user_path(:id => user.id) %></td>
+		<!-- td><% for group_a in Group.find(:all) %><%= check_box_tag "user[group_ids][]", user.id, user.role?(group_a.name.to_sym) %><%= group_a.name %><% end %></td -->
+	</tr>
 	<% end %>
+	<% end %>
+
 </table>
+<table>
+	<colgroup>
+		<col width="760">
+
+		<col width="50">
+	</colgroup>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= user.email %> </td>
+		<td><%= link_to "Make Lecturer", give_auth_path(:user_id => user.id, :id => current_user.id) %></td>
+		<!-- td><% for group_a in Group.find(:all) %><%= check_box_tag "user[group_ids][]", user.id, user.role?(group_a.name.to_sym) %><%= group_a.name %><% end %></td -->
+	</tr>
+	<% end %>
+
+</table>
+
 <%= link_to "Users" , user_index_path %>
 <% else %>
-<p>please login as admin first</p>
+<p>
+	please login as admin first
+</p>
 <% end %>
