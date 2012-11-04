@@ -19,8 +19,8 @@ class Take < ActiveRecord::Base
   end
   
   def progress
-    if last_position == nil
-      last_position = 0;
+    if self.last_position == nil
+      self.last_position = 0;
     end
     return 100*self.last_position / course.lectures.size
   end
