@@ -38,4 +38,9 @@ class User < ActiveRecord::Base
     !self.takes.where(:course_id => course_id).empty?
   end
   
+  def turnLecturer
+    lecture_group = Group.find_by_name("lecturer")
+    self.memberships.create(:user_id => self.id, :group_id => lecture_group.id)
+  end
+  
 end

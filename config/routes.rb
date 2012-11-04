@@ -3,6 +3,8 @@ Baobab::Application.routes.draw do
   resources :next_lectures
 
   resources :comments
+  
+  resources :admin_interfaces
 
   # resources :subscriptions
 
@@ -40,6 +42,9 @@ Baobab::Application.routes.draw do
   match 'courses/assign/:id' => 'mypages#assign', :as => :assign
   match 'courses/unassign/:id' => 'mypages#unassign', :as => :unassign
   match 'admininterface' => "admin_interfaces#index" 
+  match 'give_auth' => "admin_interfaces#give_auth"
+  
+  
   
   match 'mypages' => 'mypages#show'
   match 'courses/play' => 'courses#play'

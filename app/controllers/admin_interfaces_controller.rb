@@ -86,4 +86,17 @@ class AdminInterfacesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def give_auth
+    
+   user = User.find(params[:user_id])
+   user.turnLecturer
+    
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.json { head :no_content }
+    end
+    
+  end
+  
 end
