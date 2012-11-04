@@ -144,7 +144,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bcrypt-ruby
   cancan
   capistrano
   coffee-rails (~> 3.2.1)
