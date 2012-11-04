@@ -14,7 +14,10 @@
 							<!-- a href="#" class="btn-course-view"><img src="../images/@temp04.png" alt="" /></a-->
 							<div class="layer">
 								<span class="progress"><em style="width: <%= take.progress %>%;">50%</em></span>
+							
+							<% if Lecture.find(take.lecture_id).next != nil %>
 								<span class="text">NEXT LECTURE -</span> <%= link_to( Lecture.find(take.lecture_id).next.title , :controller => 'courses', :action => 'play', :lecture_id => Lecture.find(take.lecture_id).next.id ) %>
+							<% end %>
 							</div>
 							<p>
 								<strong><%= take.course.name %></strong>
@@ -54,6 +57,9 @@
 							<p>
 								<strong><%= course.name %></strong>
 								<span><%= course.authour.fullname %></span>
+							</p>
+							<p>
+								<%= link_to "destroy", course, method: :delete %>
 							</p>
 						</section>
 					</li>
