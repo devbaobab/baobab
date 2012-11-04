@@ -68,7 +68,7 @@ class CoursesController < ApplicationController
   def edit
     
     @course = Course.find(params[:id])
-    authorize! :update, @course
+    #authorize! :update, @course
   end
 
   # POST /courses
@@ -129,7 +129,10 @@ class CoursesController < ApplicationController
     @lecture = Lecture.find(params[:lecture_id])
     @course = Course.find(@lecture.course.id)
     @chapter = Chapter.find(@lecture.chapter.id)
-    Take.find_by_course_id_and_user_id( @course.id , current_user.id ).set_last_lecture_reference( @lecture.id )
+    take = Take.find_by_course_id_and_user_id( @course.id , current_user.id )
+    if(take)
+      take.set_last_lecture_reference( @lecture.id )
+    end
     respond_to do |format|
       format.html # new.html.erb
     end

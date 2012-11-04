@@ -45,7 +45,7 @@
 				<% @offering_courses.each do |course| %>
 					<li>
 						<section class="my-course">
-							<%= link_to image_tag(course.snapshot) , course, :class => "btn-course-view"  %> </br>
+							<%= link_to image_tag(course.snapshot) , edit_course_path(:id => course.id), :class => "btn-course-view"  %> </br>
 							<!-- a href="#" class="btn-course-view"><img src="../images/@temp04.png" alt="" /></a-->
 							<div class="layer">
 								<span class="progress"><em style="width: 80%;">50%</em></span>
