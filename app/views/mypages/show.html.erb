@@ -14,7 +14,7 @@
 							<!-- a href="#" class="btn-course-view"><img src="../images/@temp04.png" alt="" /></a-->
 							<div class="layer">
 								<!--<span class="progress"><em style="width: 0%;">50%</em></span> -->
-								<span class="text">NEXT LECTURE -</span> <%= link_to( Lecture.find(take.lecture_id).next.title , :controller => 'courses', :action => 'play', :lecture_id => Lecture.find(take.lecture_id).next.id ) %>
+								<!--<span class="text">NEXT LECTURE -</span> <%= link_to( Lecture.find(take.lecture_id).next.title , :controller => 'courses', :action => 'play', :lecture_id => Lecture.find(take.lecture_id).next.id ) %> -->
 							</div>
 							<p>
 								<strong><%= take.course.name %></strong>
@@ -49,7 +49,7 @@
 							<!-- a href="#" class="btn-course-view"><img src="../images/@temp04.png" alt="" /></a-->
 							<div class="layer">
 								<span class="progress"><em style="width: 80%;">50%</em></span>
-								<span class="text">NEXT LECTURE -</span> What is this LSAT?
+								<span class="text">NEXT LECTURE -</span> 
 							</div>
 							<p>
 								<strong><%= course.name %></strong>
