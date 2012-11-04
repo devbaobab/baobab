@@ -2,8 +2,6 @@ Baobab::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
-  Paperclip.options[:command_path] = "/usr/local/bin/"
-  
   config.consider_all_requests_local = true
   
   config.cache_classes = true
