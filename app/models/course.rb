@@ -3,6 +3,7 @@ class Course < ActiveRecord::Base
   
   
   has_attached_file :snapshot, :styles => { :medium => "270x171", :thumb => "270x171"}
+  has_attached_file :big_snapshot, :styles => { :medium => "270x171", :thumb => "270x171"}
   
   #belongs_to :take
   has_many :takes, :dependent => :destroy
