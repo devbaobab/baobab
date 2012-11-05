@@ -98,7 +98,7 @@
 				<!--%= f.label "login_id" %-->
 				<%= f.text_field :email, :placeholder => "이메일" %>
 				<!--%= f.label :password %-->
-				<%= f.password_field :password, :placeholder => "비밀번호" %>
+				<%= f.password_field :password %>
 				<%= f.submit "로그인  ", :class => "transition btn-login" %>
 			</fieldset>
 			<% end %>
@@ -122,6 +122,7 @@
 				$("section.register").css("height","380px");
 				$("fieldset.signup-fieldset").hide();
 				$("section.register h1").hide();
+				$("#ready_msg").show();
 			}
 		}		
 		$(checkInvitation);
@@ -205,13 +206,19 @@
 		<%= form_for(User.new, :as => :user, :url => registration_path(:user)) do |f| %>
 		<div class="container-contents">
 			<section class="register">
+				<div id="ready_msg" style="display:none;font-size: 18px;line-height: 35px;margin-left: 10px;margin-top: 80px;">
+					<b>Baobab</b> Class에 오신 걸 환영합니다. <br>
+					현재 <b>Baobab</b> Class Beta에는 <br>
+					초대 받으신 분들만 입장 가능합니다. <br><br>
+					12월 중에 모두를 위한 <b>Baobab</b> Class가 정식<br> 런칭됩니다. 기대해주세요!
+				</div>
 				<h1>회원가입</h1>
 
 				<fieldset class="signup-fieldset">
 					<legend>
 						회원가입 항목
 					</legend>
-					<a class="transition btn-fb" onclick="fb_login()">Facebook으로 로그인</a> 
+					<a class="transition btn-fb" onclick="comingSoondMsg()">Facebook으로 로그인</a> 
 					<span class="or" />or</span>
 					<p>
 						<%= f.text_field :fullname, :placeholder => "이름", :class => "name" %>
@@ -220,10 +227,10 @@
 						<%= f.email_field :email, :placeholder => "email" ,:class =>"email" %>
 					</p>
 					<p>
-						<%= f.password_field :password, :placeholder => "비밀번호" ,:class =>"pwd" %>
+						<%= f.password_field :password, :class =>"pwd" %>
 					</p>
 					<p>
-						<%= f.password_field :password_confirmation, :placeholder => "confirm" ,:class =>"pwd" %>
+						<%= f.password_field :password_confirmation, :class =>"pwd" %>
 					</p>
 					<p>
 						<%= f.submit "가입하기", :class=>"transition btn-signup" %>
@@ -246,6 +253,7 @@
 				</section>
 			</section>
 		</div>
+		
 		<% end %>
 
 		<% end %>

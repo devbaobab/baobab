@@ -10,7 +10,6 @@ function takeCourseDialog()
 }
 
 </script>
-
 <div class="container-summary">
 		<section class="summary-course">
 			<h1><%= course.name %></h1>
@@ -19,7 +18,8 @@ function takeCourseDialog()
 				   <param name='movie' value="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>">
 				   <param name='allowfullscreen' value='true'>
 				   <param name='allowscriptaccess' value='never'>
-				   <param name='flashvars' value="type=rtmp&streamer=<%= course.intro_video_link %>">
+				   <param name='wmode' value='transparent'>
+				   <param name='flashvars' value="image=<%= course.snapshot %>&type=rtmp&streamer=<%= course.intro_video_link %>">
 				   <embed id='player1'
 				          name='player1'
 				          src="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>"
@@ -27,7 +27,7 @@ function takeCourseDialog()
 				          height='300'
 				          allowscriptaccess='never'
 				          allowfullscreen='true'
-				          flashvars='type=rtmp&streamer=<%= course.intro_video_link %>'   />
+				          flashvars='image=<%= course.snapshot %>&type=rtmp&streamer=<%= course.intro_video_link %>'   />
 				</object>
 				</div>
 			<p><%= course.subtitle %></p>

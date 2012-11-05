@@ -14,7 +14,8 @@ class Take < ActiveRecord::Base
         self.update_attribute(:lecture_id, lect_id )
       end
     else
-      self.update_attributes(:lecture_id => self.course.lectures.first.id , :last_position => self.course.lectures.first.position )
+      #self.update_attributes(:lecture_id => self.course.lectures.first.id , :last_position => self.course.lectures.first.position )
+      self.update_attributes(:lecture_id => self.course.lectures.first.id , :last_position => 0 )
     end    
   end
   
@@ -22,6 +23,7 @@ class Take < ActiveRecord::Base
     if self.last_position == nil
       self.last_position = 0;
     end
+    
     return 100*self.last_position / course.lectures.size
   end
   

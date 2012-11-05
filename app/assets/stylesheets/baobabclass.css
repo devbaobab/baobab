@@ -203,10 +203,10 @@ section.search-course ul.search-filter li ul.list-category li a { display: block
 section.search-course ul.search-filter li ul.list-category li a:hover, section.search-course ul.search-filter li ul.list-category li a.on { color: #fff; background-color: #bba459; }
 
 ul.result-course { padding-left: 20px; }
-ul.result-course li { float: left; display: block; margin: 30px 30px 0 0; }
+ul.result-course li { float: left; display: block; margin: 30px 20px 0 0; }
 ul.result-course li.lb { margin-right: 0; }
 
-article.lecture-summary { display: block; width: 288px;
+article.lecture-summary { display: block; width: 297px;
 	-moz-box-shadow: 4px 4px 0 0 #c3bf92;
 	-webkit-box-shadow: 4px 4px 0 0 #c3bf92;
 	box-shadow: 4px 4px 0 0 #c3bf92;
@@ -214,7 +214,7 @@ article.lecture-summary { display: block; width: 288px;
 	border: 1px solid #c3bf92;
 	background-color: #ffffff;
 }
-	article.lecture-summary header { width: 278px; height: auto; margin: 0; padding: 215px 0px 0px 5px; }
+	article.lecture-summary header { width: 289px; height: auto; margin: 0; padding: 215px 0px 0px 5px; }
 	article.lecture-summary header:hover { cursor:pointer }
 	article.lecture-summary header a { display: block; font-size: 14px; color: #fff; font-weight: bold; margin: 0; padding: 9px 5px 8px 17px; background-color: #554410; text-align: center; }
 	article.lecture-summary header span { position: absolute; top: -1px; left: -1px; display: block; width: 65px; height: 67px; text-indent: -9999px; }
@@ -227,7 +227,7 @@ article.lecture-summary { display: block; width: 288px;
 	article.lecture-summary dl dt strong { display: block; font-size: 16px; color: #554410; font-weight: bold; }
 	article.lecture-summary dl dt span { font-size: 12px; color: #857031; }
 	article.lecture-summary dl dd { padding: 10px 5px 5px 5px; }
-	article.lecture-summary dl dd p { font-size: 12px; line-height: 16px; height:80px; overflow:hidden;}
+	article.lecture-summary dl dd p { font-size: 13px; line-height: 16px; height:80px; overflow:hidden;}
 	article.lecture-summary footer { display: block; border-top: 1px solid #c3bf92; }
 	article.lecture-summary footer span.students { float: left; display: block; height: 20px; font-size: 12px; color: #856e22; border-right: 1px solid #c3bf92; padding: 7px 17px 0 33px; background: url(icon01.png) 10px 5px no-repeat; }
 	article.lecture-summary footer span.price { float: right; height: 20px; font-size: 12px; color: #856e22; font-weight: bold; padding: 7px 10px 0 29px; border-left: 1px solid #c3bf92; background: url(icon04.png) 9px 5px no-repeat; }
@@ -313,7 +313,7 @@ section.list-course { width: 960px; margin: 0 auto; padding: 30px 44px 55px 20px
 	}
 
 	section.my-course p { margin-top: 38px; }
-	section.my-course p strong { display: block; font-size: 16px; color: #554410; font-weight: bold; text-align: center; line-height: 18px; }
+	section.my-course p strong { display: block; font-size: 16px; color: #554410; font-weight: bold; text-align: center; line-height: 18px; margin-bottom:10px }
 	section.my-course p span { display: block; font-size: 12px; color: #857031; text-align: center; }
 
 
@@ -466,10 +466,10 @@ aside.lecture-aside { position: fixed; top: 68px; right: 54px; bottom: 30px; dis
 	aside.lecture-aside ul.list-mobile li { border-bottom: 1px solid #e0e0e0; }
 
 section.movie-area { position: fixed; top: 57px; right: 381px; bottom: 30px; left: 20px; min-width: 621px; height:660px; text-align: center; padding: 20px 0 0 0; }
-	section.movie-area h1 { font-size: 14px; color: #999999; font-weight: bold; text-align: center; margin-top: 9px; }
-	section.movie-area em.section { font-size: 12px; color: #857021; font-weight: bold; }
+	section.movie-area h1 { font-size: 15px; color: #999999; font-weight: bold; text-align: center; margin-top: 9px; }
+	section.movie-area em.section { font-size: 15px; color: #857021; font-weight: bold; }
 	section.movie-area em.lecture { font-size: 12px; color: #419e58; font-weight: bold; }
-	section.movie-area div.movie { position: absolute; top: 73px; right: 0; bottom: 40px; left: 0; color: #fff; border: 3px solid #3b3b3b; background-color: #000; }
+	section.movie-area div.movie { position: absolute; top: 73px; right: 0; bottom: 40px; left: 0; color: #fff; padding-top: 30px;/*border: 3px solid #3b3b3b; background-color: #000;*/}
 	section.movie-area div.btns { position: absolute; right: 0px; bottom: 0px; }
 	section.movie-area div.btns a { float: right; display: block; width: 30px; height: 30px; text-indent: -9999px; margin-left: 6px; }
 	section.movie-area div.btns a.like { background: url(btn_like.png) left top no-repeat; }

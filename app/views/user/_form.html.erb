@@ -103,14 +103,14 @@ $(setInterest);
 				</tbody>
 			</table>
 
-			<% if @user.role? :lecturer %>
-			<p>
-				please update your author profile
-			</p>
-			<%= render "authour_form" %>
-			<% end %>
 			<%= f.submit :class => "transition btn-signup-complete" %>
 		</fieldset>
 		<% end %>
 	</section>
+	<% if @user.role? :lecturer %>
+		<p>
+			please update your author profile
+		</p>
+		<%= render "authour_form" %>
+	<% end %>
 </div>
