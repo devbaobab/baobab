@@ -1,6 +1,6 @@
-<script>setupPlay();
-    lecture_id = "<%= @lecture.id %>";
-
+<script>
+setupPlay();
+lecture_id = "<%= @lecture.id %>";
 
 </script>
 
@@ -11,79 +11,92 @@
 </header>
 <div class="movie-contents">
 
-		<aside class="lecture-aside">
-			<a href="#" class="btn-toggle">닫힘</a>
-			<ul class="tab-btns">
-				<li><a href="#" class="q on">질문</a></li>
-				<li><a href="#" class="p end">교안</a></li>
-			</ul>
+	<aside class="lecture-aside">
+		<a href="#" class="btn-toggle">닫힘</a>
+		<ul class="tab-btns">
+			<li>
+				<a href="#" class="q on">질문</a>
+			</li>
+			<li>
+				<a href="#" class="p end">교안</a>
+			</li>
+		</ul>
 
-			<div class="tab-question">
-				<fieldset class="question">
-					<legend>질문하기</legend>
-					<textarea name="" id="new_comment" placeholder="질문을 입력하세요."></textarea>
-					<a href="#" onclick="sendLectureComment()" class="btn-question">질문하기</a>
-				</fieldset>
+		<div class="tab-question">
+			<fieldset class="question">
+				<legend>
+					질문하기
+				</legend>
+				<textarea name="" id="new_comment" placeholder="질문을 입력하세요."></textarea>
+				<!--a href="#" onclick="sendLectureComment()" class="btn-question">질문하기</a-->
+				<a href="#" onclick='alert("준비중입니다. 우측 feedback 버튼을 이용해주세요")' class="btn-question">질문하기</a>
+			</fieldset>
 
-				<div class="scroll-list-mobile">
-					<ul class="list-mobile">
-						<% @lecture.comments.each do |comment| %>
-						<li>
-							<a href="#">
-								<p>
-									<strong><%= comment.user.fullname %>:</strong>
-								</p>
-								<p>
-									<%= comment.content %>
-								</p>
-							</a>
-						</li>
-						<% end %>
-						
-					</ul>
-				</div>
+			<div class="scroll-list-mobile">
+				<ul class="list-mobile">
+				<!--
+					<% @lecture.comments.each do |comment| %>
+					<li>
+						<a href="#">
+						<p>
+							<strong><%= comment.user.fullname %>:</strong>
+						</p>
+						<p>
+							<%= comment.content %>
+						</p> </a>
+					</li>
+					<% end %>
+-->
+					<li>
+						<a href="#">
+						<p>
+						</p>
+						<p>
+						</p> </a>
+					</li>
+
+				</ul>
 			</div>
+		</div>
 
-			<div class="tab-plan">
+		<div class="tab-plan">
 
-			</div>
-		</aside>
+		</div>
+	</aside>
 
+	<section class="movie-area">
+		<em class="section"><%= @chapter.title %></em><!-- em class="lecture"></em -->
+		<h1><%= @lecture.title %></h1>
 
+		<!-- a href="#" class="transition btn-nav prev">이전 강의</a -->
+		<% if @lecture.previous %>
+		<%= link_to "이전 강의", { :controller => 'courses', :action => 'play', :course_id => @course.id, :lecture_id => @lecture.previous.id }, :class => "transition btn-nav prev", :placeholder => "이전 강의" %>
+		<% end %>
+		<!-- a href="#" class="transition btn-nav next">다음 강의</a -->
+		<% if @lecture.next %>
+		<%= link_to "다음 강의",  {:controller => 'courses', :action => 'play', :course_id => @course.id, :lecture_id => @lecture.next.id}, :class => "transition btn-nav next", :placeholder => "다음 강의" %>
+		<% end %>
+		<div class="movie">
+			<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' id='player1' width='616' height='500' name='player1'>
+				<param name='movie' value=<%= escape_javascript( asset_path('jwplayer/player.swf')) %>>
+				<param name='allowfullscreen' value='true'>
+				<param name='allowscriptaccess' value='never'>
+				<param name='flashvars' value="autostart=true&type=rtmp&streamer=<%= @lecture.video_clip_link %>">
+				<embed id='player1'
+				name='player1'
+				src="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>"
+				width='616'
+				height='500'
+				allowscriptaccess='never'
+				allowfullscreen='true'
+				flashvars='autostart=true&type=rtmp&streamer=<%= @lecture.video_clip_link %>'   />
+			</object>
+		</div>
+		<div class="btns">
+			<a href="#" class="tw">트위터</a>
+			<a href="#" class="fb">페이스북</a>
+			<a href="#" class="like">좋아요</a>
+		</div>
+	</section>
 
-		<section class="movie-area">
-			<em class="section"><%= @chapter.title %></em> <!-- em class="lecture"></em -->
-			<h1><%= @lecture.title %></h1>
-
-			<!-- a href="#" class="transition btn-nav prev">이전 강의</a -->
-			<% if @lecture.previous %>
-			<%= link_to "이전 강의", { :controller => 'courses', :action => 'play', :course_id => @course.id, :lecture_id => @lecture.previous.id }, :class => "transition btn-nav prev", :placeholder => "이전 강의" %>
-			<% end %>
-			<!-- a href="#" class="transition btn-nav next">다음 강의</a -->
-			<% if @lecture.next %>
-			<%= link_to "다음 강의",  {:controller => 'courses', :action => 'play', :course_id => @course.id, :lecture_id => @lecture.next.id}, :class => "transition btn-nav next", :placeholder => "다음 강의" %>
-			<% end %>
-			<div class="movie">
-				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' id='player1' width='616' height='500' name='player1'>
-				   <param name='movie' value=<%= escape_javascript( asset_path('jwplayer/player.swf')) %>>
-				   <param name='allowfullscreen' value='true'>
-				   <param name='allowscriptaccess' value='never'>
-				   <param name='flashvars' value="autostart=true&type=rtmp&streamer=<%= @lecture.video_clip_link %>">
-				   <embed id='player1'
-				          name='player1'
-				          src="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>"
-				          width='616'
-				          height='500'
-				          allowscriptaccess='never'
-				          allowfullscreen='true'
-				          flashvars='autostart=true&type=rtmp&streamer=<%=  @lecture.video_clip_link %>'   />
-				</object>
-				</div>
-			<div class="btns">
-				<a href="#" class="tw">트위터</a>
-				<a href="#" class="fb">페이스북</a>
-				<a href="#" class="like">좋아요</a>
-			</div>
-		</section>
-
-	</div>
+</div>
