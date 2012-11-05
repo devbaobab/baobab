@@ -64,7 +64,7 @@
 			<%= link_to "다음 강의",  {:controller => 'courses', :action => 'play', :course_id => @course.id, :lecture_id => @lecture.next.id}, :class => "transition btn-nav next", :placeholder => "다음 강의" %>
 			<% end %>
 			<div class="movie">
-				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' id='player1' height="350" name='player1'>
+				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' id='player1' width='616' height='500' name='player1'>
 				   <param name='movie' value='https://ucloudbiz.olleh.com/cdn/player.swf'>
 				   <param name='allowfullscreen' value='true'>
 				   <param name='allowscriptaccess' value='always'>
