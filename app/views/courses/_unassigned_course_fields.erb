@@ -99,8 +99,8 @@ function takeCourseDialog()
 							<% chapter.lectures.each do |lecture| %>
 							<li>
 								<a class="lecture" onclick='takeCourseDialog()'>
-									<span class="free">free</span>
-									<!--23:57 -->
+									<!-- <span class="free">free</span>
+									23:57 -->
 								</a>
 								<a class="lecture_title" onclick='takeCourseDialog()'> <%= truncate(lecture.title, length:18) %></a>
 							</li>
