@@ -213,7 +213,7 @@ article.lecture-summary { display: block; width: 288px;
 	border: 1px solid #c3bf92;
 	background-color: #ffffff;
 }
-	article.lecture-summary header { width: 278px; height: auto; margin: 0; padding: 175px 5px 0px 5px; }
+	article.lecture-summary header { width: 278px; height: auto; margin: 0; padding: 175px 0px 0px 5px; }
 	article.lecture-summary header:hover { cursor:pointer }
 	article.lecture-summary header a { display: block; font-size: 14px; color: #fff; font-weight: bold; margin: 0; padding: 9px 5px 8px 17px; background-color: #554410; text-align: center; }
 	article.lecture-summary header span { position: absolute; top: -1px; left: -1px; display: block; width: 65px; height: 67px; text-indent: -9999px; }
@@ -226,7 +226,7 @@ article.lecture-summary { display: block; width: 288px;
 	article.lecture-summary dl dt strong { display: block; font-size: 16px; color: #554410; font-weight: bold; }
 	article.lecture-summary dl dt span { font-size: 12px; color: #857031; }
 	article.lecture-summary dl dd { padding: 10px 5px 5px 5px; }
-	article.lecture-summary dl dd p { font-size: 12px; color: #999999; line-height: 16px; }
+	article.lecture-summary dl dd p { font-size: 12px; color: #999999; line-height: 16px; height:80px; overflow:hidden;}
 	article.lecture-summary footer { display: block; border-top: 1px solid #c3bf92; }
 	article.lecture-summary footer span.students { float: left; display: block; height: 20px; font-size: 12px; color: #856e22; border-right: 1px solid #c3bf92; padding: 7px 17px 0 33px; background: url(icon01.png) 10px 5px no-repeat; }
 	article.lecture-summary footer span.price { float: right; height: 20px; font-size: 12px; color: #856e22; font-weight: bold; padding: 7px 10px 0 29px; border-left: 1px solid #c3bf92; background: url(icon04.png) 9px 5px no-repeat; }
