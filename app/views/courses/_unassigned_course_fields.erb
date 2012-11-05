@@ -1,20 +1,33 @@
+<script>
+function takeCourseDialog()
+{
+	var r=confirm("강의를 수강하시겠습니까");
+
+	if (r==true)
+  	{
+ 		window.location = '<%= assign_url( :id => course.id ) %>';
+  	}
+}
+
+</script>
+
 <div class="container-summary">
 		<section class="summary-course">
 			<h1><%= course.name %></h1>
 			<div class="movie" >
-				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='640' height='480' id='player1' name='player1'>
-				   <param name='movie' value='https://ucloudbiz.olleh.com/cdn/player.swf'>
+				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='500' height='300' id='player1' name='player1'>
+				   <param name='movie' value="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>">
 				   <param name='allowfullscreen' value='true'>
 				   <param name='allowscriptaccess' value='always'>
-				   <param name='flashvars' value="autostart=true&type=rtmp&streamer=<%= course.intro_video_link %>">
+				   <param name='flashvars' value="type=rtmp&streamer=<%= course.intro_video_link %>">
 				   <embed id='player1'
 				          name='player1'
-				          src='https://ucloudbiz.olleh.com/cdn/player.swf'
+				          src="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>"
 				          width='500'
 				          height='300'
 				          allowscriptaccess='always'
 				          allowfullscreen='true'
-				          flashvars='autostart=true&type=rtmp&streamer=<%= course.intro_video_link %>'   />
+				          flashvars='type=rtmp&streamer=<%= course.intro_video_link %>'   />
 				</object>
 				</div>
 			<p><%= course.subtitle %></p>
@@ -69,7 +82,7 @@
 					<span>by</span> <strong><%= course.authour.fullname %></strong><br />
 					<%= course.description %>
 					
-					<a href="#" class="more">더 보기</a>
+				<!--	<a href="#" class="more">더 보기</a>  -->
 				</p>
 			</section>
 			
@@ -81,15 +94,15 @@
 				<ol class="list-section">
 					<% course.chapters.each do |chapter| %>
 					<li>
-						<a class="section-title"><%= chapter.title %>:</a>
+						<a class="section-title"><%= chapter.title %></a>
 						<ol class="list-lecture">
 							<% chapter.lectures.each do |lecture| %>
 							<li>
-								<a class="lecture">
+								<a class="lecture" onclick='takeCourseDialog()'>
 									<span class="free">free</span>
 									<!--23:57 -->
 								</a>
-								<%= lecture.title %>:
+								<a class="lecture_title" onclick='takeCourseDialog()'> <%= lecture.title %> </a>
 							</li>
 							<% end %>
 						</ol>
@@ -97,7 +110,7 @@
 					</li>
 					<% end %>
 					<li>
-						<a href="#" class="more">더 보기</a>
+			<!--			<a href="#" class="more">더 보기</a>  -->
 					</li>
 				</ol>
 				
@@ -109,7 +122,7 @@
 				<ul class="list-review">
 					<li>
 						<%= image_tag("main/@temp02.png") %>
-						<span>by</span> <a href="#">바오밥 클래스</a>, 1 month ago
+						<span>by</span> <a href="#">바오밥 클래스</a>, 1 day ago
 						<span class="star"><em class="point04"><span>5/5</span></em></span>
 						<p>
 							<b>준비중입니다.</b><br />

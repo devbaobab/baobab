@@ -111,7 +111,24 @@
 		<% if user_signed_in? %>
 		<%= yield %>
 		<% else %>
-
+		
+		<!-- check invitation -->
+		<script>
+		function checkInvitation()
+		{
+			var invitation = '<%= params[:input_key].to_s() %>';
+			if(invitation != 'baobab_invitation')
+			{
+				$("section.register").css("height","380px");
+				$("fieldset.signup-fieldset").hide();
+				$("section.register h1").hide();
+			}
+		}		
+		$(checkInvitation);
+		
+		</script>
+		<!----------------------->
+		
 		<!--------------------------- FACEBOOK API ------------------------->
 
 		<div id="fb-root"></div>

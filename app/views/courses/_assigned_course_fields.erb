@@ -49,7 +49,7 @@
 							<br />
 							<%= take.course.authour.introduction %><br />
 						</p>
-						<a href="#" class="more">더 보기</a>
+					<!--	<a href="#" class="more">더 보기</a>  -->
 					</dd>
 				</dl>
 
@@ -57,7 +57,7 @@
 				<h1 class="subtitle-notice">공지</h1>
 				<ul class="list-mobile">
 					<li>
-						<a href='#' onclick="alert('준비중입니다.')">
+						<a onclick="alert('준비중입니다.')">
 							<p>
 								베타테스터 분들을 환영합니다.
 							</p>
@@ -109,7 +109,7 @@
 					<span>by</span> <strong><%= take.course.authour.fullname %></strong><br />
 					<%= take.course.description %>
 					
-					<a href="#" class="more">더 보기</a>
+				<!--	<a href="#" class="more">더 보기</a>  -->
 				</p>
 			</section>
 
@@ -127,18 +127,18 @@
 				<ol class="list-section">
 					<% take.course.chapters.each do |chapter| %>
 					<li>
-						<a class="section-title"><%= chapter.title %>:</a>
+						<a class="section-title"><%= chapter.title %></a>
 						<ol class="list-lecture">
 							<% chapter.lectures.each do |lecture| %>
 							<li>
 								<!-- %= link_to('Click here', :controller => 'users',
 								        :action => 'new', :message => 'Welcome!') do || % -->
 								
-								<a class="lecture">
+								<%= link_to courses_play_path(:lecture_id => lecture.id), :class => 'lecture'  do %>
 									<span class="free">free</span>
 									<!--23:57-->
-								</a>
-								<%= link_to( lecture.title, :controller => 'courses', :action => 'play', :lecture_id => lecture.id ) %>:
+								<% end %>
+								<%= link_to( lecture.title, :controller => 'courses', :action => 'play', :lecture_id => lecture.id ) %>
 							</li>
 							<% end %>
 						</ol>
@@ -146,7 +146,7 @@
 					</li>
 					<% end %>
 					<li>
-						<a href="#" class="more">더 보기</a> 
+				<!--		<a href="#" class="more">더 보기</a>  --> 
 					</li>
 				</ol>
 			</section>
