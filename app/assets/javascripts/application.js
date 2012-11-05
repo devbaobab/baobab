@@ -15,6 +15,11 @@
 //= require_tree .
 //= require jquery.ui.all
 
+function comingSoondMsg()
+{
+	alert("준비중입니다.");
+}
+
 function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".fields").hide();

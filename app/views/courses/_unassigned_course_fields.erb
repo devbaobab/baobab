@@ -18,14 +18,14 @@ function takeCourseDialog()
 				<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='500' height='300' id='player1' name='player1'>
 				   <param name='movie' value="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>">
 				   <param name='allowfullscreen' value='true'>
-				   <param name='allowscriptaccess' value='always'>
+				   <param name='allowscriptaccess' value='never'>
 				   <param name='flashvars' value="type=rtmp&streamer=<%= course.intro_video_link %>">
 				   <embed id='player1'
 				          name='player1'
 				          src="<%= escape_javascript( asset_path('jwplayer/player.swf')) %>"
 				          width='500'
 				          height='300'
-				          allowscriptaccess='always'
+				          allowscriptaccess='never'
 				          allowfullscreen='true'
 				          flashvars='type=rtmp&streamer=<%= course.intro_video_link %>'   />
 				</object>
@@ -102,7 +102,7 @@ function takeCourseDialog()
 									<span class="free">free</span>
 									<!--23:57 -->
 								</a>
-								<a class="lecture_title" onclick='takeCourseDialog()'> <%= lecture.title %> </a>
+								<a class="lecture_title" onclick='takeCourseDialog()'> <%= truncate(lecture.title, length:18) %></a>
 							</li>
 							<% end %>
 						</ol>

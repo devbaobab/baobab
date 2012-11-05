@@ -34,7 +34,7 @@ class UserController < ApplicationController
       if current_user.role? :admin
         redirect_to admininterface_path
       else
-        redirect_to mypages_path
+        redirect_to courses_path
       end
     else
       render :action => 'edit'

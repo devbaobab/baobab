@@ -138,7 +138,7 @@
 									<span class="free">free</span>
 									<!--23:57-->
 								<% end %>
-								<%= link_to( lecture.title, :controller => 'courses', :action => 'play', :lecture_id => lecture.id ) %>
+								<%= link_to( truncate(lecture.title, length:30), :controller => 'courses', :action => 'play', :lecture_id => lecture.id ) %>
 							</li>
 							<% end %>
 						</ol>

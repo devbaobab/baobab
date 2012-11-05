@@ -16,7 +16,12 @@
 								<span class="progress"><em style="width: <%= take.progress %>%;">50%</em></span>
 							
 							<% if Lecture.find(take.lecture_id).next != nil %>
-								<span class="text">NEXT LECTURE -</span> <%= link_to( Lecture.find(take.lecture_id).next.title , :controller => 'courses', :action => 'play', :lecture_id => Lecture.find(take.lecture_id).next.id ) %>
+							<!--
+								<%= link_to courses_play_path(:lecture_id => Lecture.find(take.lecture_id).next.id ) do %>
+									<span class="text">NEXT LECTURE - <%= Lecture.find(take.lecture_id).next.title %></span> 
+								<% end %>  -->
+								<span class="text">NEXT LECTURE - </span>
+								<%= link_to( truncate(Lecture.find(take.lecture_id).next.title, length:18),  :controller => 'courses', :action => 'play', :lecture_id => Lecture.find(take.lecture_id).next.id) %> 
 							<% end %>
 							</div>
 							<p>

@@ -1,12 +1,11 @@
-
 <div class="container-contents02">
 <section class="search-course">
 	<h1 Class="search">강의탐색</h1>
 	
 	<ul class="search-filter">
-		<li class="start"><a href="#">추천 강의</a></li><li>
-		<a href="#">인기순</a></li><li>
-		<a href="#">평점순</a></li><li>
+		<li class="start"><a href="#" onclick="comingSoondMsg()">추천 강의</a></li><li>
+		<a href="#" onclick="comingSoondMsg()">인기순</a></li><li>
+		<a href="#" onclick="comingSoondMsg()">평점순</a></li><li>
 			
 		<a href="#" class="category" onclick="toggleCategoryList()" >카테고리</a>
 			<ul class="list-category">
@@ -18,8 +17,8 @@
 			<fieldset class="search-course-fieldset">
 				<legend>검색</legend>
 				<p>
-					<input type="text" />
-					<a href="#" class="btn-search">검색</a>
+					<input type="text" onclick="comingSoondMsg()" />
+					<a href="#" class="btn-search" onclick="comingSoondMsg()">검색</a>
 				</p>
 			</fieldset>
 		</li>
@@ -32,7 +31,7 @@
 			<article class="lecture-summary">
 				<header style="background: url('<%= course.snapshot %>') 5px 5px no-repeat;" onclick="window.location='<%=course_url(:id => course.id) %>'">
 					<h1><%= link_to course.name, course  %></h1>
-					<span class="updated">updated</span>
+					<span class="new">new</span>
 				</header>
 				<dl>
 					<dt>
@@ -47,7 +46,7 @@
 					</dd>
 				</dl>
 				<footer>
-					<span class="price"><%= course.price %>$</span>
+					<span class="price"><!--<%= course.price %>$ -->free</span>
 					<span class="students"><%= course.users.size %></span>
 					<span class="star"><em class="point04"><span>3/5</span></em></span>
 					<div class="clear"></div>
