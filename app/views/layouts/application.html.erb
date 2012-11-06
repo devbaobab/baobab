@@ -83,7 +83,7 @@
 		<% else %>
 		<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
 		<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
-		<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+		<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %> 
 		<header class="register" >
 			<a href="#" class="baobab-class">Baobab Class - For Your Ever Learning Experience</a>
 
@@ -99,7 +99,7 @@
 				<!--%= f.label "login_id" %-->
 				<%= f.text_field :email, :placeholder => "이메일" %>
 				<!--%= f.label :password %-->
-				<%= f.password_field :password %>
+				<%= f.password_field :password, :placeholder => "" %>
 				<%= f.submit "로그인  ", :class => "transition btn-login" %>
 			</fieldset>
 			<% end %>
@@ -212,7 +212,7 @@
 					현재 <b>Baobab</b> Class Beta에는 <br>
 					초대 받으신 분들만 입장 가능합니다. <br><br>
 					12월 중에 모두를 위한 <b>Baobab</b> Class가 정식<br> 런칭됩니다. 기대해주세요!
-				</div>
+				</div>  
 				<h1>회원가입</h1>
 
 				<fieldset class="signup-fieldset">
@@ -228,10 +228,10 @@
 						<%= f.email_field :email, :placeholder => "email" ,:class =>"email" %>
 					</p>
 					<p>
-						<%= f.password_field :password, :class =>"pwd" %>
+						<%= f.password_field :password, :placeholder => "", :class =>"pwd" %>
 					</p>
 					<p>
-						<%= f.password_field :password_confirmation, :class =>"pwd" %>
+						<%= f.password_field :password_confirmation, :placeholder => "", :class =>"pwd" %>
 					</p>
 					<p>
 						<%= f.submit "가입하기", :class=>"transition btn-signup" %>
